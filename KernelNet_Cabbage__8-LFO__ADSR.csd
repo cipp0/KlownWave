@@ -19,7 +19,9 @@ a                                                                      .---.
 #define buttontabstyle fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue"), imgfile("on", "img/tabon.svg"), imgfile("off", "img/taboff.svg")
 #define checkboxstyle fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue"), imgfile("on", "img/buttonon.svg"), imgfile("off", "img/buttonoff.svg")
 
-
+combobox bounds(70, 204, 100, 25), populate("*.snaps"), channelType("string") channel("combo23") value("1")
+filebutton bounds(8, 204, 60, 25), text("Save", "Save"), populate("*.snaps", "test"), mode("named preset") channel("filebutton24")
+filebutton bounds(8, 234, 60, 25), text("Remove", "Remove"), populate("*.snaps", "test"), mode("remove preset") channel("filebutton25")
 
 bounds(0, 0, 0, 0)
 form caption("Untitled") size(1200, 700), colour(58, 110, 182), pluginid("def1")
