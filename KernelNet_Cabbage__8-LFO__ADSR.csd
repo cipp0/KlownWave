@@ -13,35 +13,32 @@ a                                                                      .---.
 ;
 
 <Cabbage> 
-#define buttonstyle imgfile("on", "img/buttonon.svg"), imgfile("off", "img/buttonoff.svg"), fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue")
 
+#define buttonstyle imgfile("on", "img/buttonon.svg"), imgfile("off", "img/buttonoff.svg"), fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue")
+#define buttonstyleon imgfile("on", "img/buttonon.svg"), imgfile("off", "img/buttonon.svg"), fontcolour:1("white"), fontcolour:1("white"), colour:0("lightblue"), colour:1("lightblue")
+#define buttontabstyle fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue"), imgfile("on", "img/tabon.svg"), imgfile("off", "img/taboff.svg")
+#define checkboxstyle fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue"), imgfile("on", "img/buttonon.svg"), imgfile("off", "img/buttonoff.svg")
 
 
 
 bounds(0, 0, 0, 0)
-form caption("Kernel-Net") size(1000, 500), colour(58, 110, 182), pluginid("def1")
-
-combobox bounds(70, 204, 100, 25), populate("*.snaps"), channelType("string") channel("combo23") value("1")
-filebutton bounds(8, 204, 60, 25), text("Save", "Save"), populate("*.snaps", "test"), mode("named preset") channel("filebutton24")
-filebutton bounds(8, 234, 60, 25), text("Remove", "Remove"), populate("*.snaps", "test"), mode("remove preset") channel("filebutton25")
-
-
-keyboard bounds(52, 376, 424, 95)
+form caption("Untitled") size(1200, 700), colour(58, 110, 182), pluginid("def1")
+keyboard bounds(54, 556, 424, 95)
 rslider bounds(476, 32, 60, 60) range(0, 1, 0.75, 1, 0.001) channel("volume")
 
-label bounds(174, 10, 213, 176) colour(63, 160, 241, 255) text("")
-label bounds(180, 16, 200, 20) text("FM PARAMETERS") fontcolour(255, 255, 255, 255)
+
+label bounds(28, 316, 200, 20) text("FM PARAMETERS") fontcolour(255, 255, 255, 255)
 
 label bounds(766, 4, 213, 176) colour(63, 160, 241, 255) text(" ")
 label bounds(772, 10, 200, 20) text("FM PARAMETERS") fontcolour(255, 255, 255, 255)
 
-vslider bounds(6, 12, 49, 168) range(0, 7, 3, 1, 0.1) channel("carwave1")
-vslider bounds(76, 12, 49, 168) range(0, 20, 0.001, 1, 0.001) channel("detune1")
-vslider bounds(306, 38, 47, 119) range(0, 10, 0.001, 1, 0.001) channel("modfactor1")
-hslider bounds(202, 42, 82, 53) range(0, 50, 0.001, 1, 0.001) channel("modindex1")
-rslider bounds(204, 98, 76, 66) range(0, 7, 0, 1, 0.001) channel("wavemod1")
+vslider bounds(6, 12, 49, 168) range(0, 68, 3, 1, 1) channel("carwave1")
+vslider bounds(78, 12, 49, 168) range(0, 20, 0.001, 1, 0.001) channel("detune1")
+vslider bounds(154, 338, 47, 119) range(0, 10, 0.001, 1, 0.001) channel("modfactor1")
+hslider bounds(50, 342, 82, 53) range(0, 50, 0.001, 1, 0.001) channel("modindex1")
+rslider bounds(52, 398, 76, 66) range(0, 7, 0, 1, 0.001) channel("wavemod1")
 
-vslider bounds(632, 6, 49, 168) range(0, 7, 3, 1, 1) channel("carwave2")
+vslider bounds(632, 6, 49, 168) range(0, 68, 3, 1, 1) channel("carwave2")
 vslider bounds(702, 6, 49, 168) range(0, 20, 0.001, 1, 0.001) channel("detune2")
 vslider bounds(904, 42, 47, 119) range(0, 10, 0.001, 1, 0.001) channel("modfactor2")
 hslider bounds(800, 46, 82, 53) range(0, 50, 0.001, 1, 0.001) channel("modindex2")
@@ -50,29 +47,30 @@ rslider bounds(802, 102, 76, 66) range(0, 7, 0, 1, 0.001) channel("wavemod2")
 
 label bounds(468, 88, 81, 19) text("VOLUME")
 
-label bounds(202, 82, 80, 16) text("MOD INDX") fontcolour(255, 255, 255, 255)
-label bounds(292, 160, 78, 15) text("FREQ FAC") fontcolour(255, 255, 255, 255)
-label bounds(196, 162, 96, 14) text("MOD WAVES") colour(255, 255, 255, 0) fontcolour(255, 255, 255, 255)
+label bounds(50, 382, 80, 16) text("MOD INDX") fontcolour(255, 255, 255, 255)
+label bounds(140, 460, 78, 15) text("FREQ FAC") fontcolour(255, 255, 255, 255)
+label bounds(44, 462, 96, 14) text("MOD WAVES") colour(255, 255, 255, 0) fontcolour(255, 255, 255, 255)
 
 
-label bounds(2, 178, 57, 17) text("MORPH")
+label bounds(0, 186, 57, 17) text("MORPH")
 label bounds(628, 172, 56, 16) text("MORPH")
-label bounds(64, 180, 80, 16) text("DETUNE")
+label bounds(64, 184, 80, 16) text("DETUNE")
 label bounds(690, 172, 75, 17) text("DETUNE")
 rslider bounds(478, 112, 60, 60) range(0, 1, 0.5, 1, 0.001) channel("ampdrywet")
 label bounds(414, 140, 65, 17) text("OSC 1")
 label bounds(538, 140, 63, 16) text("OSC 2")
 
-label bounds(252, 268, 80, 16) text("CUT OFF")
+label bounds(226, 476, 80, 16) text("CUT OFF")
 
 
 
-combobox bounds(462, 186, 80, 20) channel("filt_menu") text("LPF18", "MOOGLADDER", "CLFILT")
-vslider bounds(484, 312, 50, 150) range(0, 1, 0, 1, 0.001) channel("drywet")
-rslider bounds(264, 206, 60, 60) range(20, 19000, 19000, 1, 0.001) channel("filt_freq")
-rslider bounds(360, 210, 60, 60) range(0, 1, 0, 1, 0.001) channel("filt_res")
-label bounds(338, 270, 98, 16) text("RESONANCE")
-rslider bounds(448, 210, 60, 60) range(0, 1, 0, 1, 0.001) channel("filt_dist")
+
+combobox bounds(436, 394, 80, 20) channel("filt_menu") text("LPF18", "MOOGLADDER", "CLFILT")
+vslider bounds(1118, 344, 50, 150) range(0, 1, 0, 1, 0.001) channel("drywet")
+rslider bounds(238, 414, 60, 60) range(20, 19000, 19000, 1, 0.001) channel("filt_freq")
+rslider bounds(334, 418, 60, 60) range(0, 1, 0, 1, 0.001) channel("filt_res")
+label bounds(312, 478, 98, 16) text("RESONANCE")
+rslider bounds(422, 418, 60, 60) range(0, 1, 0, 1, 0.001) channel("filt_dist")
 
 ;-------------- Cabbage GUI - 1° LFO----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
