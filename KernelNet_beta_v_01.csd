@@ -406,8 +406,8 @@ adrywet interp gkdrywet
 kmix chnget "drywet"
 
 
-aL = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5*avol)
-aR = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5*avol)
+aL = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)
+aR = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)
 
 
 iamp = ampdbfs(-3) 
@@ -471,10 +471,11 @@ if changed:k(kPPQPosition)==1 then
 endif
 
 
+;----- balance volume!
+aoutLeft balance2 aoutL, aout1
+aoutRight balance2 aoutR, aout2
 
-
-
-outs aoutL , aoutR
+outs aoutLeft*avol , aoutRight*avol
 
 
 endin
