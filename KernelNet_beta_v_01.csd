@@ -490,29 +490,29 @@ endin
 ;morphing tables for OSC 1 carrier waveforms
 f1 0 10 -2 3 4 5 6 7 8 9 10 11 12 13; 14 15 16 17 18 19 20 21 22 23 24 25 26
 
-f2 0 16384 10 1 
+f2 0 8192 10 1 
 
 ;morphing tables for OSC 2 carrier waveforms
 f111 0 9 -2 3 4 5 6 7 8 9 10 11; 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
 
-f222 0 16384 10 1 
+f222 0 8192 10 1 
 
 ;OSC 1&2 carrier waveforms
 
-f3 0 16384 10 1	;sine wave
+f3 0 8192 10 1	;sine wave
 
 
 ;Forme d'onda di Giordani
-f4 0  16384  7  0 8192 1 0 -1  8192 0                     ;Ramp
-f5 0 16384 7 1 8192-256 1 0 -1 8192+256 -1		          ;Square (slightly asym)
-f6 0 16384 10 1 0   0.3 0    0.2 0     0.14 0     .111    ;Square
-f7 0 16384 7 1 4772 1 0 -1 11612 -1				          ;PW1
-f8 0 16384 7 1 2810 1 0 -1 13574 -1                       ;PW2
-f9 0 16384 10 1 1   1   1    0.7 0.5   0.3  0.1          ; Pulse
-f10 0 16384 7 0 16384 1 0 -1 16384 0;		              ;sawtooth up and down
-f11 0 16384 10 1 0.5 0.3 0.25 0.2 0.167 0.14 0.125 .111   ; Sawtooth
-f12 0 16384 7 0 4096-128 1  8192+128 -1 4096 0             ;!!!! Slightly asymmetric triangle
-f13 0 16384 7 0.65 8192 -0.5 8182 0.35			          ; Peaked Triangle
+f4 0  8192  7  0 8192 1 0 -1  8192 0                     ;Ramp
+f5 0 8192 7 1 8192-256 1 0 -1 8192+256 -1		          ;Square (slightly asym)
+f6 0 8192 10 1 0   0.3 0    0.2 0     0.14 0     .111    ;Square
+f7 0 8192 7 1 4772 1 0 -1 11612 -1				          ;PW1
+f8 0 8192 7 1 2810 1 0 -1 13574 -1                       ;PW2
+f9 0 8192 10 1 1   1   1    0.7 0.5   0.3  0.1          ; Pulse
+f10 0 8192 7 0 16384 1 0 -1 16384 0;		              ;sawtooth up and down
+f11 0 8192 10 1 0.5 0.3 0.25 0.2 0.167 0.14 0.125 .111   ; Sawtooth
+f12 0 8192 7 0 4096-128 1  8192+128 -1 4096 0             ;!!!! Slightly asymmetric triangle
+f13 0 8192 7 0.65 8192 -0.5 8182 0.35			          ; Peaked Triangle
 
 
 
