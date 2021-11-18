@@ -151,7 +151,7 @@ nchnls = 2
 #include "./SynthResources/fastLFO.udo" ; LFO
 #include "./SynthResources/fMorph.udo"    ;UDO per l'fm
 #include "./SynthResources/MOOG_Ladder.udo"; UDO filtro
-#include "./SynthResources/limiter.udo"
+;#include "./SynthResources/limiter.udo"
 
 opcode	scale_k,k,kkk				; UDO for an k-rate version of the 'scale' opcode
  kval,kmax,kmin	xin
@@ -441,7 +441,7 @@ ares MOOG_Ladder (aL+aR), k(acut), gkres, k(gifco)
 endif
 
 
-; DCBLOCK PER EVITARE DC OFFSET ALLA FINE DELLA CATENA
+; CATENA DI USCITA
 
 arevL, arevR  reverbsc ares, ares, 0.7, 12000, sr, 0.5, 1  
              
