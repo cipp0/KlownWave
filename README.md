@@ -2,6 +2,17 @@
 VST Plugin 
 Bassline Wavetable Synth with FM & FX 
 
+# ToDo
+
+- Inserire filtri bandpass e hipass
+- Testare con LFO di Ableton e capire dove sono funzionali gli LFO e quindi direzionarli dove sono più musicali
+- Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
+- Cercare di fare gli occhi che lampeggiano a tempo col transport della DAW (verificare quanta CPU)
+
+Una volta fatto tutto questo: 
+- verificare consumo di CPU con varie configurazioni di buffer e samplerate. 
+- Beta testing e fare presets (lo famo tutti compresi Kernel e Spiral Tribe)
+
 
 # Changelog
 
@@ -18,21 +29,14 @@ Major Update 18/11/21 --------------------------------------
 
 Update 28/05/21 --------------------------------------------
 
-1. Aggiunti 8 LFO
-2. Aggiunto inviluppo ADSR
+- Aggiunti 8 LFO
+- Aggiunto inviluppo ADSR
 
 Update 27/05/21 --------------------------------------------
 
 New KernelNet VST Plugin Synth
 
-1. Aggiunto Engine per presets
-2. Rimosse forme d'onda a campioni
+- Aggiunto Engine per presets
+- Rimosse forme d'onda a campioni
 
-
-# ToDo
-
-- Inserire filtri bandpass e hipass
-- Testare con LFO di Ableton e capire dove sono funzionali gli LFO e quindi direzionarli dove sono più musicali
-- Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
-- Cercare di fare gli occhi che lampeggiano a tempo col transport della DAW (verificare quanta CPU)
 
