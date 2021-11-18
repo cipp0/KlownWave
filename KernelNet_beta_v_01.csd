@@ -39,7 +39,7 @@ combobox bounds(70, 204, 100, 25), populate("*.snaps"), channelType("string") ch
 filebutton bounds(8, 204, 60, 25), text("Save", "Save"), populate("*.snaps", "test"), mode("named preset") channel("filebutton24")
 filebutton bounds(8, 234, 60, 25), text("Remove", "Remove"), populate("*.snaps", "test"), mode("remove preset") channel("filebutton25")
 
-signaldisplay bounds(1000, 50, 294, 127), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("aoutL", "aoutR"), channel("display")
+signaldisplay bounds(1000, 50, 294, 127), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("aoutLeft", "aoutRight"), channel("display")
 rslider bounds(476, 32, 75, 75) range(0, 1, 0.75, 1, 0.001) channel("volume") $sliderstyle popupText("FM Src") text("FM Source") valueTextBox(0)
 
 ;-------------- Oscillatore 1 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -143,7 +143,7 @@ keyboard bounds(110, 380, 400, 100) channel("keyboard10079")
 </CsOptions>
 <CsInstruments>
 ; Initialize the global variables. 
-ksmps = 256
+ksmps = 512
 nchnls = 2
 0dbfs = 1
 
@@ -436,7 +436,7 @@ if gkmenu == 1 then
 printk2 gkmenu
 ares diode_ladder (aL+aR), acut, gkres*17., 1, 4
 else
-printk2 gkmenu
+;printk2 gkmenu
 ares MOOG_Ladder (aL+aR), k(acut), gkres, k(gifco)
 endif
 
@@ -449,31 +449,23 @@ arevL, arevR  reverbsc ares, ares, 0.7, 12000, sr, 0.5, 1
 aoutL = (ares+arevL*kmix)*aEnv;(kdeclick)
 aoutR = (ares+arevR*kmix)*aEnv;(kdeclick)
 
-aoutL  = limit(aoutL, -0.7, .7)
-aoutR  = limit(aoutR, -0.7, .7)
+
 ;aoutL clip aoutL, 0, 0.9
 ;aoutR clip aoutR, 0, 0.9
-
-aoutL dcblock aoutL
-aoutR dcblock aoutR  
-
-
-display	aoutL, .008, 1
-dispfft aoutL, .008, 1024
-
-kPPQPosition chnget "HOST_PPQ_POS"
-if changed:k(kPPQPosition)==1 then
-	
-	SMess = "alpha(1)"
-	chnset SMess, "occhio"
-	chnset SMess, "occhio1"
-   
-endif
-
 
 ;----- balance volume!
 aoutLeft balance2 aoutL, aout1
 aoutRight balance2 aoutR, aout2
+
+aoutLeft  = limit(aoutLeft, -0.7, .7)
+aoutRight  = limit(aoutRight, -0.7, .7)
+
+aoutLeft dcblock aoutLeft
+aoutRight dcblock aoutRight 
+
+display	aoutLeft, .008, 1
+dispfft aoutLeft, .008, 1024
+
 
 outs aoutLeft*avol , aoutRight*avol
 
