@@ -22,7 +22,7 @@
 #define combostyle colour(120, 50, 5, 255) alpha(0.7)
 
 bounds(0, 0, 0, 0)
-form caption("KernelNet") size(1300, 600), openGL(1), pluginId("kn02") bundle("./SynthResources", "./KernelNet_beta_v_01.snaps") ;guiMode("queue")
+form caption("KernelNet") size(1300, 600), openGL(1), pluginId("pluq") bundle("./SynthResources", "./KernelNet_beta_v_01.snaps") ;guiMode("queue")
 
 ;-------------- Background e pagliaccio ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AudioComponents</key>
+	<array>
+		<dict>
+			<key>description</key>
+			<string>CabbagePlugin</string>
+			<key>factoryFunction</key>
+			<string>CabbagePluginSynthAUFactory</string>
+			<key>manufacturer</key>
+			<string>Cabb</string>
+			<key>name</key>
+			<string>CabbageAudio: KernelNet</string>
+			<key>sandboxSafe</key>
+			<true/>
+			<key>subtype</key>
+			<string>pluq</string>
+			<key>type</key>
+			<string>aumu</string>
+			<key>version</key>
+			<integer>133180</integer>
+		</dict>
+	</array>
+	<key>BuildMachineOSBuild</key>
+	<string>19H1519</string>
+	<key>CFBundleDisplayName</key>
+	<string>CabbagePluginSynth</string>
+	<key>CFBundleExecutable</key>
+	<string>CabbagePluginSynth</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.CabbageAudio.plugin</string>
+	<key>CFBundleName</key>
+	<string>CabbagePluginSynth</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.8.60</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>2.8.60</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>12D4e</string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
+	<key>DTPlatformVersion</key>
+	<string>11.1</string>
+	<key>DTSDKBuild</key>
+	<string>20C63</string>
+	<key>DTSDKName</key>
+	<string>macosx11.1</string>
+	<key>DTXcode</key>
+	<string>1240</string>
+	<key>DTXcodeBuild</key>
+	<string>12D4e</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.11</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string></string>
+</dict>
+</plist>
