@@ -19,122 +19,83 @@
 #define buttontabstyle fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue"), imgfile("on", "img/tabon.svg"), imgfile("off", "img/taboff.svg")
 #define checkboxstyle fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue"), imgfile("on", "img/buttonon.svg"), imgfile("off", "img/buttonoff.svg")
 #define sliderstyle outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/knob.png", 128)  textColour(255, 255, 255, 200) fontColour(255, 255, 255, 255) textBoxOutlineColour(0,0,0,0) trackerInsideRadius(0.67) popupText("") text("")
+#define combostyle colour(120, 50, 5, 255) alpha(0.7)
 
 bounds(0, 0, 0, 0)
-form caption("KernelNet") size(1300, 600), guiMode("queue"), openGL(1), pluginId("kn02") bundle("./SynthResources", "./KernelNet_beta_v_01.snaps") 
+form caption("KernelNet") size(1300, 600), openGL(1), pluginId("kn02") bundle("./SynthResources", "./KernelNet_beta_v_01.snaps") ;guiMode("queue")
 
 ;-------------- Background e pagliaccio ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-image bounds(0, 0, 1300, 600) channel("ibg") file("./SynthResources/bg.jpg")
+image bounds(-2, 0, 1300, 600) channel("ibg") file("./SynthResources/bg.jpg")
 
-image bounds(480, 0, 334, 404) channel("image10000") file("./SynthResources/pagliacciosint2.png")
+
+image bounds(0, 2, 505, 182) channel("ooscil1") file("./SynthResources/oscil.png")
+image bounds(794, 2, 505, 182) channel("ooscil2") file("./SynthResources/oscil.png")
+
+image bounds(0, 182, 505, 182) channel("filter1") file("./SynthResources/filter.png")
+image bounds(794, 200, 505, 182) channel("filter2") file("./SynthResources/envelope.png")
+
 image bounds(474, 84, 200, 200) channel("occhio") file("./SynthResources/occhi.png") alpha(1) identChannel("occhio")
 image bounds(620, 85, 200, 200) channel("occhio1") file("./SynthResources/occhi.png") identChannel("occhio1")
 rslider bounds(580, 200, 131, 130) channel("ampdrywet") range(0, 1, 0.5, 1, 0.001)  outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/nasoknob.png", 128)  textColour(0, 0, 0, 255) fontColour(0, 0, 0, 255) trackerInsideRadius(0.67) 
-
+image bounds(480, 0, 334, 404) channel("image10000") file("./SynthResources/pagliacciosint2.png")
 
 ;-------------- Presets .snaps ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-combobox bounds(70, 204, 100, 25), populate("*.snaps"), channelType("string") channel("combo23") value("1")
-filebutton bounds(8, 204, 60, 25), text("Save", "Save"), populate("*.snaps", "test"), mode("named preset") channel("filebutton24")
-filebutton bounds(8, 234, 60, 25), text("Remove", "Remove"), populate("*.snaps", "test"), mode("remove preset") channel("filebutton25")
+combobox bounds(588, 516, 123, 25), populate("*.snaps"), channelType("string") channel("combo23") value("1") automatable(0) text("FM_1", "303")
+filebutton bounds(590, 542, 60, 25), text("Save", "Save"), populate("*.snaps", "test"), mode("named preset") channel("filebutton24")
+filebutton bounds(650, 542, 60, 25), text("Remove", "Remove"), populate("*.snaps", "test"), mode("remove preset") channel("filebutton25")
 
-signaldisplay bounds(1000, 50, 294, 127), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("aoutLeft", "aoutRight"), channel("display")
-rslider bounds(476, 32, 75, 75) range(0, 1, 0.75, 1, 0.001) channel("volume") $sliderstyle popupText("FM Src") text("FM Source") valueTextBox(0)
+signaldisplay bounds(522, 36, 253, 127), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("aoutLeft", "aoutRight"), channel("display")
 
 ;-------------- Oscillatore 1 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-rslider bounds(4, 28, 75, 75) range(0, 10, 3, 1, 0.1) channel("carwave1") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(0)
-rslider bounds(76, 12, 100, 100) range(0, 20, 0., 1, 0.001) channel("detune1") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1)
-rslider bounds(306, 38, 100, 100) range(0, 10, 0, 1, 0.001) channel("modfactor1") $sliderstyle popupText("FM Mod") text("FM Modulation") valueTextBox(1)
-rslider bounds(202, 42, 100, 100) range(0, 50, 0., 1, 0.001) channel("modindex1") $sliderstyle popupText("FM Index") text("FM Index") valueTextBox(1)
-rslider bounds(204, 98, 100, 100) range(0, 7, 0, 1, 0.001) channel("wavemod1") $sliderstyle popupText("FM Src") text("FM Source") valueTextBox(1)
+rslider bounds(0, 32, 120, 120) range(0, 10, 3, 1, 0.1) channel("carwave1") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67) trackerOutsideRadius(0.55)
+rslider bounds(100, 32, 120, 120) range(0, 20, 0, 1, 0.001) channel("detune1") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(316, 32, 120, 120) range(0, 10, 0, 1, 0.001) channel("modfactor1") $sliderstyle popupText("FM Mod") text("FM Modulation") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(206, 32, 120, 120) range(0, 50, 0, 1, 0.001) channel("modindex1") $sliderstyle popupText("FM Index") text("FM Index") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+
+combobox bounds(428, 82, 57, 20) channel("wavemod1") text("Sine", "Sine 2 Harm", "Sine 3 Harm", "Sine 4 Harm", "Sine 5 Harm", "Sine 6 Harm", "Sine 7 Harm", "Sine 8 Harm")popupText("FM Src") $combostyle alpha(0.7) colour(120, 50, 5, 255)
+label bounds(426, 64, 59, 12) channel("fmsrc_1") fontColour(255, 255, 255, 255) text("FM Source") alpha(0.84)
 
 
 ;-------------- Oscillatore 2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-rslider bounds(532, 6, 100, 100) range(0., 1., 1, 1, 0.001) channel("vol") $sliderstyle popupText("Volume") text("Volume") valueTextBox(1)
+rslider bounds(594, 396, 110, 110) range(0, 1, 1, 1, 0.001) channel("vol") $sliderstyle popupText("Volume") text("Volume") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
-rslider bounds(632, 6, 75, 75) range(0, 7, 3, 1, 1) channel("carwave2") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(0)
-rslider bounds(702, 6, 100, 100) range(0, 20, 0.001, 1, 0.001) channel("detune2") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1)
-rslider bounds(904, 42, 100, 100) range(0, 10, 0.001, 1, 0.001) channel("modfactor2") $sliderstyle popupText("FM Mod") text("FM Modulation") valueTextBox(1)
-rslider bounds(800, 46, 100, 100) range(0, 50, 0.001, 1, 0.001) channel("modindex2") $sliderstyle popupText("FM Index") text("FM Index") valueTextBox(1)
-rslider bounds(802, 102, 100, 100) range(0, 7, 0, 1, 0.001) channel("wavemod2") $sliderstyle popupText("FM Src") text("FM Source") valueTextBox(1)
+rslider bounds(862, 32, 120, 120) range(0, 10, 3, 1, 0.1) channel("carwave2") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(970, 32, 120, 120) range(0, 20, 0.001, 1, 0.001) channel("detune2") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1180, 32, 120, 120) range(0, 10, 0.001, 1, 0.001) channel("modfactor2") $sliderstyle popupText("FM Mod") text("FM Modulation") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1076, 32, 120, 120) range(0, 50, 0.001, 1, 0.001) channel("modindex2") $sliderstyle popupText("FM Index") text("FM Index") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+combobox bounds(818, 82, 57, 20) channel("wavemod2") text("Sine", "Sine 2 Harm", "Sine 3 Harm", "Sine 4 Harm", "Sine 5 Harm", "Sine 6 Harm", "Sine 7 Harm", "Sine 8 Harm")popupText("FM Src") colour(120, 50, 5, 255) alpha(0.7)
+
+label bounds(816, 64, 59, 12) channel("fmsrc_2") fontColour(255, 255, 255, 255) text("FM Source") alpha(0.84)
 
 ;-------------- Parametri Filtro----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-rslider bounds(142, 300, 100, 100) channel("filAttack") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle popupText("Attack") text("Attack") valueTextBox(1)
-rslider bounds(268, 302, 100, 100) channel("filEmphasis") range(100, 10000, 100, 1, 1) $sliderstyle popupText("Emphasis") text("Emphasis") valueTextBox(1)
-combobox bounds(462, 186, 80, 20) channel("filt_menu") text("TB303 LADDER", "MOOG LADDER")
-rslider bounds(264, 206, 100, 100) range(20, 19000, 19000, 1, 0.001) channel("filt_freq") $sliderstyle popupText("Cutoff Frequency") text("Cutoff") valueTextBox(1)
-rslider bounds(360, 210, 100, 100) range(0, 1, 0, 1, 0.001) channel("filt_res") $sliderstyle popupText("Resonance") text("Resonance") valueTextBox(1)
+rslider bounds(200, 220, 120, 120) channel("filAttack") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle popupText("Attack") text("Attack") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(294, 220, 120, 120) channel("filEmphasis") range(100, 10000, 100, 1, 1) $sliderstyle popupText("Emphasis") text("Emphasis") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(394, 222, 120, 120) channel("filDec") range(50, 10000, 100, 1, 1) $sliderstyle popupText("Decay Freq") text("Decay Freq") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+combobox bounds(340, 202, 153, 20) channel("filt_menu") text("TB303 LADDER", "MOOG LADDER") $combostyle alpha(0.7) colour(120, 50, 5, 255)
+rslider bounds(0, 220, 120, 120) range(50, 10000, 10000, 1, 0.001) channel("filt_freq") $sliderstyle popupText("Cutoff Frequency") text("Cutoff") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(102, 220, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_res") $sliderstyle popupText("Resonance") text("Resonance") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 
 ;--------------  1° LFO----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-combobox bounds(816, 216, 70, 20), fontcolour("silver") channel("LFO1shape_B"), items("-","Sine","Triangle","Square","Saw Dn","Saw Up","Random"), value(1), colour(20,30,40), align("centre")
-    
-        rslider  bounds(816, 258, 45, 45),   channel("LFO1gain"),        range(0, 20, 0.5, 0.25, 0.01),   text("Gain"), popuppostfix(" ")
-        rslider  bounds(856, 258, 45, 45),   channel("LFO1rate"),        range(0, 1000, 4, 0.25, 0.01),   text("Rate"), popuppostfix(" Hz") 
-        rslider  bounds(896, 258, 45, 45),  channel("LFO1amt"),         range(-100, 100, 100, 1, 0.01),   text("Amt"), popuppostfix(" %"), $rsliderstyle
 
- button bounds(816, 240, 38, 17),     channel("lfo1amp"), text("Amp"), radiogroup(107), value(1), $buttonstyle 
-        button bounds(856, 240, 38, 17),     channel("lfo1pitch"), text("Pitch"), radiogroup(107), $buttonstyle 
-        button bounds(896, 240, 38, 17),     channel("lfo1morph"), text("Morph"), radiogroup(107), $buttonstyle  
-        button bounds(836, 240, 38, 17),     channel("lfo1filter"), text("Filter"), radiogroup(107), $buttonstyle
-        
-;--------------  2° LFO----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-combobox bounds(816, 316, 70, 20), fontcolour("silver") channel("LFO2shape_B"), items("-","Sine","Triangle","Square","Saw Dn","Saw Up","Random"), value(1), colour(20,30,40), align("centre")
-    
-        rslider  bounds(816, 358, 45, 45),   channel("LFO2gain"),        range(0, 20, 0.5, 0.25, 0.01),   text("Gain"), popuppostfix(" ")
-        rslider  bounds(856, 358, 45, 45),   channel("LFO2rate"),        range(0, 1000, 4, 0.25, 0.01),   text("Rate"), popuppostfix(" Hz") 
-        rslider  bounds(896, 358, 45, 45),  channel("LFO2amt"),         range(-100, 100, 100, 1, 0.01),   text("Amt"), popuppostfix(" %"), $rsliderstyle
-
- button bounds(816, 340, 38, 17),     channel("lfo2amp"), text("Amp"), radiogroup(108), value(1), $buttonstyle 
-        button bounds(856, 340, 38, 17),     channel("lfo2pitch"), text("Pitch"), radiogroup(108), $buttonstyle 
-        button bounds(896, 340, 38, 17),     channel("lfo2morph"), text("Morph"), radiogroup(108), $buttonstyle  
-        button bounds(836, 340, 38, 17),     channel("lfo2filter"), text("Filter"), radiogroup(108), $buttonstyle
-        
-
-;--------------  3° LFO----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-combobox bounds(616, 416, 70, 20), fontcolour("silver") channel("LFO3shape_B"), items("-","Sine","Triangle","Square","Saw Dn","Saw Up","Random"), value(1), colour(20,30,40), align("centre")
-    
-        rslider  bounds(616, 458, 45, 45),   channel("LFO3gain"),        range(0, 20, 0.5, 0.25, 0.01),   text("Gain"), popuppostfix(" ")
-        rslider  bounds(656, 458, 45, 45),   channel("LFO3rate"),        range(0, 1000, 4, 0.25, 0.01),   text("Rate"), popuppostfix(" Hz") 
-        rslider  bounds(696, 458, 45, 45),  channel("LFO3amt"),         range(-100, 100, 100, 1, 0.01),   text("Amt"), popuppostfix(" %"), $rsliderstyle
-
- button bounds(616, 440, 38, 17),     channel("lfo3amp"), text("Amp"), radiogroup(109), value(1), $buttonstyle 
-        button bounds(656, 440, 38, 17),     channel("lfo3pitch"), text("Pitch"), radiogroup(109), $buttonstyle 
-        button bounds(696, 440, 38, 17),     channel("lfo3morph"), text("Morph"), radiogroup(109), $buttonstyle  
-        button bounds(736, 440, 38, 17),     channel("lfo3filter"), text("Filter"), radiogroup(109), $buttonstyle
-                
-;--------------  4° LFO----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-combobox bounds(616, 516, 70, 20), fontcolour("silver") channel("LFO4shape_B"), items("-","Sine","Triangle","Square","Saw Dn","Saw Up","Random"), value(1), colour(20,30,40), align("centre")
-    
-        rslider  bounds(616, 558, 45, 45),   channel("LFO4gain"),        range(0, 20, 0.5, 0.25, 0.01),   text("Gain"), popuppostfix(" ")
-        rslider  bounds(656, 558, 45, 45),   channel("LFO4rate"),        range(0, 1000, 4, 0.25, 0.01),   text("Rate"), popuppostfix(" Hz") 
-        rslider  bounds(696, 558, 45, 45),  channel("LFO4amt"),         range(-100, 100, 100, 1, 0.01),   text("Amt"), popuppostfix(" %"), $rsliderstyle
-
- button bounds(616, 540, 38, 17),     channel("lfo4amp"), text("Amp"), radiogroup(110), value(1), $buttonstyle 
-        button bounds(656, 540, 38, 17),     channel("lfo4pitch"), text("Pitch"), radiogroup(110), $buttonstyle 
-        button bounds(696, 540, 38, 17),     channel("lfo4morph"), text("Morph"), radiogroup(110), $buttonstyle  
-        button bounds(736, 540, 38, 17),     channel("lfo4filter"), text("Filter"), radiogroup(110), $buttonstyle        
-        
      
 
 ;--------------  ADSR----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-rslider bounds(216, 502, 60, 60) channel("env1a") range(0.001, 2, 0.2, 1, 0.001)
-rslider bounds(274, 502, 60, 60) channel("env1d") range(0.001, 2, 0.2, 1, 0.001)
-rslider bounds(334, 502, 60, 60) channel("env1s") range(0.001, 2, 1, 1, 0.001)
-rslider bounds(398, 502, 64, 60) channel("env1r") range(0.001, 2, 0.4, 1, 0.001)
+rslider bounds(812, 236, 120, 120) channel("env1a") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Attack") text("Attack") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(932, 236, 120, 120) channel("env1d") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Decay") text("Decay") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1052, 236, 120, 120) channel("env1s") range(0.001, 2, 1, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Sustain") text("Sustain") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1170, 236, 120, 120) channel("env1r") range(0.001, 2, 0.4, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Release") text("Release") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 
 
-keyboard bounds(110, 380, 400, 100) channel("keyboard10079")
+;keyboard bounds(440, 480, 400, 100) channel("keyboard10079")
 </Cabbage>
 <CsoundSynthesizer>
 
@@ -151,6 +112,7 @@ nchnls = 2
 #include "./SynthResources/fastLFO.udo" ; LFO
 #include "./SynthResources/fMorph.udo"    ;UDO per l'fm
 #include "./SynthResources/MOOG_Ladder.udo"; UDO filtro
+#include "./UDOs/Flanger.udo"; Flanger
 ;#include "./SynthResources/limiter.udo"
 
 opcode	scale_k,k,kkk				; UDO for an k-rate version of the 'scale' opcode
@@ -410,7 +372,7 @@ aL = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)
 aR = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)
 
 
-iamp = ampdbfs(-6) 
+iamp = ampdbfs(-7) 
 
 aL = aL*iamp
 aR = aR*iamp
@@ -422,9 +384,9 @@ aR = aR*iamp
 ifilAttack chnget "filAttack"
 ifilDecay chnget "env1r"
 ifilEmphasis chnget "filEmphasis"
+ifilDec chnget "filDec"
 
-
-acut = expseg:a(i(gkfco), ifilAttack, (i(gkfco)+ifilEmphasis), ifilDecay, i(gkfco))
+acut = expseg:a(i(gkfco), ifilAttack, (i(gkfco)+ifilEmphasis), ifilDecay, ifilDec)
 
   acut limit acut, 100, 10000  
   
@@ -441,17 +403,31 @@ ares MOOG_Ladder (aL+aR), k(acut), gkres, k(gifco)
 endif
 
 
-; CATENA DI USCITA
-
-arevL, arevR  reverbsc ares, ares, 0.7, 12000, sr, 0.5, 1  
-             
-     
-aoutL = (ares+arevL*kmix)*aEnv;(kdeclick)
-aoutR = (ares+arevR*kmix)*aEnv;(kdeclick)
+; EFFETTI:
 
 
-;aoutL clip aoutL, 0, 0.9
-;aoutR clip aoutR, 0, 0.9
+; ---------- FLANGER
+; Performance
+; -----------
+; ain    --  input audio to which the flanging effect will be applied
+; krate  --  rate control of the lfo of the effect *NOT IN HERTZ* (range 0 to 1)
+; kdepth --  depth of the lfo of the effect (range 0 to 1)
+; kdelay --  static delay offset of the flanging effect (range 0 to 1)
+; kfback --  feedback and therefore intensity of the effect (range 0 to 1)
+
+aout3 Flanger ares, 0.2, 0.6, 0.4, 0.7
+aout4 Flanger ares, 0.2, 0.6, 0.4, 0.7
+              
+           
+                                                                     
+    
+aoutL = ares*aEnv;(kdeclick)
+aoutR = ares*aEnv;(kdeclick)
+
+
+
+
+
 
 ;----- balance volume!
 aoutLeft balance2 aoutL, (aL*0.5)
