@@ -1,4 +1,4 @@
-a                                                                      .---.                                          
+                                                                     .---.                                          
 ;     .           __.....__                _..._         __.....__     |   |   _..._         __.....__               
 ;   .'|       .-''         '.            .'     '.   .-''         '.   |   | .'     '.   .-''         '.             
 ; .'  |      /     .-''"'-.  `. .-,.--. .   .-.   . /     .-''"'-.  `. |   |.   .-.   . /     .-''"'-.  `.      .|   
@@ -145,7 +145,7 @@ keyboard bounds(110, 380, 400, 100) channel("keyboard10079")
 ; Initialize the global variables. 
 ksmps = 512
 nchnls = 2
-0dbfs = 1
+0dbfs = 2
 
 
 #include "./SynthResources/fastLFO.udo" ; LFO
@@ -410,7 +410,7 @@ aL = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)
 aR = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)
 
 
-iamp = ampdbfs(-3) 
+iamp = ampdbfs(-6) 
 
 aL = aL*iamp
 aR = aR*iamp
@@ -454,8 +454,8 @@ aoutR = (ares+arevR*kmix)*aEnv;(kdeclick)
 ;aoutR clip aoutR, 0, 0.9
 
 ;----- balance volume!
-aoutLeft balance2 aoutL, aout1
-aoutRight balance2 aoutR, aout2
+aoutLeft balance2 aoutL, (aL*0.5)
+aoutRight balance2 aoutR, (aR*0.5)
 
 aoutLeft  = limit(aoutLeft, -0.7, .7)
 aoutRight  = limit(aoutRight, -0.7, .7)
@@ -463,11 +463,11 @@ aoutRight  = limit(aoutRight, -0.7, .7)
 aoutLeft dcblock aoutLeft
 aoutRight dcblock aoutRight 
 
-display	aoutLeft, .008, 1
+display	aoutLeft, .008, 0.8
 dispfft aoutLeft, .008, 1024
 
-
-outs aoutLeft*avol , aoutRight*avol
+iamp1 = ampdbfs(-6)
+outs aoutLeft*iamp1*avol , aoutRight*iamp1*avol
 
 
 endin
