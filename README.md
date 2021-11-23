@@ -5,9 +5,11 @@ Bassline Wavetable Synth with FM & FX
 # ToDo
 
 - Inserire filtri bandpass e hipass
+- Utilizzare le tabelle delle wavetable come sorgente dell'FM (oltre a quelle presenti)
 - Inserire FX vari prendendo gli UDO dalla cartella UDOs
 - Testare con LFO di Ableton e capire dove sono funzionali gli LFO e quindi direzionarli dove sono più musicali
 - Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
+
 
 Una volta fatto tutto questo: 
 - verificare consumo di CPU con varie configurazioni di buffer e samplerate. 
