@@ -455,19 +455,19 @@ endin
 
 ;----------------------------------------------------
 instr 6
-gkBPM = 150
+gkBPM chnget "HOST_BPM"
+;gkBPM = 180
 gkTrig metro (gkBPM/60)
 
 if gkTrig == 1 then
 schedkwhen gkTrig, 0, 0, 7, 0, 1
 endif
 
-printk2 gkTrig
 endin
 
 instr 7
 
-kline linseg   0., 0.5, 1
+kline linseg   0., 0.2, 1
 cabbageSet 1,  "occhio", "alpha", kline
 cabbageSet 1,  "occhio1", "alpha", kline
 
