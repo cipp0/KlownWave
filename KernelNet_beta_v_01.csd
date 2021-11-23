@@ -36,8 +36,8 @@ image bounds(794, 2, 505, 182) channel("ooscil2") file("./SynthResources/oscil.p
 image bounds(0, 182, 505, 182) channel("filter1") file("./SynthResources/filter.png")
 image bounds(794, 200, 505, 182) channel("filter2") file("./SynthResources/envelope.png")
 
-image bounds(474, 84, 200, 200) channel("occhio") file("./SynthResources/occhi.png") alpha(1)
-image bounds(620, 85, 200, 200) channel("occhio1") file("./SynthResources/occhi.png") 
+image bounds(474, 84, 200, 200) channel("occhio") file("./SynthResources/occhi.png") alpha(0)
+image bounds(620, 85, 200, 200) channel("occhio1") file("./SynthResources/occhi.png") alpha(0)
 rslider bounds(580, 200, 131, 130) channel("ampdrywet") range(0, 1, 0.5, 1, 0.001)  outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/nasoknob.png", 128)  textColour(0, 0, 0, 255) fontColour(0, 0, 0, 255) trackerInsideRadius(0.67) 
 
 
@@ -458,11 +458,12 @@ endin
 
 
 instr 6 ; Ricevo le info di BPM dall'Host
-gkBPM chnget "HOST_BPM"
-gkTrig metro (gkBPM/60)
+kplay chnget "IS_PLAYING"
+kBPM chnget "HOST_BPM"
+kTrig metro (kBPM/60)
 
-if gkTrig == 1 then
-schedkwhen gkTrig, 0, 0, 7, 0, 1; Triggero lo strumento 7 ogni ciclo
+if kTrig == 1 && kplay == 1 then
+schedkwhen kTrig, 0, 0, 7, 0, 1; Triggero lo strumento 7 ogni ciclo
 endif
 
 endin
