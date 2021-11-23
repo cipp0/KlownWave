@@ -463,7 +463,7 @@ kBPM chnget "HOST_BPM"
 kTrig metro (kBPM/60)
 
 if kTrig == 1 && kplay == 1 then
-schedkwhen kTrig, 0, 0, 7, 0, 1; Triggero lo strumento 7 ogni ciclo
+schedkwhen kTrig, 0, 1, 7, 0, 1; Triggero lo strumento 7 ogni ciclo
 else
 cabbageSet 1,  "occhio", "alpha", 0
 cabbageSet 1,  "occhio1", "alpha", 0
