@@ -22,7 +22,7 @@ Mac: https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274
 
 Update 23/11/21 --------------------------------------
 
-- Inseriti gli occhi che lampeggiano a tempo col transport della DAW 
+- Inseriti gli occhi che lampeggiano a tempo col transport della DAW (verificare consumo CPU di schedkwhen)
 
 
 Major Update 18/11/21 --------------------------------------
@@ -47,5 +47,11 @@ New KernelNet VST Plugin Synth
 
 - Aggiunto Engine per presets
 - Rimosse forme d'onda a campioni
+
+# Contributors
+
+- Francesco Casanova
+- Matteo Tomasetti
+- Luis Braschi
 
 
