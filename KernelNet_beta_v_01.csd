@@ -14,20 +14,21 @@
 
 <Cabbage> 
 
-#define buttonstyle imgfile("on", "img/buttonon.svg"), imgfile("off", "img/buttonoff.svg"), fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue")
-#define buttonstyleon imgfile("on", "img/buttonon.svg"), imgfile("off", "img/buttonon.svg"), fontcolour:1("white"), fontcolour:1("white"), colour:0("lightblue"), colour:1("lightblue")
-#define buttontabstyle fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue"), imgfile("on", "img/tabon.svg"), imgfile("off", "img/taboff.svg")
-#define checkboxstyle fontcolour:1("white"), fontcolour:0(220,220,220), colour("lightblue"), imgfile("on", "img/buttonon.svg"), imgfile("off", "img/buttonoff.svg")
+#define buttonstyle imgFile("on", "img/buttonon.svg"), imgFile("off", "img/buttonoff.svg"), fontColour:1("white"), fontColour:0(220,220,220), colour("lightblue")
+#define buttonstyleon imgFile("on", "img/buttonon.svg"), imgFile("off", "img/buttonon.svg"), fontColour:1("white"), fontColour:1("white"), colour:0("lightblue"), colour:1("lightblue")
+#define buttontabstyle fontColour:1("white"), fontColour:0(220,220,220), colour("lightblue"), imgFile("on", "img/tabon.svg"), imgFile("off", "img/taboff.svg")
+#define checkboxstyle fontColour:1("white"), fontColour:0(220,220,220), colour("lightblue"), imgFile("on", "img/buttonon.svg"), imgFile("off", "img/buttonoff.svg")
 #define sliderstyle outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/knob.png", 128)  textColour(255, 255, 255, 200) fontColour(255, 255, 255, 255) textBoxOutlineColour(0,0,0,0) trackerInsideRadius(0.67) popupText("") text("")
 #define combostyle colour(120, 50, 5, 255) alpha(0.7)
 
 bounds(0, 0, 0, 0)
-form caption("KernelNet") size(1300, 600), openGL(1), pluginId("pluq") bundle("./SynthResources", "./KernelNet_beta_v_01.snaps") ;guiMode("queue")
+form caption("KernelNet") size(1300, 600), openGL(1), pluginId("pluq") bundle("./SynthResources", "./KernelNet_beta_v_01.snaps") guiMode("queue")
 
 ;-------------- Background e pagliaccio ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 image bounds(-2, 0, 1300, 600) channel("ibg") file("./SynthResources/bg.jpg")
 
+image bounds(480, 0, 334, 404) channel("image10000") file("./SynthResources/pagliacciosint2.png")
 
 image bounds(0, 2, 505, 182) channel("ooscil1") file("./SynthResources/oscil.png")
 image bounds(794, 2, 505, 182) channel("ooscil2") file("./SynthResources/oscil.png")
@@ -35,10 +36,10 @@ image bounds(794, 2, 505, 182) channel("ooscil2") file("./SynthResources/oscil.p
 image bounds(0, 182, 505, 182) channel("filter1") file("./SynthResources/filter.png")
 image bounds(794, 200, 505, 182) channel("filter2") file("./SynthResources/envelope.png")
 
-image bounds(474, 84, 200, 200) channel("occhio") file("./SynthResources/occhi.png") alpha(1) identChannel("occhio")
-image bounds(620, 85, 200, 200) channel("occhio1") file("./SynthResources/occhi.png") identChannel("occhio1")
+image bounds(474, 84, 200, 200) channel("occhio") file("./SynthResources/occhi.png") alpha(1)
+image bounds(620, 85, 200, 200) channel("occhio1") file("./SynthResources/occhi.png") 
 rslider bounds(580, 200, 131, 130) channel("ampdrywet") range(0, 1, 0.5, 1, 0.001)  outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/nasoknob.png", 128)  textColour(0, 0, 0, 255) fontColour(0, 0, 0, 255) trackerInsideRadius(0.67) 
-image bounds(480, 0, 334, 404) channel("image10000") file("./SynthResources/pagliacciosint2.png")
+
 
 ;-------------- Presets .snaps ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -76,7 +77,7 @@ label bounds(816, 64, 59, 12) channel("fmsrc_2") fontColour(255, 255, 255, 255) 
 rslider bounds(200, 220, 120, 120) channel("filAttack") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle popupText("Attack") text("Attack") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(294, 220, 120, 120) channel("filEmphasis") range(100, 10000, 100, 1, 1) $sliderstyle popupText("Emphasis") text("Emphasis") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(394, 222, 120, 120) channel("filDec") range(50, 10000, 100, 1, 1) $sliderstyle popupText("Decay Freq") text("Decay Freq") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-combobox bounds(340, 202, 153, 20) channel("filt_menu") text("TB303 LADDER", "MOOG LADDER") $combostyle alpha(0.7) colour(120, 50, 5, 255)
+combobox bounds(340, 202, 153, 20) channel("filt_menu") text("TB303 LADDER", "MOOG LADDER", "Generic LowPass", "Generic Bandpass", "Generic Hi Pass") $combostyle alpha(0.7) colour(120, 50, 5, 255)
 rslider bounds(0, 220, 120, 120) range(50, 10000, 10000, 1, 0.001) channel("filt_freq") $sliderstyle popupText("Cutoff Frequency") text("Cutoff") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(102, 220, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_res") $sliderstyle popupText("Resonance") text("Resonance") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
@@ -91,7 +92,7 @@ rslider bounds(102, 220, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_res") 
 rslider bounds(812, 236, 120, 120) channel("env1a") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Attack") text("Attack") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(932, 236, 120, 120) channel("env1d") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Decay") text("Decay") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(1052, 236, 120, 120) channel("env1s") range(0.001, 2, 1, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Sustain") text("Sustain") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(1170, 236, 120, 120) channel("env1r") range(0.001, 2, 0.4, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Release") text("Release") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1170, 236, 120, 120) channel("env1r") range(0.01, 2, 0.4, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Release") text("Release") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 
 
@@ -389,7 +390,10 @@ ifilDec chnget "filDec"
 acut = expseg:a(i(gkfco), ifilAttack, (i(gkfco)+ifilEmphasis), ifilDecay, ifilDec)
 
   acut limit acut, 100, 10000  
+
+asigs[] init 3
   
+asigs[0], asigs[1], asigs[2] svfilter (aL+aR),k(acut), gkres*500
   
  ; FILTRI  
   
@@ -397,9 +401,13 @@ if gkmenu == 1 then
 
 printk2 gkmenu
 ares diode_ladder (aL+aR), acut, gkres*17., 1, 4
-else
-;printk2 gkmenu
+elseif gkmenu == 2 then
+printk2 gkmenu
 ares MOOG_Ladder (aL+aR), k(acut), gkres, k(gifco)
+elseif gkmenu == 3 then
+printk2 gkmenu
+ares resonz (aL+aR), k(acut), k(ifilEmphasis)
+
 endif
 
 
@@ -427,8 +435,6 @@ aoutR = ares*aEnv;(kdeclick)
 
 
 
-
-
 ;----- balance volume!
 aoutLeft balance2 aoutL, (aL*0.5)
 aoutRight balance2 aoutR, (aR*0.5)
@@ -445,15 +451,31 @@ dispfft aoutLeft, .008, 1024
 iamp1 = ampdbfs(-6)
 outs aoutLeft*iamp1*avol , aoutRight*iamp1*avol
 
-
 endin
 
 ;----------------------------------------------------
+instr 6
+gkBPM = 150
+gkTrig metro (gkBPM/60)
 
+if gkTrig == 1 then
+schedkwhen gkTrig, 0, 0, 7, 0, 1
+endif
+
+printk2 gkTrig
+endin
+
+instr 7
+
+kline linseg   0., 0.5, 1
+cabbageSet 1,  "occhio", "alpha", kline
+cabbageSet 1,  "occhio1", "alpha", kline
+
+endin
 
 </CsInstruments>
 <CsScore>
-
+i6 0 z
 
 ;morphing tables for OSC 1 carrier waveforms
 f1 0 10 -2 3 4 5 6 7 8 9 10 11 12 13; 14 15 16 17 18 19 20 21 22 23 24 25 26
