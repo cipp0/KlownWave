@@ -445,8 +445,8 @@ aoutRight  = limit(aoutRight, -0.7, .7)
 aoutLeft dcblock aoutLeft
 aoutRight dcblock aoutRight 
 
-display	aoutLeft, .008, 0.8
-dispfft aoutLeft, .008, 1024
+display	aoutLeft, .018, 0.8
+dispfft aoutLeft, .018, 1024
 
 iamp1 = ampdbfs(-6)
 outs aoutLeft*iamp1*avol , aoutRight*iamp1*avol
