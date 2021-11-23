@@ -457,7 +457,7 @@ endin
 ;Occhi reattivi al BPM dell'Host
 
 
-instr 6 ; Ricevo le info di BPM dall'Host
+instr 6 ; Ricevo le info di BPM e Play/Stop dall'Host
 kplay chnget "IS_PLAYING"
 kBPM chnget "HOST_BPM"
 kTrig metro (kBPM/60)
