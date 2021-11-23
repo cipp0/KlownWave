@@ -445,8 +445,8 @@ aoutRight  = limit(aoutRight, -0.7, .7)
 aoutLeft dcblock aoutLeft
 aoutRight dcblock aoutRight 
 
-display	aoutLeft, .018, 0.8
-dispfft aoutLeft, .018, 1024
+display	aoutLeft, .01, 2
+dispfft aoutLeft, .01, 512
 
 iamp1 = ampdbfs(-6)
 outs aoutLeft*iamp1*avol , aoutRight*iamp1*avol
@@ -464,6 +464,9 @@ kTrig metro (kBPM/60)
 
 if kTrig == 1 && kplay == 1 then
 schedkwhen kTrig, 0, 0, 7, 0, 1; Triggero lo strumento 7 ogni ciclo
+else
+cabbageSet 1,  "occhio", "alpha", 0
+cabbageSet 1,  "occhio1", "alpha", 0
 endif
 
 endin
@@ -475,6 +478,7 @@ cabbageSet 1,  "occhio", "alpha", kline
 cabbageSet 1,  "occhio1", "alpha", kline
 
 endin
+
 
 </CsInstruments>
 <CsScore>
