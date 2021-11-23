@@ -454,18 +454,20 @@ outs aoutLeft*iamp1*avol , aoutRight*iamp1*avol
 endin
 
 ;----------------------------------------------------
-instr 6
+;Occhi reattivi al BPM dell'Host
+
+
+instr 6 ; Ricevo le info di BPM dall'Host
 gkBPM chnget "HOST_BPM"
-;gkBPM = 180
 gkTrig metro (gkBPM/60)
 
 if gkTrig == 1 then
-schedkwhen gkTrig, 0, 0, 7, 0, 1
+schedkwhen gkTrig, 0, 0, 7, 0, 1; Triggero lo strumento 7 ogni ciclo
 endif
 
 endin
 
-instr 7
+instr 7 ; Inviluppo lineare sull'alpha del widget da 0 a 1
 
 kline linseg   0., 0.2, 1
 cabbageSet 1,  "occhio", "alpha", kline
