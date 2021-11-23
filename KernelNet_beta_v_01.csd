@@ -77,9 +77,10 @@ label bounds(816, 64, 59, 12) channel("fmsrc_2") fontColour(255, 255, 255, 255) 
 rslider bounds(200, 220, 120, 120) channel("filAttack") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle popupText("Attack") text("Attack") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(294, 220, 120, 120) channel("filEmphasis") range(100, 10000, 100, 1, 1) $sliderstyle popupText("Emphasis") text("Emphasis") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(394, 222, 120, 120) channel("filDec") range(50, 10000, 100, 1, 1) $sliderstyle popupText("Decay Freq") text("Decay Freq") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-combobox bounds(340, 202, 153, 20) channel("filt_menu") text("TB303 LADDER", "MOOG LADDER", "Generic LowPass", "Generic Bandpass", "Generic Hi Pass") $combostyle alpha(0.7) colour(120, 50, 5, 255)
+combobox bounds(340, 202, 153, 20) channel("filt_menu") text("diode_ladder", "vclpf", "spf LowPass", "spf HighPass", "spf BandPass", "svn Highpass", "svn Lowpass", "svn Bandpass", "svn Band Reject") $combostyle alpha(0.7) colour(120, 50, 5, 255)
 rslider bounds(0, 220, 120, 120) range(50, 10000, 10000, 1, 0.001) channel("filt_freq") $sliderstyle popupText("Cutoff Frequency") text("Cutoff") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(102, 220, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_res") $sliderstyle popupText("Resonance") text("Resonance") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(102, 320, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_dist") $sliderstyle popupText("Distortion") text("Distortion") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 
 ;--------------  1° LFO----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -368,15 +369,10 @@ adrywet interp gkdrywet
 
 kmix chnget "drywet"
 
-
-aL = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)
-aR = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)
-
-
 iamp = ampdbfs(-7) 
 
-aL = aL*iamp
-aR = aR*iamp
+aL = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)*iamp*aEnv
+
 ; ----------------------------------------------------------- FILTRI 
 
 
@@ -391,22 +387,48 @@ acut = expseg:a(i(gkfco), ifilAttack, (i(gkfco)+ifilEmphasis), ifilDecay, ifilDe
 
   acut limit acut, 100, 10000  
 
-asigs[] init 3
-  
-asigs[0], asigs[1], asigs[2] svfilter (aL+aR),k(acut), gkres*500
-  
+
  ; FILTRI  
-  
+ 
+ 
+    
 if gkmenu == 1 then
 
-printk2 gkmenu
-ares diode_ladder (aL+aR), acut, gkres*17., 1, 4
+    ares diode_ladder aL, acut, gkres*17., 1, 4
 elseif gkmenu == 2 then
-printk2 gkmenu
-ares MOOG_Ladder (aL+aR), k(acut), gkres, k(gifco)
+
+    ares vclpf aL, k(acut), gkres;, k(gifco)
 elseif gkmenu == 3 then
-printk2 gkmenu
-ares resonz (aL+aR), k(acut), k(ifilEmphasis)
+
+    abp = 0
+    ahp = 0
+    alp  = aL
+    ares spf alp,ahp,abp,acut,gkres*2 ; la resonance funzia al contrario
+elseif gkmenu == 4 then
+    abp = 0
+    alp = 0
+    ahp  = aL
+    ares spf alp,ahp,abp,acut,gkres*2 ; la resonance funzia al contrario
+elseif gkmenu == 5 then
+    ahp = 0
+    alp = 0
+    abp  = aL
+    ares spf alp,ahp,abp,acut,gkres*2 ; la resonance funzia al contrario
+elseif gkmenu == 6 then
+    gkres limit gkres, 0.5, 1.
+    ares,alp1,abp1,abr1 svn aL, acut, gkres ,gkdist 
+    
+elseif gkmenu == 7 then
+    gkres limit gkres, 0.5, 1.
+    ahp1,ares,abp1,abr1 svn aL, acut, gkres ,gkdist  
+    
+elseif gkmenu == 8 then
+    gkres limit gkres, 0.5, 1.
+    ahp1,alp1,ares,abr1 svn aL, acut, gkres ,gkdist  
+elseif gkmenu == 9 then
+    gkres limit gkres, 0.5, 1.
+   ahp1,alp1,abp1,ares svn aL, acut, gkres ,gkdist  
+    
 
 endif
 
@@ -429,15 +451,15 @@ aout4 Flanger ares, 0.2, 0.6, 0.4, 0.7
            
                                                                      
     
-aoutL = ares*aEnv;(kdeclick)
-aoutR = ares*aEnv;(kdeclick)
+aoutL = ares;*aEnv;(kdeclick)
+aoutR = ares;*aEnv;(kdeclick)
 
 
 
 
 ;----- balance volume!
 aoutLeft balance2 aoutL, (aL*0.5)
-aoutRight balance2 aoutR, (aR*0.5)
+aoutRight balance2 aoutR, (aL*0.5)
 
 aoutLeft  = limit(aoutLeft, -0.7, .7)
 aoutRight  = limit(aoutRight, -0.7, .7)
@@ -460,7 +482,7 @@ endin
 instr 6 ; Ricevo le info di BPM e Play/Stop dall'Host
 kplay chnget "IS_PLAYING"
 kBPM chnget "HOST_BPM"
-kTrig metro (kBPM/60)
+kTrig metro 1;(kBPM/60)
 
 if kTrig == 1 && kplay == 1 then
 schedkwhen kTrig, 0, 0, 7, 0, 1; Triggero lo strumento 7 ogni ciclo
@@ -473,7 +495,8 @@ endin
 
 instr 7 ; Inviluppo lineare sull'alpha del widget da 0 a 1
 
-kline linseg   0., 0.2, 1
+kline linseg  0., 0.5, 1
+;printk2 kline
 cabbageSet 1,  "occhio", "alpha", kline
 cabbageSet 1,  "occhio1", "alpha", kline
 

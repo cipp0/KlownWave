@@ -4,11 +4,15 @@ Bassline Wavetable Synth with FM & FX
 
 # ToDo
 
-- Inserire filtri bandpass e hipass
-- Utilizzare le tabelle delle wavetable come sorgente dell'FM (oltre a quelle presenti)
+23/11/21 
+
+- CAMBIARE E SFANCULARE FTMORF USARE VCO2 E CONVERTIRE LE FORME D'ONDA IN FTGEN --> cippo
+
+- sistemare il filtro svn e inserire mvmfilter --> giovedì
 - Inserire FX vari prendendo gli UDO dalla cartella UDOs
 - Testare con LFO di Ableton e capire dove sono funzionali gli LFO e quindi direzionarli dove sono più musicali
 - Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
+- Utilizzare le tabelle delle wavetable come sorgente dell'FM (oltre a quelle presenti)
 
 
 Una volta fatto tutto questo: 
@@ -22,6 +26,7 @@ Mac: https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274
 
 Update 23/11/21 --------------------------------------
 
+- Inseriti i filtri: vclpf, spf (ricordarsi di fare abp=0,..)
 - Inseriti gli occhi che lampeggiano a tempo col transport della DAW (verificare consumo CPU di schedkwhen)
 
 
