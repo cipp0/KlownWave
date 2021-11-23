@@ -8,7 +8,6 @@ Bassline Wavetable Synth with FM & FX
 - Inserire FX vari prendendo gli UDO dalla cartella UDOs
 - Testare con LFO di Ableton e capire dove sono funzionali gli LFO e quindi direzionarli dove sono più musicali
 - Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
-- Cercare di fare gli occhi che lampeggiano a tempo col transport della DAW (verificare quanta CPU)
 
 Una volta fatto tutto questo: 
 - verificare consumo di CPU con varie configurazioni di buffer e samplerate. 
@@ -18,6 +17,11 @@ Mac: https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274
 
 
 # Changelog
+
+Update 23/11/21 --------------------------------------
+
+- Inseriti gli occhi che lampeggiano a tempo col transport della DAW 
+
 
 Major Update 18/11/21 --------------------------------------
  
