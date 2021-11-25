@@ -6,7 +6,8 @@ Bassline Wavetable Synth with FM & FX
 
 23/11/21 
 
-- CAMBIARE E SFANCULARE FTMORF USARE VCO2 E CONVERTIRE LE FORME D'ONDA IN FTGEN --> cippo
+- opcode da tenere in considerazione: midiarp
+- rendere logaritmico l'andamento del knob del filtro (vedi eu-moog)
 
 - sistemare il filtro svn e inserire mvmfilter --> giovedì
 - Inserire FX vari prendendo gli UDO dalla cartella UDOs
@@ -26,6 +27,7 @@ Mac: https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274
 
 Update 23/11/21 --------------------------------------
 
+- Inserito --limiter=0.8 (vedere se funziona)
 - Inseriti i filtri: vclpf, spf (ricordarsi di fare abp=0,..)
 - Inseriti gli occhi che lampeggiano a tempo col transport della DAW (verificare consumo CPU di schedkwhen)
 
