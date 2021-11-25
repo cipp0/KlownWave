@@ -8,7 +8,7 @@ Bassline Wavetable Synth with FM & FX
 
 - L'idea finale è quella di fare 4 oscillatori: 2 con VCO2 (forme d'onda classiche) + 2 Poscil3 con varie wavetables prese da Serum, GRP, ANA ecc. che si possono mixare tra di loro a piacimento. Tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
 
-- Assolutamente da fare il bypass dei filtri, l'andamento logaritmico del cutoff e inviluppo tranese anche nel filtro! 
+- Assolutamente da fare il bypass dei filtri, l'andamento logaritmico del cutoff e inviluppo transeg anche nel filtro! 
 - sistemare il filtro svn e inserire mvmfilter 
 - Inserire 2 filtri (uno a sinistra del clown, uno a destra)
 
