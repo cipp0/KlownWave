@@ -12,11 +12,11 @@
 			<key>manufacturer</key>
 			<string>Cabb</string>
 			<key>name</key>
-			<string>CabbageAudio: KernelNet_0.1</string>
+			<string>CabbageAudio: KernelNet_0.2</string>
 			<key>sandboxSafe</key>
 			<true/>
 			<key>subtype</key>
-			<string>pluw</string>
+			<string>plup</string>
 			<key>type</key>
 			<string>aumu</string>
 			<key>version</key>

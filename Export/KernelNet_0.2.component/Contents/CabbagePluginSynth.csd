@@ -22,7 +22,7 @@
 #define combostyle colour(120, 50, 5, 255) alpha(0.7)
 
 bounds(0, 0, 0, 0)
-form caption("KernelNet") size(1300, 600), openGL(1), pluginId("pluw") bundle("./SynthResources", "./KernelNet_beta_v_01.snaps", "./UDOs") guiMode("queue")
+form caption("KernelNet") size(1300, 600), openGL(1), pluginId("plup") bundle("./SynthResources", "./KernelNet_beta_v_01.snaps", "./UDOs") guiMode("queue")
 
 ;-------------- Background e pagliaccio ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -47,12 +47,12 @@ combobox bounds(588, 516, 123, 25), populate("*.snaps"), channelType("string") c
 filebutton bounds(590, 542, 60, 25), text("Save", "Save"), populate("*.snaps", "test"), mode("named preset") channel("filebutton24")
 filebutton bounds(650, 542, 60, 25), text("Remove", "Remove"), populate("*.snaps", "test"), mode("remove preset") channel("filebutton25")
 
-signaldisplay bounds(534, 32, 229, 160), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("aoutLeft", "aoutRight"), channel("display")
+signaldisplay bounds(522, 36, 253, 127), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("aoutLeft", "aoutRight"), channel("display")
 
 ;-------------- Oscillatore 1 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-rslider bounds(0, 32, 120, 120) range(0, 10, 3, 1, 0.1) channel("carwave1") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67) trackerOutsideRadius(0.55)
-rslider bounds(100, 32, 120, 120) range(0, 20, 0, 1, 0.001) channel("detune1") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(0, 32, 120, 120) range(0, 11, 3, 1, 0.001) channel("carwave1") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67) trackerOutsideRadius(0.55)
+rslider bounds(100, 32, 120, 120) range(-20, 20, 0, 1, 0.001) channel("detune1") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(316, 32, 120, 120) range(0, 10, 0, 1, 0.001) channel("modfactor1") $sliderstyle popupText("FM Mod") text("FM Modulation") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(206, 32, 120, 120) range(0, 50, 0, 1, 0.001) channel("modindex1") $sliderstyle popupText("FM Index") text("FM Index") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
@@ -64,8 +64,8 @@ label bounds(426, 64, 59, 12) channel("fmsrc_1") fontColour(255, 255, 255, 255) 
 
 rslider bounds(594, 396, 110, 110) range(0, 1, 1, 1, 0.001) channel("vol") $sliderstyle popupText("Volume") text("Volume") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
-rslider bounds(862, 32, 120, 120) range(0, 10, 3, 1, 0.1) channel("carwave2") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(970, 32, 120, 120) range(0, 20, 0.001, 1, 0.001) channel("detune2") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(862, 32, 120, 120) range(0, 11, 3, 1, 0.001) $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67) channel("carwave")
+rslider bounds(970, 32, 120, 120) range(-20, 20, 0.001, 1, 0.001) channel("detune2") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(1180, 32, 120, 120) range(0, 10, 0.001, 1, 0.001) channel("modfactor2") $sliderstyle popupText("FM Mod") text("FM Modulation") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(1076, 32, 120, 120) range(0, 50, 0.001, 1, 0.001) channel("modindex2") $sliderstyle popupText("FM Index") text("FM Index") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 combobox bounds(818, 82, 57, 20) channel("wavemod2") text("Sine", "Sine 2 Harm", "Sine 3 Harm", "Sine 4 Harm", "Sine 5 Harm", "Sine 6 Harm", "Sine 7 Harm", "Sine 8 Harm")popupText("FM Src") colour(120, 50, 5, 255) alpha(0.7)
@@ -77,9 +77,10 @@ label bounds(816, 64, 59, 12) channel("fmsrc_2") fontColour(255, 255, 255, 255) 
 rslider bounds(200, 220, 120, 120) channel("filAttack") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle popupText("Attack") text("Attack") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(294, 220, 120, 120) channel("filEmphasis") range(100, 10000, 100, 1, 1) $sliderstyle popupText("Emphasis") text("Emphasis") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(394, 222, 120, 120) channel("filDec") range(50, 10000, 100, 1, 1) $sliderstyle popupText("Decay Freq") text("Decay Freq") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-combobox bounds(340, 202, 153, 20) channel("filt_menu") text("TB303 LADDER", "MOOG LADDER", "Generic LowPass", "Generic Bandpass", "Generic Hi Pass") $combostyle alpha(0.7) colour(120, 50, 5, 255)
+combobox bounds(340, 202, 153, 20) channel("filt_menu") text("diode_ladder", "vclpf", "spf LowPass", "spf HighPass", "spf BandPass", "svn Highpass", "svn Lowpass", "svn Bandpass", "svn Band Reject") $combostyle alpha(0.7) colour(120, 50, 5, 255)
 rslider bounds(0, 220, 120, 120) range(50, 10000, 10000, 1, 0.001) channel("filt_freq") $sliderstyle popupText("Cutoff Frequency") text("Cutoff") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(102, 220, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_res") $sliderstyle popupText("Resonance") text("Resonance") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(102, 320, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_dist") $sliderstyle popupText("Distortion") text("Distortion") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 
 ;--------------  1° LFO----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -111,6 +112,7 @@ nchnls = 2
 
 
 #include "./SynthResources/fastLFO.udo" ; LFO
+#include "./SynthResources/fMorph1.udo"    ;UDO per l'fm
 #include "./SynthResources/fMorph.udo"    ;UDO per l'fm
 #include "./SynthResources/MOOG_Ladder.udo"; UDO filtro
 #include "./UDOs/Flanger.udo"; Flanger
@@ -145,7 +147,7 @@ gkdetune1 port gkdetune1, 0.02
 
 ;;--------------------------> OSC 2
 
-gkcarwave2  chnget "carwave2" 	; Valori di index delle tabelle per il morphing nel primo oscillatore (valori da 0 a 7)
+gkcarwave2  chnget "carwave" 	; Valori di index delle tabelle per il morphing nel primo oscillatore (valori da 0 a 7)
 gkcarwave1 port gkcarwave1, 0.02
 
 
@@ -358,7 +360,7 @@ icps cpsmidi
    ;gkenv1a chnget "env1a"    
 aEnv madsr i(gkenv1a), i(gkenv1d), i(gkenv1s), i(gkenv1r);0.02, 0.08, 0.6, 0.02
 
-aout1 fMorph gkwavemod1, gkcarwave1, icps+gkdetune1+kcps, gkmodfact1, gkmodindex1,  88, 89, 1, 2, 1  ;OSC1
+aout1 fMorph gkwavemod1, gkcarwave1, icps+gkdetune1+kcps, gkmodfact1, gkmodindex1,  88, 89, 1, 2, 0  ;OSC1
 
 aout2 fMorph gkwavemod2, gkcarwave2, icps+gkdetune2+kcps, gkmodfact2, gkmodindex2,  888, 899, 111, 222, 0    ;OSC2
 
@@ -368,15 +370,11 @@ adrywet interp gkdrywet
 
 kmix chnget "drywet"
 
-
-aL = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)
-aR = (((aout2*adrywet)+(aout1*(1-adrywet)))*0.5)
-
-
 iamp = ampdbfs(-7) 
 
-aL = aL*iamp
-aR = aR*iamp
+aL sum (aout2*adrywet), (aout1*(1-adrywet))
+aL = (aL*0.5*iamp)*aEnv
+
 ; ----------------------------------------------------------- FILTRI 
 
 
@@ -391,22 +389,48 @@ acut = expseg:a(i(gkfco), ifilAttack, (i(gkfco)+ifilEmphasis), ifilDecay, ifilDe
 
   acut limit acut, 100, 10000  
 
-asigs[] init 3
-  
-asigs[0], asigs[1], asigs[2] svfilter (aL+aR),k(acut), gkres*500
-  
+
  ; FILTRI  
-  
+ 
+ 
+    
 if gkmenu == 1 then
 
-printk2 gkmenu
-ares diode_ladder (aL+aR), acut, gkres*17., 1, 4
+    ares diode_ladder aL, acut, gkres*17., 1, 4
 elseif gkmenu == 2 then
-printk2 gkmenu
-ares MOOG_Ladder (aL+aR), k(acut), gkres, k(gifco)
+
+    ares vclpf aL, k(acut), gkres;, k(gifco)
 elseif gkmenu == 3 then
-printk2 gkmenu
-ares resonz (aL+aR), k(acut), k(ifilEmphasis)
+
+    abp = 0
+    ahp = 0
+    alp  = aL
+    ares spf alp,ahp,abp,acut,gkres*2 ; la resonance funzia al contrario
+elseif gkmenu == 4 then
+    abp = 0
+    alp = 0
+    ahp  = aL
+    ares spf alp,ahp,abp,acut,gkres*2 ; la resonance funzia al contrario
+elseif gkmenu == 5 then
+    ahp = 0
+    alp = 0
+    abp  = aL
+    ares spf alp,ahp,abp,acut,gkres*2 ; la resonance funzia al contrario
+elseif gkmenu == 6 then
+    gkres limit gkres, 0.5, 1.
+    ares,alp1,abp1,abr1 svn aL, acut, gkres ,gkdist 
+    
+elseif gkmenu == 7 then
+    gkres limit gkres, 0.5, 1.
+    ahp1,ares,abp1,abr1 svn aL, acut, gkres ,gkdist  
+    
+elseif gkmenu == 8 then
+    gkres limit gkres, 0.5, 1.
+    ahp1,alp1,ares,abr1 svn aL, acut, gkres ,gkdist  
+elseif gkmenu == 9 then
+    gkres limit gkres, 0.5, 1.
+   ahp1,alp1,abp1,ares svn aL, acut, gkres ,gkdist  
+    
 
 endif
 
@@ -429,15 +453,15 @@ aout4 Flanger ares, 0.2, 0.6, 0.4, 0.7
            
                                                                      
     
-aoutL = ares*aEnv;(kdeclick)
-aoutR = ares*aEnv;(kdeclick)
+aoutL = ares;*aEnv;(kdeclick)
+aoutR = ares;*aEnv;(kdeclick)
 
 
 
 
 ;----- balance volume!
 aoutLeft balance2 aoutL, (aL*0.5)
-aoutRight balance2 aoutR, (aR*0.5)
+aoutRight balance2 aoutR, (aL*0.5)
 
 aoutLeft  = limit(aoutLeft, -0.7, .7)
 aoutRight  = limit(aoutRight, -0.7, .7)
@@ -445,9 +469,8 @@ aoutRight  = limit(aoutRight, -0.7, .7)
 aoutLeft dcblock aoutLeft
 aoutRight dcblock aoutRight 
 
-display	aoutLeft, .018, 0.8
-display	aoutRight, .018, 0.8
-dispfft aoutLeft, .018, 1024
+display	aoutLeft, .01, 2
+dispfft aoutLeft, .01, 512
 
 iamp1 = ampdbfs(-6)
 outs aoutLeft*iamp1*avol , aoutRight*iamp1*avol
@@ -461,21 +484,26 @@ endin
 instr 6 ; Ricevo le info di BPM e Play/Stop dall'Host
 kplay chnget "IS_PLAYING"
 kBPM chnget "HOST_BPM"
-kTrig metro (kBPM/60)
+kTrig metro 1;(kBPM/60)
 
 if kTrig == 1 && kplay == 1 then
 schedkwhen kTrig, 0, 0, 7, 0, 1; Triggero lo strumento 7 ogni ciclo
+else
+cabbageSet 1,  "occhio", "alpha", 0
+cabbageSet 1,  "occhio1", "alpha", 0
 endif
 
 endin
 
 instr 7 ; Inviluppo lineare sull'alpha del widget da 0 a 1
 
-kline linseg   0., 0.2, 1
+kline linseg  0., 0.5, 1
+;printk2 kline
 cabbageSet 1,  "occhio", "alpha", kline
 cabbageSet 1,  "occhio1", "alpha", kline
 
 endin
+
 
 </CsInstruments>
 <CsScore>
@@ -484,31 +512,42 @@ i6 0 z
 ;morphing tables for OSC 1 carrier waveforms
 f1 0 10 -2 3 4 5 6 7 8 9 10 11 12 13; 14 15 16 17 18 19 20 21 22 23 24 25 26
 
-f2 0 8192 10 1 
+f2 0 16384 10 1 
 
 ;morphing tables for OSC 2 carrier waveforms
-f111 0 9 -2 3 4 5 6 7 8 9 10 11; 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+f111 0 10 -2 300 400 500 600 700 800 900 1000 1100 1200 1300; 14 15 16 17 18 19 20 21 22 23 24 25 26
 
-f222 0 8192 10 1 
+f222 0 16384 10 1 
 
 ;OSC 1&2 carrier waveforms
 
-f3 0 8192 10 1	;sine wave
+f3 0 16384 10 1	;sine wave
+f300 0 16384 10 1	;sine wave
 
 
 ;Forme d'onda di Giordani
-f4 0  8192  7  0 8192 1 0 -1  8192 0                     ;Ramp
-f5 0 8192 7 1 7936 1 0 -1 8448 -1		          ;Square (slightly asym)
-f6 0 8192 10 1 0   0.3 0    0.2 0     0.14 0     .111    ;Square
-f7 0 8192 7 1 4772 1 0 -1 11612 -1				          ;PW1
-f8 0 8192 7 1 2810 1 0 -1 13574 -1                       ;PW2
-f9 0 8192 10 1 1   1   1    0.7 0.5   0.3  0.1          ; Pulse
-f10 0 8192 7 0 16384 1 0 -1 16384 0;		              ;sawtooth up and down
-f11 0 8192 10 1 0.5 0.3 0.25 0.2 0.167 0.14 0.125 .111   ; Sawtooth
-f12 0 8192 7 0 3968 1  8320 -1 4096 0             ;!!!! Slightly asymmetric triangle
-f13 0 8192 7 0.65 8192 -0.5 8182 0.35			          ; Peaked Triangle
+f4 0 16384  7   0       8192    1       0       -1      8192    0                              ;Ramp
+f5 0 16384  7   1       7936    1       0       -1      8448    -1	                           ;Square (slightly asym)
+f6 0 16384  7   0       0       1       8192    1       0       -1  8192    -1  0       0       ;Square
+f7 0 16384  7   1       4772    1       0       -1      11612   -1				               ;PW1
+f8 0 16384  7   1       2810    1       0       -1      13574   -1                             ;PW2
+f9 0 16384  7   0       0       1       1024    1       0       -1  15360   -1  0       0      ;Pulse
+f10 0 16384 7   0       16384   1       0       -1      16384   0		                       ;sawtooth up and down
+f11 0 16384 7   0       4096    1       8192    -1      4096    0                              ;Triangle
+f12 0 16384 7   0       3968    1       8320    -1      4096    0                              ;Slightly asymmetric triangle
+f13 0 16384 7   0.65    8192    -0.5    8182    0.35			                               ;Peaked Triangle
 
 
+f400 0 16384  7   0       8192    1       0       -1      8192    0                              ;Ramp
+f500 0 16384  7   1       7936    1       0       -1      8448    -1	                           ;Square (slightly asym)
+f600 0 16384  7   0       0       1       8192    1       0       -1  8192    -1  0       0       ;Square
+f700 0 16384  7   1       4772    1       0       -1      11612   -1				               ;PW1
+f800 0 16384  7   1       2810    1       0       -1      13574   -1                             ;PW2
+f900 0 16384  7   0       0       1       1024    1       0       -1  15360   -1  0       0      ;Pulse
+f1000 0 16384 7   0       16384   1       0       -1      16384   0		                       ;sawtooth up and down
+f1100 0 16384 7   0       4096    1       8192    -1      4096    0                              ;Triangle
+f1200 0 16384 7   0       3968    1       8320    -1      4096    0                              ;Slightly asymmetric triangle
+f1300 0 16384 7   0.65    8192    -0.5    8182    0.35			                               ;Peaked Triangle
 
 ;----------------------------------------------------
 
