@@ -6,10 +6,18 @@ Bassline Wavetable Synth with FM & FX
 
 25/11/21 
 
+- L'idea finale è quella di fare 4 oscillatori: 2 con VCO2 (forme d'onda classiche) + 2 Poscil3 con varie wavetables prese da Serum, GRP, ANA ecc. che si possono mixare tra di loro a piacimento. Tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
+
+- Assolutamente da fare il bypass dei filtri e l'andamento logaritmico! 
+- sistemare il filtro svn e inserire mvmfilter 
+- Inserire 2 filtri (uno a sinistra del clown, uno a destra)
+
+- ADSR (guardare eu-moog) - Usa Transeg per Attack/Sustain e un altro Transeg per il Release (tramite UDO) ---> LUIS
+  
+
 - opcode da tenere in considerazione: midiarp (arpeggiatore midi), GEN05 per generare funzioni con curve a seconda dei punti, GEN07 per generare funzioni con segmenti a seconda dei punti, GEN9 e GEN10 Per generare forme d'onda composite con somma di sinusoidi, GEN18 per mixare due forme d'onda, 
 - rendere logaritmico l'andamento del knob del filtro (vedi eu-moog)
 
-- sistemare il filtro svn e inserire mvmfilter --> giovedì
 - Inserire FX vari prendendo gli UDO dalla cartella UDOs
 - Testare con LFO di Ableton e capire dove sono funzionali gli LFO e quindi direzionarli dove sono più musicali
 - Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
