@@ -6,7 +6,7 @@ Bassline Wavetable Synth with FM & FX
 
 23/11/21 
 
-- opcode da tenere in considerazione: midiarp
+- opcode da tenere in considerazione: midiarp (arpeggiatore midi), GEN05 per generare funzioni con curve a seconda dei punti, GEN07 per generare funzioni con segmenti a seconda dei punti, GEN9 e GEN10 Per generare forme d'onda composite con somma di sinusoidi, GEN18 per mixare due forme d'onda, 
 - rendere logaritmico l'andamento del knob del filtro (vedi eu-moog)
 
 - sistemare il filtro svn e inserire mvmfilter --> giovedì
