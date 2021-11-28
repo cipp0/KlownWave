@@ -26,32 +26,34 @@ form caption("KernelNet") size(1300, 600), openGL(1), pluginId("plup") bundle(".
 
 ;-------------- Background e pagliaccio ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-image bounds(-2, 0, 1300, 600) channel("ibg") file("./SynthResources/bg.jpg")
+image bounds(0, 0, 1300, 600) channel("ibg") file("./SynthResources/bg0.jpg")
 
-image bounds(480, 0, 334, 404) channel("image10000") file("./SynthResources/pagliacciosint2.png")
 
-image bounds(0, 2, 505, 182) channel("ooscil1") file("./SynthResources/oscil.png")
-image bounds(794, 2, 505, 182) channel("ooscil2") file("./SynthResources/oscil.png")
+image bounds(518, 474, 238, 131) channel("image10000") file("./SynthResources/scritta.png")
+image bounds(480, 32, 334, 404) channel("image11000") file("./SynthResources/pagliacciosint2.png")
 
-image bounds(0, 182, 505, 182) channel("filter1") file("./SynthResources/filter.png")
-image bounds(794, 200, 505, 182) channel("filter2") file("./SynthResources/envelope.png")
+image bounds(0, 2, 505, 182) channel("ooscil1") file("./SynthResources/cornice.png")
+image bounds(794, 16, 505, 182) channel("ooscil2") file("./SynthResources/cornice.png")
 
-image bounds(474, 84, 200, 200) channel("occhio") file("./SynthResources/occhi.png") alpha(0)
-image bounds(620, 85, 200, 200) channel("occhio1") file("./SynthResources/occhi.png") alpha(0)
-rslider bounds(580, 200, 131, 130) channel("ampdrywet") range(0, 1, 0.5, 1, 0.001)  outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/nasoknob.png", 128)  textColour(0, 0, 0, 255) fontColour(0, 0, 0, 255) trackerInsideRadius(0.67) 
+image bounds(0, 182, 505, 182) channel("filter1") file("./SynthResources/cornice.png")
+image bounds(794, 200, 505, 182) channel("filter2") file("./SynthResources/cornice.png")
+
+image bounds(474, 116, 200, 200) channel("occhio") file("./SynthResources/occhi.png") alpha(0)
+image bounds(620, 116, 200, 200) channel("occhio1") file("./SynthResources/occhi.png") alpha(0)
+rslider bounds(580, 232, 131, 130) channel("ampdrywet") range(0, 1, 0.5, 1, 0.001)  outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/nasoknob.png", 128)  textColour(0, 0, 0, 255) fontColour(0, 0, 0, 255) trackerInsideRadius(0.67) 
 
 
 ;-------------- Presets .snaps ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-combobox bounds(588, 516, 123, 25), populate("*.snaps"), channelType("string") channel("combo23") value("1") automatable(0) text("FM_1", "303")
-filebutton bounds(590, 542, 60, 25), text("Save", "Save"), populate("*.snaps", "test"), mode("named preset") channel("filebutton24")
-filebutton bounds(650, 542, 60, 25), text("Remove", "Remove"), populate("*.snaps", "test"), mode("remove preset") channel("filebutton25")
+combobox bounds(592, 404, 123, 25), populate("*.snaps"), channelType("string") channel("combo23") value("1") automatable(0) text("Growling01", "303")
+filebutton bounds(592, 430, 60, 25), text("Save", "Save"), populate("*.snaps", "test"), mode("named preset") channel("filebutton24")
+filebutton bounds(654, 430, 60, 25), text("Remove", "Remove"), populate("*.snaps", "test"), mode("remove preset") channel("filebutton25")
 
-signaldisplay bounds(522, 36, 253, 127), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("aoutLeft", "aoutRight"), channel("display")
+signaldisplay bounds(524, 70, 239, 117), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("aoutLeft", "aoutRight"), channel("display")
 
 ;-------------- Oscillatore 1 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-rslider bounds(0, 32, 120, 120) range(0, 11, 3, 1, 0.001) channel("carwave1") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67) trackerOutsideRadius(0.55)
+rslider bounds(0, 32, 120, 120) range(0, 15, 3, 1, 0.001) channel("carwave1") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67) trackerOutsideRadius(0.55)
 rslider bounds(100, 32, 120, 120) range(-20, 20, 0, 1, 0.001) channel("detune1") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(316, 32, 120, 120) range(0, 10, 0, 1, 0.001) channel("modfactor1") $sliderstyle popupText("FM Mod") text("FM Modulation") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(206, 32, 120, 120) range(0, 50, 0, 1, 0.001) channel("modindex1") $sliderstyle popupText("FM Index") text("FM Index") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
@@ -62,7 +64,7 @@ label bounds(426, 64, 59, 12) channel("fmsrc_1") fontColour(255, 255, 255, 255) 
 
 ;-------------- Oscillatore 2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-rslider bounds(594, 396, 110, 110) range(0, 1, 1, 1, 0.001) channel("vol") $sliderstyle popupText("Volume") text("Volume") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1188, 488, 110, 110) range(0, 1, 1, 1, 0.001) channel("vol") $sliderstyle popupText("Volume") text("Volume") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 rslider bounds(862, 32, 120, 120) range(0, 11, 3, 1, 0.001) $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67) channel("carwave")
 rslider bounds(970, 32, 120, 120) range(-20, 20, 0.001, 1, 0.001) channel("detune2") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
@@ -75,13 +77,12 @@ label bounds(816, 64, 59, 12) channel("fmsrc_2") fontColour(255, 255, 255, 255) 
 ;-------------- Parametri Filtro----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 rslider bounds(200, 220, 120, 120) channel("filAttack") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle popupText("Attack") text("Attack") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(294, 220, 120, 120) channel("filEmphasis") range(100, 10000, 0, 1, 0.001) $sliderstyle popupText("Emphasis") text("Emphasis") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(294, 220, 120, 120) channel("filEmphasis") range(100, 10000, 100, 1, 1) $sliderstyle popupText("Emphasis") text("Emphasis") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(394, 222, 120, 120) channel("filDec") range(50, 10000, 100, 1, 1) $sliderstyle popupText("Decay Freq") text("Decay Freq") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 combobox bounds(340, 202, 153, 20) channel("filt_menu") text("diode_ladder", "vclpf", "spf LowPass", "spf HighPass", "spf BandPass", "svn Highpass", "svn Lowpass", "svn Bandpass", "svn Band Reject") $combostyle alpha(0.7) colour(120, 50, 5, 255)
-rslider bounds(0, 220, 120, 120) range(20, 20000, 1, 1, 0.0001) channel("filt_freq") $sliderstyle popupText("Cutoff Frequency") text("Cutoff") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(0, 220, 120, 120) range(50, 10000, 10000, 1, 0.001) channel("filt_freq") $sliderstyle popupText("Cutoff Frequency") text("Cutoff") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(102, 220, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_res") $sliderstyle popupText("Resonance") text("Resonance") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(102, 320, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_dist") $sliderstyle popupText("Distortion") text("Distortion") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-
+rslider bounds(2, 478, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_dist") $sliderstyle popupText("Distortion") text("Distortion") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 ;--------------  1° LFO----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -98,18 +99,27 @@ rslider bounds(1170, 236, 120, 120) channel("env1r") range(0.01, 2, 0.4, 1, 0.00
 
 
 ;keyboard bounds(440, 480, 400, 100) channel("keyboard10079")
+image bounds(260, 428, 100, 100) file("./SynthResources/basemanopola3.png") channel("image102")
+rslider bounds(244, 412, 130, 122) channel("rslider10038") range(0, 1, 0, 1, 0.001) outlineColour(58, 58, 58, 0) markerColour(80, 80, 80, 0) trackerColour(147, 210, 0, 0) fontColour(160, 160, 160, 0) imgFile("Slider", "SynthResources/manopolina2.png")
+
+
+rslider bounds(468, 436, 80, 80) channel("rslider10038") range(0, 1, 0, 1, 0.001) outlineColour(58, 58, 58, 0) markerColour(80, 80, 80, 0) trackerColour(147, 210, 0, 0) fontColour(160, 160, 160, 0) imgFile("Slider", "SynthResources/manopola6.png")
+
+;rslider bounds(468, 436, 114, 96) channel("rslider10038") range(0, 1, 0, 1, 0.001) outlineColour(58, 58, 58, 0) markerColour(80, 80, 80, 0) trackerColour(147, 210, 0, 0) fontColour(160, 160, 160, 0) imgFile("Slider", "SynthResources/manovelle.png")
+
+
 </Cabbage>
 <CsoundSynthesizer>
 
 <CsOptions>
--n -d -+rtmidi=NULL -M0 -m0d --midi-key-cps=4 --midi-velocity-amp=5 --displays --limiter=.9
+-n -d -+rtmidi=NULL -M0 -m0d --midi-key-cps=4 --midi-velocity-amp=5 --displays
 </CsOptions>
 <CsInstruments>
 ; Initialize the global variables. 
-ksmps = 512
-nchnls = 2
-0dbfs = 2
-
+;sr			= 	44100
+ksmps		= 	512
+nchnls		= 	2
+0dbfs		=	1	
 
 #include "./SynthResources/fastLFO.udo" ; LFO
 #include "./SynthResources/fMorph1.udo"    ;UDO per l'fm
@@ -118,22 +128,9 @@ nchnls = 2
 #include "./UDOs/Flanger.udo"; Flanger
 ;#include "./SynthResources/limiter.udo"
 
-opcode	scale_k,k,kkk				; UDO for an k-rate version of the 'scale' opcode
- kval,kmax,kmin	xin
- kval	=	(kval * (kmax-kmin)) + kmin
-	xout	kval
-endop
-
-
-giTable_FIL ftgen 0, 0,1024, -8, 20, 184, 125, 328, 1000, 256, 4800, 256, 20000
 
 ;buttons state initializator 
 instr 11 
-gkFBASE_VCF_0	chnget	"filt_freq"
-
-gkfco tablei gkFBASE_VCF_0, giTable_FIL,1		;Map filt. frequency to non linear table
-chnset gkfco, "dispVCF_CUT"
-gkfco port gkfco,0.01							;Smooth control..
 
 ;;--------------------------> OSC 1
 
@@ -270,7 +267,7 @@ instr 1
 
 kLFOamp = 1
 kcps = 0
-icps cpsmidi
+icps = p4; cpsmidi
 
 ;-----------------------------------------------------------------------------------------------Inizio 1° LFO
 
@@ -474,8 +471,8 @@ aoutRight  = limit(aoutRight, -0.7, .7)
 aoutLeft dcblock aoutLeft
 aoutRight dcblock aoutRight 
 
-display	aoutLeft, .01, 2
-dispfft aoutLeft, .01, 512
+display	aoutLeft, .008, 2
+dispfft aoutLeft, .008, 512
 
 iamp1 = ampdbfs(-6)
 outs aoutLeft*iamp1*avol , aoutRight*iamp1*avol
@@ -489,14 +486,20 @@ endin
 instr 6 ; Ricevo le info di BPM e Play/Stop dall'Host
 kplay chnget "IS_PLAYING"
 kBPM chnget "HOST_BPM"
-kTrig metro 1;(kBPM/60)
+;kTrig metro (kBPM/60)
 
-if kTrig == 1 && kplay == 1 then
-schedkwhen kTrig, 0, 0, 7, 0, 1; Triggero lo strumento 7 ogni ciclo
-else
-cabbageSet 1,  "occhio", "alpha", 0
-cabbageSet 1,  "occhio1", "alpha", 0
-endif
+kline linseg  0., 0.2, 1, 0.2, 0.
+
+;if kTrig == 1 && kplay == 1 then
+;printk2 kTrig
+;cabbageSet kTrig,  "occhio", "alpha", kline
+;cabbageSet kTrig,  "occhio1", "alpha", kline
+
+;schedkwhen kTrig, 0, 1, 7, 0, 0.4; Triggero lo strumento 7 ogni ciclo
+;else
+;cabbageSet 1,  "occhio", "alpha", 0
+;cabbageSet 1,  "occhio1", "alpha", 0
+;endif
 
 endin
 
@@ -515,9 +518,9 @@ endin
 i6 0 z
 
 ;morphing tables for OSC 1 carrier waveforms
-f1 0 10 -2 3 4 5 6 7 8 9 10 11 12 13; 14 15 16 17 18 19 20 21 22 23 24 25 26
+f1 0 16 -2 30 40 50 60 70 80 99 100 110 120 130 140 150 160 170 180; 19 20 21 22 23 24 25 26
 
-f2 0 16384 10 1 
+f2 0 4096 10 1 
 
 ;morphing tables for OSC 2 carrier waveforms
 f111 0 10 -2 300 400 500 600 700 800 900 1000 1100 1200 1300; 14 15 16 17 18 19 20 21 22 23 24 25 26
@@ -529,6 +532,22 @@ f222 0 16384 10 1
 f3 0 16384 10 1	;sine wave
 f300 0 16384 10 1	;sine wave
 
+f30 0 4096 1 "./Waves/1_SickBass__A#.wav" 0 0 0
+f40 0 4096 1 "./Waves/2_KernelTable.wav" 0 0 0
+f50 0 4096 1 "./Waves/3_Dancefloor.wav" 0 0 0 
+f60 0 4096 1 "./Waves/4_InnerState.wav" 0 0 0
+f70 0 4096 1 "./Waves/5_BitNetRocking.wav" 0 0 0
+f80 0 4096 1 "./Waves/6_.UndergroundTable.wav" 0 0 0
+f99 0 4096 1 "./Waves/7_VocRider.wav" 0 0 0
+f100 0 4096 1 "./Waves/8_OpenBreakSaw.wav" 0 0 0
+f110 0 4096 1 "./Waves/9_DarkGrind23.wav" 0 0 0
+f120 0 4096 1 "./Waves/10_Hallucination.wav" 0 0 0
+f130 0 4096 1 "./Waves/11_RaveBells.wav" 0 0 0
+f140 0 4096 1 "./Waves/12_TAZTable.wav" 0 0 0
+f150 0 4096 1 "./Waves/13_CuttingEdge.wav" 0 0 0
+f160 0 4096 1 "./Waves/14_ChainsawKK.wav" 0 0 0
+f170 0 4096 1 "./Waves/15_Elekktro.wav" 0 0 0
+f180 0 4096 1 "./Waves/16_BitNetTable.wav" 0 0 0
 
 ;Forme d'onda di Giordani
 f4 0 16384  7   0       8192    1       0       -1      8192    0                              ;Ramp
