@@ -38,64 +38,53 @@ Procedura OSX: https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/22
 
 Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-windows/2275
 
-🔴 fare DMG con Package dentro
+*fare DMG con Package dentro*
 
 # How to build
-🔴 Spiegare procedura per buildare con Cabbage
+*Spiegare procedura per buildare con Cabbage*
 
 # Hacking
-🔴 Spiegare procedura per hackerare il Synth
+*Spiegare procedura per hackerare il Synth*
 
 # Changelog
 🚨 Update 15/12/21 (cippo)--------------------------------------
   Struttura dell'algoritmo completamente rinnovata:
 
-  ✔️ Riscritto totalmente l'[UDO]('/SynthResources/MainOsc.udo')
+  - Riscritto totalmente l'[UDO]('/SynthResources/MainOsc.udo')
     - Inserito vco2 con forma d'onda Saw - Triangolo - Rampa (morphing tra le tre)
     - Inserito oscilikt suboscillatore 1° ottava sotto con forme d'onda a scelta tra Sinusoide, Triangolo, Saw, Quadra
     - Somme audio corrette con sum
     - Commentato tutto e riorganizzato inputs
 
-  ✔️ Cambiato totalmente l'inviluppo
+  - Cambiato totalmente l'inviluppo
     - Porting del sistema di inviluppi di Giordani (euMOOD) | Issue: è monofonico
 
 🚨 Update 23/11/21 (cippo)--------------------------------------
 
-  ✔️ Inserito --limiter=0.8 (vedere se funziona)
-
-  ✔️ Inseriti i filtri: vclpf, spf (ricordarsi di fare abp=0,..)
-
-  ✔️ Inseriti gli occhi che lampeggiano a tempo col transport della DAW (verificare consumo CPU di schedkwhen)
+  - Inserito --limiter=0.8 (vedere se funziona)
+  - Inseriti i filtri: vclpf, spf (ricordarsi di fare abp=0,..)
+  - Inseriti gli occhi che lampeggiano a tempo col transport della DAW (verificare consumo CPU di schedkwhen)
 
 🚨 Update 18/11/21 (cippo)--------------------------------------
 
-  ✔️ Inserite wavetable calcolate con le GEN Routine (alcune di Giordani altre standard)
-
-  ✔️ Inseriti widget per modificare l'ADSR
-
-  ✔️ Inseriti filtro MOOG Ladder UDO di Giordani + diode_ladder (filtro 303)
-
-  ✔️ Inserito inviluppo esponenziale sul filtro (attack ed emphasis) e widget relativi
-
-  ✔️ Inserito opcode limit per limitare l'ampiezza tra -0.7 e 0.7 (ed evitare clipping)
-
-  ✔️ Rimossi 4 LFO su 8 (non ne servono così tanti)
-
-  ✔️ Inserito opcode balance2 per compensare i volumi prima e dopo il filtraggio
-
-  ✔️ Inseriti elementi di GUI: Pagliaccio estetico, naso-knob tra i due Oscillatori, knob rotativi griffati KK
+  - Inserite wavetable calcolate con le GEN Routine (alcune di Giordani altre standard)
+  - Inseriti widget per modificare l'ADSR
+  - Inseriti filtro MOOG Ladder UDO di Giordani + diode_ladder (filtro 303)
+  - Inserito inviluppo esponenziale sul filtro (attack ed emphasis) e widget relativi
+  - Inserito opcode limit per limitare l'ampiezza tra -0.7 e 0.7 (ed evitare clipping)
+  - Rimossi 4 LFO su 8 (non ne servono così tanti)
+  - Inserito opcode balance2 per compensare i volumi prima e dopo il filtraggio
+  - Inseriti elementi di GUI: Pagliaccio estetico, naso-knob tra i due Oscillatori, knob rotativi griffati KK
 
 🚨 Update 28/05/21 (fauster)--------------------------------------------
 
-  ✔️ Aggiunti 8 LFO
-
-  ✔️ Aggiunto inviluppo ADSR
+  - Aggiunti 8 LFO
+  - Aggiunto inviluppo ADSR
 
 🚨 Update 27/05/21 (cippo)--------------------------------------------
 
-  ✔️ Aggiunto Engine per presets
-
-  ✔️ Rimosse forme d'onda a campioni
+  - Aggiunto Engine per presets
+  - Rimosse forme d'onda a campioni
 
 # Contributors
 
