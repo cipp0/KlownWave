@@ -23,6 +23,7 @@ Da tenere in considerazione:
 
 ## Issues
 - Il suboscillatore viene filtrato, metterlo opzionale
+- il synth è monofonico, è un problema?
 
 ## Tests
 - Verificare consumo di CPU con varie configurazioni di buffer e samplerate.
@@ -60,7 +61,7 @@ Da tenere in considerazione:
     - Somme audio corrette con sum
     - Commentato tutto e riorganizzato input
   - Cambiato totalmente l'inviluppo del filtro e il main
-    - Porting del sistema di inviluppi di Giordani (euMOOD) | Issue: è monofonico
+    - Porting del sistema di inviluppi di Giordani (euMOOD)
   - Inserito l'andamento logaritmico per il cutoff del filtro
   - Inserito bypass del filtro
   - Spostate tutte le wavetable dallo score all'orchestra (ottimizzazione)
