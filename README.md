@@ -6,9 +6,9 @@ by BitNet01 & Kernel Panik Sound
 
 # ToDo
 
-25/11/21
+Ultimo update: 15/12/21
 
-- L'idea finale è quella di fare 4 oscillatori: 2 con VCO2 (forme d'onda classiche) + 2 Poscil3 con varie wavetables prese da Serum, GRP, ANA ecc. che si possono mixare tra di loro a piacimento. Tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
+🔴 Prendere wavetables da Serum, ANA ecc. Utilizzare  [AutoCropWT](/Tool). Tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
 
 - Assolutamente da fare il bypass dei filtri, l'andamento logaritmico del cutoff e inviluppo transeg anche nel filtro!
 - sistemare il filtro svn e inserire mvmfilter
@@ -30,11 +30,12 @@ by BitNet01 & Kernel Panik Sound
 
 # Test
 - Verificare consumo di CPU con varie configurazioni di buffer e samplerate.
-  - Test 16/12/21 | 5% di CPU con due istanze del synth | MOTU M4 - Buffer size: 128 samples - Sampling rate: 48kHz | Processore: 2,7 GHz Intel Core i5  | 8GB di RAM
+  - Test 15/12/21 | 5% di CPU con due istanze del synth | MOTU M4 - Buffer size: 128 samples - Sampling rate: 48kHz | Processore: 2,7 GHz Intel Core i5  | 8GB di RAM
 - Beta testing e fare presets
 - verificare il funzionamento della release su PC senza aver CSound installato
 
 Procedura OSX: https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274
+
 Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-windows/2275
 
 
@@ -48,42 +49,48 @@ Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-wind
 🔴 Spiegare procedura per hackerare il Synth
 
 # Changelog
+🚨 Update 15/12/21 --------------------------------------
+  Struttura dell'algoritmo completamente rinnovata:
+
+  ✔️ Riscritto l'UDO
 
 🚨 Update 23/11/21 --------------------------------------
 
-- ✔️ Inserito --limiter=0.8 (vedere se funziona)
+  ✔️ Inserito --limiter=0.8 (vedere se funziona)
 
-- ✔️ Inseriti i filtri: vclpf, spf (ricordarsi di fare abp=0,..)
+  ✔️ Inseriti i filtri: vclpf, spf (ricordarsi di fare abp=0,..)
 
-- ✔️ Inseriti gli occhi che lampeggiano a tempo col transport della DAW (verificare consumo CPU di schedkwhen)
+  ✔️ Inseriti gli occhi che lampeggiano a tempo col transport della DAW (verificare consumo CPU di schedkwhen)
 
 🚨 Major Update 18/11/21 --------------------------------------
 
-- ✔️ Inserite wavetable calcolate con le GEN Routine (alcune di Giordani altre standard)
+  ✔️ Inserite wavetable calcolate con le GEN Routine (alcune di Giordani altre standard)
 
-- ✔️ Inseriti widget per modificare l'ADSR
+  ✔️ Inseriti widget per modificare l'ADSR
 
-- ✔️ Inseriti filtro MOOG Ladder UDO di Giordani + diode_ladder (filtro 303)
+  ✔️ Inseriti filtro MOOG Ladder UDO di Giordani + diode_ladder (filtro 303)
 
-- ✔️ Inserito inviluppo esponenziale sul filtro (attack ed emphasis) e widget relativi
+  ✔️ Inserito inviluppo esponenziale sul filtro (attack ed emphasis) e widget relativi
 
-- ✔️ Inserito opcode limit per limitare l'ampiezza tra -0.7 e 0.7 (ed evitare clipping)
+  ✔️ Inserito opcode limit per limitare l'ampiezza tra -0.7 e 0.7 (ed evitare clipping)
 
-- ✔️ Rimossi 4 LFO su 8 (non ne servono così tanti)
+  ✔️ Rimossi 4 LFO su 8 (non ne servono così tanti)
 
-- ✔️ Inserito opcode balance2 per compensare i volumi prima e dopo il filtraggio
+  ✔️ Inserito opcode balance2 per compensare i volumi prima e dopo il filtraggio
 
-- ✔️ Inseriti elementi di GUI: Pagliaccio estetico, naso-knob tra i due Oscillatori, knob rotativi griffati KK
+  ✔️ Inseriti elementi di GUI: Pagliaccio estetico, naso-knob tra i due Oscillatori, knob rotativi griffati KK
 
 🚨 Update 28/05/21 --------------------------------------------
 
-- ✔️ Aggiunti 8 LFO
-- ✔️ Aggiunto inviluppo ADSR
+  ✔️ Aggiunti 8 LFO
+
+  ✔️ Aggiunto inviluppo ADSR
 
 🚨 Update 27/05/21 --------------------------------------------
 
-- ✔️ Aggiunto Engine per presets
-- ✔️ Rimosse forme d'onda a campioni
+  ✔️ Aggiunto Engine per presets
+
+  ✔️ Rimosse forme d'onda a campioni
 
 # Contributors
 
