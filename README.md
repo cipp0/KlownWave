@@ -21,6 +21,7 @@ by BitNet01 & Kernel Panik Sound
 - rendere logaritmico l'andamento del knob del filtro (vedi eu-moog)
 
 ⭕️ Inserire FX vari prendendo gli UDO dalla cartella UDOs
+
 ⭕️ Testare con LFO di Ableton e capire dove sono funzionali gli LFO e quindi direzionarli dove sono più musicali
 ⭕️ Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
 ⭕️ Utilizzare le tabelle delle wavetable come sorgente dell'FM (oltre a quelle presenti)
