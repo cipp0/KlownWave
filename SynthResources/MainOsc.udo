@@ -17,22 +17,21 @@
 ; 12) kFMIndex = Indice della modulazione FM
 ; 13) iFMmorphTable = Numero della tabella dove sono elencate le tabelle tra cui fare morphing nell'FM
 ; 14) iFMDummyTable = Tabella dummy da inserire nell'oscillatore FM
-; 15) kSubONOFF = Selettore se accendere o spegnere il sub Oscillatore
-; 16) kSubWave = Selettore di forma d'onda per il sub Oscillatore
-; 17) kSubAmp =  Volume del sub Oscillatore
-; 18) kSubTable =  Volume del sub Oscillatore
+; 15) kSubWave = Selettore di forma d'onda per il sub Oscillatore
+; 16) kSubAmp =  Volume del sub Oscillatore
+; 17) kSubTable =  Volume del sub Oscillatore
 
 ; Outputs: somma Mono output
 
 ; ----------------------------------------------------------------------------------
 
-opcode MainOsc, a, kkkkkiikkkkkiikkk
+opcode MainOsc, aa, kkkkkiikkkkkiikk
 
 ;============================   
 ;==== VARIABILI DI INPUT ==== 
 ;============================
 
-kFreq, kFreqWT, kFreqVCO, kWave,kWAVETamp, iMorphTable, iDummyTable, kVCOamp, kPWM, kFMwave, kFMfactor, kFMIndex, iFMmorphTable, iFMDummyTable, kSubONOFF, kSubAmp,kSubTable  xin
+kFreq, kFreqWT, kFreqVCO, kWave,kWAVETamp, iMorphTable, iDummyTable, kVCOamp, kPWM, kFMwave, kFMfactor, kFMIndex, iFMmorphTable, iFMDummyTable, kSubAmp,kSubTable  xin
 
 
 ;============    
@@ -76,14 +75,10 @@ asubOSC oscilikt kSubAmp, ksubFreq, kSubTable
 ;==== SOMME AUDIO E OUT ==== 
 ;===========================
 
+            
+aOsc sum awavetable, avco
 
-if kSubONOFF ==1 then            
-aouts sum awavetable, avco, asubOSC 
-elseif kSubONOFF ==0 then
-aouts sum awavetable, avco
-endif
-
-xout aouts
+xout aOsc, asubOSC
 
 endop
 

@@ -4,7 +4,7 @@ Multi Wavetable Synth with FM & FX - AU/VST Plugin
 *by BitNet01 & Kernel Panik Sound*
 
 
-# ToDo
+## ToDo
 
 - Prendere wavetables da Serum, ANA ecc. utilizzando [AutoCropWT](/Tool). Ricampionare tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
 - Capire il funzionamento dei filtri svn
@@ -21,7 +21,10 @@ Da tenere in considerazione:
 
 *Ultimo update: 15/12/21*
 
-# Tests
+## Issues
+- Il suboscillatore viene filtrato, metterlo opzionale
+
+## Tests
 - Verificare consumo di CPU con varie configurazioni di buffer e samplerate.
   - Test 15/12/21
     - 5% consumo medio CPU con due istanze del synth
@@ -41,13 +44,13 @@ Da tenere in considerazione:
 [Procedura distribuzione Plugin Windows](https://forum.cabbageaudio.com/t/distributing-plugins-on-windows/2275)
 
 
-# How to build
+## How to build
 *Spiegare procedura per buildare con Cabbage*
 
-# Hacking
+## Hacking
 *Spiegare procedura per hackerare il Synth*
 
-# Changelog
+## Changelog
 ### Update 15/12/21 (cippo)
   Struttura dell'algoritmo completamente rinnovata:
 
@@ -92,7 +95,7 @@ Da tenere in considerazione:
   - Aggiunto Engine per presets
   - Rimosse forme d'onda a campioni
 
-# Contributors
+## Contributors
 
 - Francesco Casanova
 - Matteo Tomasetti

@@ -98,11 +98,11 @@ label bounds(1032, 130, 150, 20) channel("sub") fontColour(255, 255, 255, 255) t
 
 ;-------------- Parametri Filtro----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-button bounds(102, 220, 55, 20), channel("filBypass"), text("Bypass", "Bypass"), colour:1(255, 0, 0, 255), alpha(0.8), , 
-rslider bounds(242, 246, 60, 60) channel("filAttack") range(0.001, 2, 0.2, 1, 0.001) $sliderstyle popupText("Attack") text("Attack") valueTextBox(0) 
+button bounds(102, 220, 55, 20), channel("filBypass"),range(0, 1, 1, 1, 1) text("Bypass", "Bypass"), colour:1(255, 0, 0, 255), alpha(0.8), , 
+rslider bounds(242, 246, 60, 60) channel("filAttack") range(0.001, 2, .001, 1, 0.001) $sliderstyle popupText("Attack") text("Attack") valueTextBox(0) 
 rslider bounds(170, 246, 60, 60) channel("filAmount") range(0, 1, 0.01, 1, 0.001) $sliderstyle popupText("Emphasis") text("Emphasis") valueTextBox(0) 
 rslider bounds(316, 246, 60, 60) channel("filDec") range(0, 4, 0.3, 1, 0.001) $sliderstyle popupText("Decay") text("Decay") valueTextBox(0) 
-combobox bounds(244, 226, 153, 20) channel("filt_menu") text("diode_ladder", "vclpf", "spf LowPass", "spf HighPass", "spf BandPass", "svn Highpass", "svn Lowpass", "svn Bandpass", "svn Band Reject") $combostyle alpha(0.7) colour(120, 50, 5, 255)
+combobox bounds(244, 226, 153, 20) channel("filt_menu") text("TB303 Ladder", "Moog Ladder", "Steiner-Parker LowPass", "Steiner-Parker HighPass", "Steiner-Parker BandPass", "svn Highpass", "svn Lowpass", "svn Bandpass", "svn Band Reject", "Sallen-Key Lowpass", "Sallen-Key Highpass") $combostyle alpha(0.7) colour(120, 50, 5, 255)
 rslider bounds(32, 248, 60, 60) range(0, 1, 1, 1, 0.001) channel("filt_freq") $sliderstyle popupText("Cutoff Frequency") text("Cutoff") valueTextBox(0) 
 rslider bounds(100, 248, 60, 60) range(0, 1, 0, 1, 0.001) channel("filt_res") $sliderstyle popupText("Resonance") text("Resonance") valueTextBox(0) 
 ;rslider bounds(2, 478, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_dist") $sliderstyle popupText("Distortion") text("Distortion") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
@@ -115,11 +115,11 @@ label bounds(10, 220, 100, 20) channel("FM") fontColour(255, 255, 255, 255) text
 
 ;--------------  ADSR----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-rslider bounds(30, 364, 60, 60) channel("env1a") range(0.001, 4, 0.2, 1, 0.001) $sliderstyle valueTextBox(0) popupText("Attack") text("Attack") 
-rslider bounds(184, 364, 60, 60) channel("env1d") range(0.001, 4, 0.2, 1, 0.001) $sliderstyle valueTextBox(0) popupText("Decay") text("Decay") 
-rslider bounds(106, 364, 60, 60) channel("env1s") range(0.001, 1, 1, 1, 0.001) $sliderstyle valueTextBox(0) popupText("Sustain") text("Sustain") 
+rslider bounds(30, 364, 60, 60) channel("env1a") range(0.001, 4, 0.0110, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Attack") text("Attack") 
+rslider bounds(184, 364, 60, 60) channel("env1d") range(0.001, 4, 0.0320, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Decay") text("Decay") 
+rslider bounds(106, 364, 60, 60) channel("env1s") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Sustain") text("Sustain") 
 ;rslider bounds(1170, 236, 120, 120) channel("env1r") range(0.01, 2, 0.4, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Release") text("Release") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(30, 504, 60, 60) channel("porttime") range(0., 2000, 0, 1, 0.001) $sliderstyle valueTextBox(0) popupText("Glide") text("Glide") 
+rslider bounds(30, 504, 60, 60) channel("porttime") range(0, 2000, 3,0.4,0.01) $sliderstyle valueTextBox(0) popupText("Glide") text("Glide") 
 
 keyboard bounds(440, 480, 400, 100) channel("keyboard10079")
 
@@ -560,8 +560,10 @@ kFM_IndexEnv	init	0				;Init FM index env to zero
 kvib_ctrl = gkvib_ctrl/127.0		;Normalize to 1 the external MOD WHEEL (0-127 -->  0 - 1)
 
 
-aOsc1 MainOsc kcps, kcps+gkWTDetune_1, kcps+gkVCOdetune_1, gkWave_1, gkWAVETamp_1, 1000, 1001, gkVCOamp_1, gkPWM_1, gkFMwave_1, gkFMfactor_1, gkFMIndex_1,  1010, 1011, gkSubONOFF_1, gkSubAmp_1, gkSubTable_1
-aOsc2 MainOsc kcps, kcps+gkWTDetune_2, kcps+gkVCOdetune_2, gkWave_2, gkWAVETamp_2, 1002, 1003, gkVCOamp_2, gkPWM_2, gkFMwave_2, gkFMfactor_2, gkFMIndex_2,  1012, 1013, gkSubONOFF_2, gkSubAmp_2, gkSubTable_2
+aOsc1, aSub1 MainOsc kcps, kcps+gkWTDetune_1, kcps+gkVCOdetune_1, gkWave_1, gkWAVETamp_1, 1000, 1001, gkVCOamp_1, gkPWM_1, gkFMwave_1, gkFMfactor_1, gkFMIndex_1,  1010, 1011,  gkSubAmp_1, gkSubTable_1
+aOsc2, aSub2 MainOsc kcps, kcps+gkWTDetune_2, kcps+gkVCOdetune_2, gkWave_2, gkWAVETamp_2, 1002, 1003, gkVCOamp_2, gkPWM_2, gkFMwave_2, gkFMfactor_2, gkFMIndex_2,  1012, 1013,  gkSubAmp_2, gkSubTable_2
+
+
 
 if gkNoteOn=1&&kactive1=1 then		;If a new legato phrase has begun (A NEW NOTE pressed and no older are held ...
 	  reinit	RestartLegEnvs		;...Restart the 'legato phrase' envelopes (AMPLITUDE AND FILTER)
@@ -598,7 +600,30 @@ rireturn
 
 adrywet interp gkdrywet 
 
-aL sum aOsc1*(1-adrywet), aOsc2*adrywet
+gkSubtoFil_1 = 1
+gkSubtoFil_2 = 1
+
+;if gkSubONOFF_1	==1 && gkSubtoFil_1 == 1 then
+
+    aSum1 sum aOsc1, aSub1
+ ;else
+     
+   ; aSum1 = aOsc1
+;endif
+
+
+;if gkSubONOFF_2	==1 && gkSubtoFil_2 == 1 then
+
+    aSum2 sum aOsc2, aSub2
+ ;else
+     
+   ; aSum2 = aOsc2
+;endif
+
+
+
+
+aL sum aSum1*(1-adrywet), aSum2*adrywet
 
 ;Filter
 
@@ -617,49 +642,67 @@ kfreq_VCF = kfreq_VCF*$MULT_TRK1^gktrack_del
 	kfreq_VCF = (kfreq_VCF <= $MAX_FREQ? kfreq_VCF : $MAX_FREQ)						;Limit upper freq to 22 Khz
 	acut interp kfreq_VCF
 	
-	
+
+
+    
+		
+; 15) kSubONOFF = Selettore se accendere o spegnere il sub Oscillatore			
+				
+					
+							
 if gkFiltbypass == 0 then	
 	
     if gkmenu == 1  then
 
-        ares diode_ladder aL, acut, gkRES_VCF*17., 1, 4
+        ares diode_ladder aL, acut, gkRES_VCF*17., 1, 4 ; TB303 Filter
     elseif gkmenu == 2 then
 
-        ares vclpf aL, k(acut), gkRES_VCF;, k(gifco)
+        ares vclpf aL, k(acut), gkRES_VCF;                MOOG Ladder
     elseif gkmenu == 3 then
 
         abp = 0
         ahp = 0
         alp  = aL
-        ares spf alp,ahp,abp,acut,gkRES_VCF*2 ; la resonance funzia al contrario
+        ares spf alp,ahp,abp,acut,(1-gkRES_VCF)*2 ;       Steiner-Parker  LowPass Filter
     elseif gkmenu == 4 then
         abp = 0
         alp = 0
         ahp  = aL
-        ares spf alp,ahp,abp,acut,gkRES_VCF*2 ; la resonance funzia al contrario
+        ares spf alp,ahp,abp,acut,(1-gkRES_VCF)*2 ;       Steiner-Parker HighPass Filter
     elseif gkmenu == 5 then
         ahp = 0
         alp = 0
         abp  = aL
-        ares spf alp,ahp,abp,acut,gkRES_VCF*2 ; la resonance funzia al contrario
-    elseif gkmenu == 6 then
+        ares spf alp,ahp,abp,acut,(1-gkRES_VCF)*2 ;       Steiner-Parker BandPass Filter
+    elseif gkmenu == 6 then                 
         gkres limit gkRES_VCF, 0.5, 1.
         ares,alp1,abp1,abr1 svn aL, acut, gkRES_VCF , 0
     
-    elseif gkmenu == 7 then
+    elseif gkmenu == 7 then                              ;svn LowPass
         gkres limit gkRES_VCF, 0.5, 1.
         ahp1,ares,abp1,abr1 svn aL, acut, gkRES_VCF ,0  
     
-    elseif gkmenu == 8 then
+    elseif gkmenu == 8 then                              ;svn BandPass
         gkres limit gkRES_VCF, 0.5, 1.
         ahp1,alp1,ares,abr1 svn aL, acut, gkRES_VCF ,0  
-    elseif gkmenu == 9 then
+    elseif gkmenu == 9 then                              ;svn HighPass
         gkres limit gkRES_VCF, 0.5, 1.
        ahp1,alp1,abp1,ares svn aL, acut, gkRES_VCF ,0 
     
-
+    elseif gkmenu == 10 then                              ;Sallen-Key LowPass Filter
+        
+       ares skf aL, acut, gkRES_VCF*3. ,0 
+    elseif gkmenu == 11 then                              ;Sallen-Key HighPass Filter
+        
+       ares skf aL, acut, gkRES_VCF*3. ,1 
+    
     endif
-else ares = aL
+else 
+
+
+ares =aL;, aSub1, aSub2
+
+
 endif
 
 
