@@ -13,13 +13,14 @@ amod poscil3 kmodamp, kfreqmod, ib
 ;____carrier______          
 ftmorf  kcarwave, ic, id                 
 
-aout poscil3 .9, kcarfreq+amod, id 
+aout poscil3 1, kcarfreq+amod, id 
 
 aout1 poscil3 .9, kcarfreq/2, giSine
 
 if ksub ==1 then
-        
-aouts = aout + aout1 
+      
+      
+aouts sum aout, aout1 
 elseif ksub ==0 then
 
 aouts=aout
