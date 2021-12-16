@@ -1,0 +1,1 @@
+![AutoCropWT](/autocrop.png)
