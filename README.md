@@ -50,7 +50,7 @@ Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-wind
 🚨 Update 15/12/21 (cippo)--------------------------------------
   Struttura dell'algoritmo completamente rinnovata:
 
-  - Riscritto totalmente l'[UDO]('/SynthResources/MainOsc.udo')
+  - Riscritto totalmente l'[UDO](/SynthResources/MainOsc.udo)
     - Inserito vco2 con forma d'onda Saw - Triangolo - Rampa (morphing tra le tre)
     - Inserito oscilikt suboscillatore 1° ottava sotto con forme d'onda a scelta tra Sinusoide, Triangolo, Saw, Quadra
     - Somme audio corrette con sum
