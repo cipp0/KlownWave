@@ -1,5 +1,5 @@
 # 👾 KernelNet
-Multi Wavetable Synth with FM & FX | AU/VST Plugin
+Multi Wavetable Synth with FM & FX - AU/VST Plugin
 
 *by BitNet01 & Kernel Panik Sound*
 
