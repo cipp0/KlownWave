@@ -44,7 +44,7 @@ Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-wind
 *Spiegare procedura per hackerare il Synth*
 
 # Changelog
-- Update 15/12/21 (cippo)--------------------------------------
+### Update 15/12/21 (cippo)--------------------------------------
   Struttura dell'algoritmo completamente rinnovata:
 
   - Riscritto totalmente l'[UDO](/SynthResources/MainOsc.udo)
@@ -60,13 +60,13 @@ Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-wind
   - Inserito Glide
   - Inseriti tutti gli elementi GUI nuovi
 
-- Update 23/11/21 (cippo)--------------------------------------
+### Update 23/11/21 (cippo)--------------------------------------
 
   - Inserito --limiter=0.8 (vedere se funziona)
   - Inseriti i filtri: vclpf, spf (ricordarsi di fare abp=0,..)
   - Inseriti gli occhi che lampeggiano a tempo col transport della DAW (verificare consumo CPU di schedkwhen)
 
-## Update 18/11/21 (cippo)--------------------------------------
+### Update 18/11/21 (cippo)
 
   - Inserite wavetable calcolate con le GEN Routine (alcune di Giordani altre standard)
   - Inseriti widget per modificare l'ADSR
@@ -77,12 +77,12 @@ Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-wind
   - Inserito opcode balance2 per compensare i volumi prima e dopo il filtraggio
   - Inseriti elementi di GUI: Pagliaccio estetico, naso-knob tra i due Oscillatori, knob rotativi griffati KK
 
-🚨 Update 28/05/21 (fauster)--------------------------------------------
+### Update 28/05/21 (fauster)--------------------------------------------
 
   - Aggiunti 8 LFO
   - Aggiunto inviluppo ADSR
 
-🚨 Update 27/05/21 (cippo)--------------------------------------------
+### Update 27/05/21 (cippo)--------------------------------------------
 
   - Aggiunto Engine per presets
   - Rimosse forme d'onda a campioni
