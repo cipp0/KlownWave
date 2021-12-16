@@ -603,22 +603,22 @@ adrywet interp gkdrywet
 gkSubtoFil_1 = 1
 gkSubtoFil_2 = 1
 
-;if gkSubONOFF_1	==1 && gkSubtoFil_1 == 1 then
+if gkSubONOFF_1	==1  then
 
     aSum1 sum aOsc1, aSub1
- ;else
+ else
      
-   ; aSum1 = aOsc1
-;endif
+    aSum1 = aOsc1
+endif
 
 
-;if gkSubONOFF_2	==1 && gkSubtoFil_2 == 1 then
+if gkSubONOFF_2	==1 then ;&& gkSubtoFil_2
 
     aSum2 sum aOsc2, aSub2
- ;else
+ else
      
-   ; aSum2 = aOsc2
-;endif
+    aSum2 = aOsc2
+endif
 
 
 
