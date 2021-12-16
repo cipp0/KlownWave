@@ -341,6 +341,8 @@ giFM8 ftgen 2007,0 ,256, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0.4, 0.2, 0, 0, 0, 0, 2.5, 
 
 instr	1	;===== NOTE ON/OFF Scheduler (Triggered by MIDI)
 
+gkdrywet chnget "ampdrywet"
+gkdrywet port gkdrywet, 0.02
 
 giMIDIvel veloc 0.15, 1.0						;Read MIDI velocity and scale to 0. - 1
 
@@ -594,8 +596,9 @@ rireturn
 	aAmpEnv		interp	kAmpEnv				;Smoother amp.env - (useful for fast changing envelope segments)	
 	
 
+adrywet interp gkdrywet 
 
-aL sum aOsc1, aOsc2
+aL sum aOsc1*(1-adrywet), aOsc2*adrywet
 
 ;Filter
 
