@@ -25,7 +25,11 @@ Da tenere in considerazione:
 
 # Tests
 - Verificare consumo di CPU con varie configurazioni di buffer e samplerate.
-  - Test 15/12/21 | 5% consumo medio CPU con due istanze del synth | MOTU M4 - Buffer size: 128 samples - Sampling rate: 48kHz | Processore: 2,7 GHz Intel Core i5  | 8GB di RAM
+   Test 15/12/21
+  - 5% consumo medio CPU con due istanze del synth
+  - MOTU M4 - Buffer size: 128 samples - Sampling rate: 48kHz
+  - Processore: 2,7 GHz Intel Core i5  
+  - 8GB di RAM
 
 - Verificare il funzionamento della release su PC senza aver CSound installato
 
