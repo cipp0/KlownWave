@@ -1,6 +1,8 @@
 # 👾 KernelNet
-VST Plugin
-Bassline Wavetable Synth with FM & FX
+Multi Wavetable Synth with FM & FX
+AU/VST Plugin
+by BitNet01 & Kernel Panik Sound
+
 
 # ToDo
 
@@ -18,18 +20,29 @@ Bassline Wavetable Synth with FM & FX
 - opcode da tenere in considerazione: midiarp (arpeggiatore midi), GEN05 per generare funzioni con curve a seconda dei punti, GEN07 per generare funzioni con segmenti a seconda dei punti, GEN9 e GEN10 Per generare forme d'onda composite con somma di sinusoidi, GEN18 per mixare due forme d'onda,
 - rendere logaritmico l'andamento del knob del filtro (vedi eu-moog)
 
-- Inserire FX vari prendendo gli UDO dalla cartella UDOs
-- Testare con LFO di Ableton e capire dove sono funzionali gli LFO e quindi direzionarli dove sono più musicali
-- Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
-- Utilizzare le tabelle delle wavetable come sorgente dell'FM (oltre a quelle presenti)
+⭕️ Inserire FX vari prendendo gli UDO dalla cartella UDOs
+⭕️ Testare con LFO di Ableton e capire dove sono funzionali gli LFO e quindi direzionarli dove sono più musicali
+⭕️ Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
+⭕️ Utilizzare le tabelle delle wavetable come sorgente dell'FM (oltre a quelle presenti)
+
+# Test
+- Verificare consumo di CPU con varie configurazioni di buffer e samplerate.
+  - Test 16/12/21 | 5% di CPU con due istanze del synth | MOTU M4 - Buffer size: 128 samples - Sampling rate: 48kHz | Processore: 2,7 GHz Intel Core i5  | 8GB di RAM
+- Beta testing e fare presets
+- verificare il funzionamento della release su PC senza aver CSound installato
+
+Procedura OSX: https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274
+Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-windows/2275
 
 
-Una volta fatto tutto questo:
-- verificare consumo di CPU con varie configurazioni di buffer e samplerate.
-- Beta testing e fare presets (lo famo tutti compresi Kernel e Spiral Tribe)
-- verificare come distribuire il plugin e farlo visualizzare benbene dall'host
-Mac: https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274
+# Installazione
+⭕️ fare DMG con Package dentro
 
+# How to build
+⭕️ Spiegare procedura per buildare con Cabbage
+
+# Hacking
+⭕️ Spiegare procedura per hackerare il Synth
 
 # Changelog
 
