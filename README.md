@@ -24,6 +24,8 @@ Da tenere in considerazione:
 ## Issues
 - Il suboscillatore viene filtrato, metterlo opzionale
 - il synth è monofonico, è un problema?
+- L'FM fa solo sul Wavetable non col vco2
+- Rinominare tutti i widget prima di distribuire
 
 ## Tests
 - Verificare consumo di CPU con varie configurazioni di buffer e samplerate.
