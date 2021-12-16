@@ -1,1 +1,1 @@
-![AutoCropWT](/autocrop.png)
+![plot](/autocrop.png)

@@ -8,7 +8,7 @@ by BitNet01 & Kernel Panik Sound
 
 # ToDo
 
-- Prendere wavetables da Serum, ANA ecc. utilizzando[AutoCropWT](/Tool). Ricampionare tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
+- Prendere wavetables da Serum, ANA ecc. utilizzando [AutoCropWT](/Tool). Ricampionare tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
 - Capire il funzionamento dei filtri svn
 - Reinserire gli LFO (Testare con LFO di Ableton)
 - Inserire sends agli FX vari prendendo gli UDO dalla cartella UDOs
