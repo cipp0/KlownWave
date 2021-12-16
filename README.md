@@ -8,34 +8,36 @@ by BitNet01 & Kernel Panik Sound
 
 # ToDo
 
-Ultimo update: 15/12/21
-
-- Prendere wavetables da Serum, ANA ecc. Utilizzare  [AutoCropWT](/Tool). Tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
-- Capire il funzionamento dei filtri svn e inserire mvmfilter, comb, formanti
-- Inserire 2 banchi di filtri (uno a sinistra del clown, uno a destra)
-
-- opcode da tenere in considerazione: midiarp (arpeggiatore midi), GEN05 per generare funzioni con curve a seconda dei punti, GEN07 per generare funzioni con segmenti a seconda dei punti, GEN9 e GEN10 Per generare forme d'onda composite con somma di sinusoidi, GEN18 per mixare due forme d'onda,
-
-
-- Inserire FX vari prendendo gli UDO dalla cartella UDOs
-
-- Testare con LFO di Ableton e capire dove sono funzionali gli LFO e quindi direzionarli dove sono più musicali
-
+- Prendere wavetables da Serum, ANA ecc. utilizzando[AutoCropWT](/Tool). Ricampionare tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
+- Capire il funzionamento dei filtri svn
+- Reinserire gli LFO (Testare con LFO di Ableton)
+- Inserire sends agli FX vari prendendo gli UDO dalla cartella UDOs
+- Inserire 2 banchi di filtri (uno a sinistra del clown, uno a destra) - ???
 - Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
 
+Da tenere in considerazione:
+- Inserire filtri: *mvmfilter comb e a formanti*
+- Utilizzo di *midiarp* (arpeggiatore midi)
+- Inserire inviluppo sul morphing
 - Utilizzare le tabelle delle wavetable come sorgente dell'FM (oltre a quelle presenti)
 
-# Test
+*Ultimo update: 15/12/21*
+
+# Tests
 - Verificare consumo di CPU con varie configurazioni di buffer e samplerate.
-  - Test 15/12/21 | 5% di CPU con due istanze del synth | MOTU M4 - Buffer size: 128 samples - Sampling rate: 48kHz | Processore: 2,7 GHz Intel Core i5  | 8GB di RAM
+  - Test 15/12/21 | 5% consumo medio CPU con due istanze del synth | MOTU M4 - Buffer size: 128 samples - Sampling rate: 48kHz | Processore: 2,7 GHz Intel Core i5  | 8GB di RAM
+
+- Verificare il funzionamento della release su PC senza aver CSound installato
+
+- Fare DMG con Package dentro
+
 - Beta testing e fare presets
-- verificare il funzionamento della release su PC senza aver CSound installato
 
-Procedura OSX: https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274
 
-Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-windows/2275
+[Procedura distribuzione Plugin OSX](https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274)
 
-*fare DMG con Package dentro*
+[Procedura distribuzione Plugin Windows](https://forum.cabbageaudio.com/t/distributing-plugins-on-windows/2275)
+
 
 # How to build
 *Spiegare procedura per buildare con Cabbage*
@@ -48,8 +50,8 @@ Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-wind
   Struttura dell'algoritmo completamente rinnovata:
 
   - Riscritto totalmente l'[UDO](/SynthResources/MainOsc.udo)
-    - Inserito vco2 con forma d'onda Saw - Triangolo - Rampa (morphing tra le tre)
-    - Inserito oscilikt suboscillatore 1° ottava sotto con forme d'onda a scelta tra Sinusoide, Triangolo, Saw, Quadra
+    - Inserito *vco2* con forma d'onda Saw - Triangolo - Rampa (morphing tra le tre)
+    - Inserito *oscilikt* suboscillatore 1° ottava sotto con forme d'onda a scelta tra Sinusoide, Triangolo, Saw, Quadra
     - Somme audio corrette con sum
     - Commentato tutto e riorganizzato input
   - Cambiato totalmente l'inviluppo del filtro e il main
@@ -59,6 +61,7 @@ Procedura Windows: https://forum.cabbageaudio.com/t/distributing-plugins-on-wind
   - Spostate tutte le wavetable dallo score all'orchestra (ottimizzazione)
   - Inserito Glide
   - Inseriti tutti gli elementi GUI nuovi
+  - Creata release moddata da distribuire
 
 ### Update 23/11/21 (cippo)
 

@@ -127,7 +127,7 @@ keyboard bounds(440, 480, 400, 100) channel("keyboard10079")
 <CsoundSynthesizer>
 
 <CsOptions>
--n -d -+rtmidi=NULL -M0 -m0d --midi-key-cps=4 --midi-velocity-amp=5 --displays
+-n -d -+rtmidi=NULL -M0 -m0d --midi-key-cps=4 --midi-velocity-amp=5 --displays --limiter
 </CsOptions>
 <CsInstruments>
 ; Initialize the global variables. 
