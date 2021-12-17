@@ -30,4 +30,5 @@ opcode	StChorus,aa,aakkk
 	aoutL		sum 	aChoL*0.6, ainL*0.6                 		;MIX DRY AND WET SIGNAL (LEFT CHANNEL) 
 	aoutR		sum 	aChoR*0.6, ainR*0.6				;MIX DRY AND WET SIGNAL (RIGHT CHANNEL)
 			xout	aoutL,aoutR					;SEND AUDIO BACK TO CALLER INSTRUMENT
+
 endop

@@ -14,7 +14,7 @@
 #define combostyle colour(120, 50, 5, 255) alpha(0.7)
 
 bounds(0, 0, 0, 0)
-form caption("KernelNet") size(1300, 600), openGL(1), pluginId("KKW2") bundle("./SynthResources", "./KKWave.snaps", "./UDOs", "./Waves") guiMode("queue")
+form caption("KernelNet") size(1300, 600), openGL(1), pluginId("KKW3") bundle("./SynthResources", "./KKWave.snaps", "./UDOs", "./Waves") guiMode("queue")
 
 ;-------------- Background e pagliaccio ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -109,7 +109,19 @@ rslider bounds(100, 248, 60, 60) range(0, 1, 0, 1, 0.001) channel("filt_res") $s
 label bounds(10, 220, 100, 20) channel("FM") fontColour(255, 255, 255, 255) text("Filter") alpha(0.60)
 
 ;--------------  1° LFO----------------------------------------------------------------------------------------------------------------------------------------------------------------
+button bounds(102, 520, 55, 20), channel("ARP"),range(0, 1, 1, 1, 1) text("ARP", "ARP"), colour:1(255, 0, 0, 255), alpha(0.8), , 
 
+;chorus
+rslider bounds(700, 364, 60, 60) channel("CHORUSsend") range(0.001, 4, 0.0110, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Send Chorus") text("Send Chorus") 
+rslider bounds(784, 364, 60, 60) channel("CHORUSrate") range(0.001, 1, 0.0320, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Rate") text("Rate") 
+rslider bounds(850, 364, 60, 60) channel("CHORUSdepth") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Depth") text("Depth") 
+rslider bounds(900, 364, 60, 60) channel("CHORUSwidth") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Width") text("Width") 
+
+;distortion
+rslider bounds(700, 464, 60, 60) channel("DISTORTIONsend") range(0.001, 4, 0.0110, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Send Dist") text("Send Dist") 
+rslider bounds(784, 464, 60, 60) channel("DISTORTIONlev") range(0.001, 1, 0.0320, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Level") text("Level") 
+rslider bounds(850, 464, 60, 60) channel("DISTORTIONdrive") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Drive") text("Drive") 
+rslider bounds(900, 464, 60, 60) channel("DISTORTIONtone") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Tone") text("Tone") 
 
      
 
@@ -120,8 +132,9 @@ rslider bounds(184, 364, 60, 60) channel("env1d") range(0.001, 4, 0.0320, 1, 0.0
 rslider bounds(106, 364, 60, 60) channel("env1s") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("Sustain") text("Sustain") 
 ;rslider bounds(1170, 236, 120, 120) channel("env1r") range(0.01, 2, 0.4, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Release") text("Release") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 rslider bounds(30, 504, 60, 60) channel("porttime") range(0, 2000, 3,0.4,0.01) $sliderstyle valueTextBox(0) popupText("Glide") text("Glide") 
+rslider bounds(940, 504, 60, 60) channel("MAIN_VOLUME") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupText("VOLUME") text("VOLUME") 
 
-keyboard bounds(440, 480, 400, 100) channel("keyboard10079")
+keyboard bounds(240, 480, 400, 100) channel("keyboard10079")
 
 </Cabbage>
 <CsoundSynthesizer>
@@ -135,6 +148,9 @@ nchnls		= 	2
 0dbfs		=	1
 
 #include "./SynthResources/MainOSC.udo"    ;UDO Oscillatore
+#include "./UDOs/StChorus.udo" ;UDO Chorus
+#include "./UDOs/Distortion.udo" ; UDO Distortion
+
 #define MAX_FREQ #20000#
 #define MULT_TRK1 #1.019440643702146#  ; 2^(1/36) : key track coefficient for SW1 On / SW2 Off  (1 octave/36 half-steps)
 #define MULT_TRK2 #1.037155044446193#  ; 2^(1/19) : key track coefficient for SW2 Off / SW2 On  (1 octave/19 half-steps)
@@ -200,6 +216,20 @@ gkVEL_TO_OSC2 		init 0
 
 gkVEL_TO_VCF 		init 0
 gkVEL_CURVE_TYPE 	init 1
+
+;FX init
+gaSEND_STCHORUS init 0
+gkCHORUS_send init 0
+gkCHORUS_rate init 0
+gkCHORUS_depth init 0
+gkCHORUS_width init 0
+
+gaSEND_DISTORTION init 0
+gkDISTORTION_send init 0
+gkDISTORTION_lev init 0
+gkDISTORTION_drive init 0
+gkDISTORTION_tone init 0
+
 
 ;Create table to map freq. filter knob
 
@@ -341,6 +371,20 @@ giFM8 ftgen 2007,0 ,256, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0.4, 0.2, 0, 0, 0, 0, 2.5, 
 
 instr	1	;===== NOTE ON/OFF Scheduler (Triggered by MIDI)
 
+
+
+gkCHORUS_SEND cabbageGetValue "CHORUSsend"
+gkCHORUS_rate cabbageGetValue "CHORUSrate"
+gkCHORUS_depth cabbageGetValue "CHORUSdepth"
+gkCHORUS_width cabbageGetValue "CHORUSwidth"
+
+gkDISTORTION_send cabbageGetValue "DISTORTIONsend"
+gkDISTORTION_lev cabbageGetValue "DISTORTIONlev"
+gkDISTORTION_drive cabbageGetValue "DISTORTIONdrive"
+gkDISTORTION_tone cabbageGetValue "DISTORTIONtone"
+
+gkMAIN_VOL cabbageGetValue "MAIN_VOLUME"
+
 gkdrywet chnget "ampdrywet"
 gkdrywet port gkdrywet, 0.02
 
@@ -368,9 +412,11 @@ giMIDIvel table3 giMIDIvel,1501,1
 	
 	gkNoteOn	init	1		;Set this flag to 1 . It will be cleared at bottom of instr 2	
 
-																																																																																											
-schedule 10,0,-1				;Invoke INSTR 10 
+    
 
+																																																																																								
+        schedule 10,0,-1				;Invoke INSTR 10 
+    
 endin
 
 
@@ -559,7 +605,6 @@ kFM_IndexEnv	init	0				;Init FM index env to zero
 
 kvib_ctrl = gkvib_ctrl/127.0		;Normalize to 1 the external MOD WHEEL (0-127 -->  0 - 1)
 
-
 aOsc1, aSub1 MainOsc kcps, kcps+gkWTDetune_1, kcps+gkVCOdetune_1, gkWave_1, gkWAVETamp_1, 1000, 1001, gkVCOamp_1, gkPWM_1, gkFMwave_1, gkFMfactor_1, gkFMIndex_1,  1010, 1011,  gkSubAmp_1, gkSubTable_1
 aOsc2, aSub2 MainOsc kcps, kcps+gkWTDetune_2, kcps+gkVCOdetune_2, gkWave_2, gkWAVETamp_2, 1002, 1003, gkVCOamp_2, gkPWM_2, gkFMwave_2, gkFMfactor_2, gkFMIndex_2,  1012, 1013,  gkSubAmp_2, gkSubTable_2
 
@@ -707,7 +752,7 @@ endif
 
 
 ; OUT
-ilimit = ampdbfs(-9)
+gilimit = ampdbfs(-9)
 aoutLeft balance2 ares, (aL*0.5)
 aoutRight balance2 ares, (aL*0.5)
 
@@ -718,11 +763,34 @@ adisplay = aoutLeft*0.3
 display	adisplay, .009, 0.01
 dispfft adisplay, .009, 256
 
-outs aoutLeft*aAmpEnv*ilimit , aoutLeft*aAmpEnv*ilimit
+
+
+;SEND
+gaSEND_STCHORUS = (aoutLeft*aAmpEnv*gilimit)*gkCHORUS_SEND
+gaSEND_DISTORTION = (aoutLeft*aAmpEnv*gilimit)*gkDISTORTION_send
+
+
+outs aoutLeft*aAmpEnv*gilimit*gkMAIN_VOL , aoutLeft*aAmpEnv*gilimit*gkMAIN_VOL
 endin
 
 ;----------------------------------------------------
 ;Occhi reattivi al BPM dell'Host
+
+instr 30 ;CHORUS
+
+aoutL, aoutR StChorus gaSEND_STCHORUS,gaSEND_STCHORUS,gkCHORUS_rate,gkCHORUS_depth,gkCHORUS_width
+
+outs aoutL*gkMAIN_VOL*gilimit,aoutR*gkMAIN_VOL*gilimit
+
+endin
+
+instr 31 ;Distortion
+
+aoutL Distortion gaSEND_DISTORTION,gkDISTORTION_lev,gkDISTORTION_drive,gkDISTORTION_tone
+
+outs aoutL*gkMAIN_VOL*gilimit,aoutL*gkMAIN_VOL*gilimit
+
+endin
 
 
 instr 6 ; Ricevo le info di BPM e Play/Stop dall'Host
@@ -759,4 +827,6 @@ endin
 i6 0 z
 f1501 0 513	-7 0 512 1		;Linear (LIN) Curve for MIDI Vel.
 i 100 0 [3600*24*7]
+i 30 0 [3600*24*7]
+i 31 0 [3600*24*7]
 </CsScore>

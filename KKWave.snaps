@@ -50,7 +50,7 @@
         "env1r": 0.4000000059604645,
         "keyboard10079": 60.0
     },
-	"FM Detuned": {
+    "FM Detuned": {
         "form": 0.0,
         "ibg": 0.0,
         "image1": 0.0,
@@ -101,7 +101,7 @@
         "env1r": 0.4000000059604645,
         "keyboard10079": 60.0
     },
-	"Riser": {
+    "Riser": {
         "form": 0.0,
         "ibg": 0.0,
         "image1": 0.0,
@@ -152,7 +152,7 @@
         "porttime": 301.369873046875,
         "keyboard10079": 60.0
     },
-    	"Lead1": {
+    "Lead1": {
         "form": 0.0,
         "ibg": 0.0,
         "image1": 0.0,
@@ -202,6 +202,66 @@
         "env1s": 0.7040000557899475,
         "porttime": 0.0,
         "keyboard10079": 60.0
+    },
+    "Daft": {
+        "form": 0.0,
+        "ibg": 0.0,
+        "image1": 0.0,
+        "occhio": 0.0,
+        "occhio1": 0.0,
+        "ampdrywet": 0.5,
+        "filebutton24": 0.0,
+        "filebutton25": 0.0,
+        "display": 0.0,
+        "MorphWT_1": 3.0,
+        "DetuneWT_1": 0.0,
+        "AmpWT_1": 0.75,
+        "WT": 0.0,
+        "PWM_1": 9.999999747378752e-05,
+        "DetuneVCO_1": 0.0,
+        "AmpVCO_1": 0.75,
+        "VCO": 0.0,
+        "FMmod_1": 0.0,
+        "FMindx_1": 0.0,
+        "FMwave_1": 0.0,
+        "FM": 0.0,
+        "SubONOFF_1": 1.0,
+        "SubWave_1": 0.0,
+        "SubAmp_1": 1.0,
+        "sub": 0.0,
+        "MorphWT_2": 3.0,
+        "DetuneWT_2": 0.0,
+        "AmpWT_2": 0.75,
+        "PWM_2": 9.999999747378752e-05,
+        "DetuneVCO_2": 0.0,
+        "AmpVCO_2": 0.75,
+        "FMmod_2": 0.0,
+        "FMindx_2": 0.0,
+        "FMwave_2": 0.0,
+        "SubONOFF_2": 0.0,
+        "SubWave_2": 1.0,
+        "SubAmp_2": 0.20000000298023224,
+        "filBypass": 0.0,
+        "filAttack": 0.4480000138282776,
+        "filAmount": 0.08700000494718552,
+        "filDec": 1.2130000591278076,
+        "filt_menu": 1.0,
+        "filt_freq": 0.08900000154972076,
+        "filt_res": 0.7210000157356262,
+        "ARP": 1.0,
+        "CHORUSsend": 2.6940999031066895,
+        "CHORUSrate": 0.5559999942779541,
+        "CHORUSdepth": 1.0,
+        "CHORUSwidth": 1.0,
+        "DISTORTIONsend": 4.0,
+        "DISTORTIONlev": 0.43849998712539673,
+        "DISTORTIONdrive": 0.3312999904155731,
+        "DISTORTIONtone": 1.0,
+        "env1a": 0.006899999920278788,
+        "env1d": 0.4658999741077423,
+        "env1s": 0.9960999488830566,
+        "porttime": 0.0,
+        "keyboard10079": 60.0,
+        "MAIN_VOLUME": 0.2638999819755554
     }
-    
 }
