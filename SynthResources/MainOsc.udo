@@ -59,7 +59,7 @@ awavetable poscil3 kWAVETamp, kFreqWT+amod, iDummyTable
 ;=====================
 
 ;kmod = k(amod)
-avco vco2 kVCOamp, kFreqVCO , 4 , kPWM
+avco vco2 kVCOamp, kFreqVCO+(k(amod)) , 4 , kPWM
 
 
 ;========================    
