@@ -93,7 +93,7 @@ i2 0 36000
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject version="2" type="BSBButton">
+ <bsbObject type="BSBButton" version="2">
   <objectName>play</objectName>
   <x>7</x>
   <y>10</y>
@@ -114,7 +114,7 @@ i2 0 36000
   <latched>false</latched>
   <fontsize>10</fontsize>
  </bsbObject>
- <bsbObject version="2" type="BSBButton">
+ <bsbObject type="BSBButton" version="2">
   <objectName>morf</objectName>
   <x>175</x>
   <y>10</y>
@@ -132,10 +132,10 @@ i2 0 36000
   <image>/</image>
   <eventLine/>
   <latch>true</latch>
-  <latched>false</latched>
+  <latched>true</latched>
   <fontsize>10</fontsize>
  </bsbObject>
- <bsbObject version="2" type="BSBHSlider">
+ <bsbObject type="BSBHSlider" version="2">
   <objectName>index</objectName>
   <x>40</x>
   <y>98</y>
@@ -148,13 +148,13 @@ i2 0 36000
   <description/>
   <minimum>0.00000000</minimum>
   <maximum>15.00000000</maximum>
-  <value>3.28358209</value>
+  <value>0.88888889</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBHSlider">
+ <bsbObject type="BSBHSlider" version="2">
   <objectName>freq</objectName>
   <x>37</x>
   <y>163</y>
@@ -167,13 +167,13 @@ i2 0 36000
   <description/>
   <minimum>20.00000000</minimum>
   <maximum>600.00000000</maximum>
-  <value>36.99633700</value>
+  <value>28.49816850</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>index</objectName>
   <x>40</x>
   <y>125</y>
@@ -197,7 +197,7 @@ i2 0 36000
    <g>255</g>
    <b>255</b>
   </bgcolor>
-  <value>3.28358209</value>
+  <value>0.88888889</value>
   <resolution>0.00100000</resolution>
   <minimum>-999999999999.00000000</minimum>
   <maximum>999999999999.00000000</maximum>
@@ -205,9 +205,9 @@ i2 0 36000
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
   <randomizable group="0">false</randomizable>
-  <mouseControl act="continuous"/>
+  <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>freq</objectName>
   <x>41</x>
   <y>186</y>
@@ -231,7 +231,7 @@ i2 0 36000
    <g>255</g>
    <b>255</b>
   </bgcolor>
-  <value>36.99633700</value>
+  <value>28.49816850</value>
   <resolution>0.00100000</resolution>
   <minimum>-999999999999.00000000</minimum>
   <maximum>999999999999.00000000</maximum>
@@ -239,9 +239,9 @@ i2 0 36000
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
   <randomizable group="0">false</randomizable>
-  <mouseControl act="continuous"/>
+  <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>2</x>
   <y>98</y>
@@ -272,7 +272,7 @@ i2 0 36000
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>3</x>
   <y>162</y>
