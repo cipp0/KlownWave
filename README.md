@@ -29,11 +29,11 @@ Multi Wavetable Synth with FM & FX - AU/VST Plugin
       - Emphasis
 
 - Dividere in due sezioni la grafica:
-  1) Sezione sopra:
+1) Sezione sopra:
     - Organizzare in due Tab (Plants) :
       1) Oscillatori
-      2) FX a sinistra - Modulation matrix a destra
-  2) Sezione sotto:
+      2) FX a sinistra - Modulation matrix a destra  
+2) Sezione sotto:
     -  Sub osc | Noise | Filter | Main Envelope
 
 Futuri sviluppi:
