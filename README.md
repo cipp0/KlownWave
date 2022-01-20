@@ -16,17 +16,17 @@ Multi Wavetable Synth with FM & FX - AU/VST Plugin
 
 - Creare 8 LFO e altri 2 ADSR
 - Fare matrice di modulazione (su Y LFO/ADSR su X le destinazioni con scaling )
- - Destinazioni:
-  - Pitch
-  - Morph - 1
-  - FM mod - 1
-  - FM Index - 1
-  - Morph - 2
-  - FM mod - 2
-  - FM Index - 2
-  - Cutoff
-  - Resonance
-  - Emphasis
+   - Destinazioni:
+      - Pitch
+      - Morph - 1
+      - FM mod - 1
+      - FM Index - 1
+      - Morph - 2
+      - FM mod - 2
+      - FM Index - 2
+      - Cutoff
+      - Resonance
+      - Emphasis
 
 - Dividere in due sezioni la grafica:
   - Sezione sopra (1) :
