@@ -14,13 +14,13 @@
 #define combostyle colour(120, 50, 5, 255) alpha(0.7)
 
 bounds(0, 0, 0, 0)
-form caption("KernelNet") size(1300, 600), openGL(1), pluginId("KKW4") bundle("./SynthResources", "./KKWave.snaps", "./UDOs", "./Waves") guiMode("queue")
+form caption("KernelNet") size(1300, 600), openGL(1), pluginId("KKs5") bundle("./SynthResources", "./KKWave.snaps", "./UDOs", "./Waves") guiMode("queue")
 
 ;-------------- Background e pagliaccio ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-image bounds(0, 0, 1300, 600) channel("ibg") file("./SynthResources/bg0.jpg")
+image bounds(0, 0, 1300, 600) channel("ibg") file("./SynthResources/bg9.jpg")
 
-gentable bounds(780, 7, 100, 55), channel("gentable2"), tableNumber(2222) outlineThickness(2), tableGridColour(155, 155, 155, 0) tableBackgroundColour(0,0,0,0) tableColour:0(255, 255, 255, 255) fill(0)
+gentable bounds(780, 6, 100, 55), channel("gentable2"), tableNumber(2222) outlineThickness(2), tableGridColour(155, 155, 155, 0) tableBackgroundColour(0,0,0,0) tableColour:0(255, 255, 255, 255) fill(0)
 
 ;image bounds(518, 474, 238, 131) channel("image1") file("./SynthResources/scritta.png")
 
@@ -32,7 +32,7 @@ gentable bounds(780, 7, 100, 55), channel("gentable2"), tableNumber(2222) outlin
 
 image bounds(474, 116, 200, 200) channel("occhio") file("./SynthResources/occhi.png") alpha(0)
 image bounds(620, 116, 200, 200) channel("occhio1") file("./SynthResources/occhi.png") alpha(0)
-rslider bounds(580, 232, 131, 130) channel("ampdrywet") range(0, 1, 0.5, 1, 0.001)  popupText("OSC1 / OSC2")  outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/nasoknob.png", 128)  textColour(0, 0, 0, 255) fontColour(0, 0, 0, 255) trackerInsideRadius(0.67) 
+rslider bounds(580, 232, 131, 130) channel("osc1/osc2") range(0, 1, 0.5, 1, 0.001)  popupText("OSC1 / OSC2")  outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/nasoknob.png", 128)  textColour(0, 0, 0, 255) fontColour(0, 0, 0, 255) trackerInsideRadius(0.67) 
 
 
 ;-------------- Presets .snaps ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -41,78 +41,77 @@ combobox bounds(532, 12, 123, 25), populate("*.snaps"), channelType("string") ch
 filebutton bounds(664, 12, 60, 25), text("Save", "Save"), populate("*.snaps", "test"), mode("named preset") channel("filebutton24")
 filebutton bounds(730, 12, 60, 25), text("Remove", "Remove"), populate("*.snaps", "test"), mode("remove preset") channel("filebutton25")
 
-signaldisplay bounds(524, 70, 239, 117), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("adisplay", "adisplay"), channel("display")
+;signaldisplay bounds(524, 70, 239, 117), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("adisplay", "adisplay"), channel("display")
 
 ;-------------- Oscillatore 1 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;wavetable
-gentable bounds(400, 7, 100, 55), channel("gentable1"), tableNumber(1111.0) outlineThickness(2), tableGridColour(155, 155, 155, 0) tableBackgroundColour(0,0,0,0) tableColour:0(255, 255, 255, 255) fill(0)
+gentable bounds(284, 192, 138, 66),channel("gentable1") , tableNumber(1111.0) outlineThickness(2), tableGridColour(155, 155, 155, 0) tableBackgroundColour(0, 0, 0, 0)  fill(0) 
 
 
-rslider bounds(242, 34, 120, 120) range(0, 22, 3, 1, 0.001) channel("MorphWT_1") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) 
-rslider bounds(322, 34, 120, 120) range(-20, 20, 0, 1, 0.001) channel("DetuneWT_1") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) 
-rslider bounds(404, 34, 120, 120) range(0, 1, 0.75, 1, 0.001) channel("AmpWT_1") $sliderstyle popupText("Gain") text("Gain") valueTextBox(1) 
+rslider bounds(242, 34, 90, 90) range(0, 22, 3, 1, 0.001) channel("MorphWT_1") $sliderstyle popupPrefix("WT Position: ") text("Morph") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(322, 34, 90, 90) range(-24, 24, 0, 1, 0.001) channel("DetuneWT_1") $sliderstyle popupPrefix("Detune: ") text("Detune") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+vslider bounds(438, 32, 50, 120) range(0, 1, 0.75, 1, 0.001) channel("AmpWT_1")  popupPrefix("Gain: ") text("Gain") valueTextBox(0) trackerColour(161, 31, 31, 178) textColour(255, 255, 255, 255) fontColour(255, 255, 255, 255) 
 
 combobox bounds(330, 31, 50, 20) channel("WaveBank_OSC_1") text("Default", "Harmonics") $combostyle alpha(0.7) colour(120, 50, 5, 255)
 
 
 ;VCO
-rslider bounds(0, 32, 120, 120) range(0.0001, 0.99999, 0.0001, 1, 0.001) channel("PWM_1") $sliderstyle popupText("Wave") text("Wave") valueTextBox(1) 
-rslider bounds(82, 34, 120, 120) range(-20, 20, 0, 1, 0.001) channel("DetuneVCO_1") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1)  
-rslider bounds(160, 34, 120, 120) range(0, 1, 0.75, 1, 0.001) channel("AmpVCO_1") $sliderstyle popupText("Gain") text("Gain") valueTextBox(1)  
+rslider bounds(0, 32, 90, 90) range(0.0001, 0.99999, 0.0001, 1, 0.001) channel("PWM_1") $sliderstyle popupPrefix("Wave: ") text("Wave") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(82, 34, 90, 90) range(-24, 24, 0, 1, 0.01) channel("DetuneVCO_1") $sliderstyle popupPrefix("Detune: ") text("Detune") valueTextBox(0)  
+rslider bounds(160, 34, 90, 90) range(0, 1, 0.75, 1, 0.001) channel("AmpVCO_1") $sliderstyle popupPrefix("Gain: ") text("Gain") valueTextBox(0)  
 label bounds(8, 16, 100, 20) channel("VCO") fontColour(255, 255, 255, 255) text("VCO") alpha(0.6)
 
 ;FM
-rslider bounds(6, 180, 120, 120) range(0, 10, 0, 1, 0.001) channel("FMmod_1") $sliderstyle popupText("FM Mod") text("FM Mod") valueTextBox(1)  
-rslider bounds(94, 180, 120, 120) range(0, 50, 0, 1, 0.001) channel("FMindx_1") $sliderstyle popupText("FM Index") text("FM Index") valueTextBox(1)  
-rslider bounds(182, 180, 120, 120) range(0, 7, 0, 1, 0.001) channel("FMwave_1") $sliderstyle popupText("FM Source") text("FM Source") valueTextBox(1)  
+rslider bounds(26, 230, 90, 90) range(0, 10, 0, 1, 0.001) channel("FMmod_1") $sliderstyle popupPrefix("FM Modulator: ") text("FM Mod") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(114, 230, 90, 90) range(0, 50, 0, 1, 0.001) channel("FMindx_1") $sliderstyle popupPrefix("FM Index: ") text("FM Index") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(202, 230, 90, 90) range(0, 7, 0, 1, 0.001) channel("FMwave_1") $sliderstyle popupPrefix("FM Source: ") text("FM Source") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 
 ;SubOSC
 
 button bounds(442, 158, 45, 25), channel("SubONOFF_1"), text("OFF", "ON"), colour:1(255, 0, 0, 255), alpha(0.8), , 
-rslider bounds(276, 180, 120, 120) range(0, 3, 1, 1, 1) channel("SubWave_1") $sliderstyle popupText("Sub Wave") text("Sub Wave") valueTextBox(1)  
-rslider bounds(366, 180, 120, 120) range(0, 1, 0.2, 1, 0.001) channel("SubAmp_1") $sliderstyle popupText("Sub Gain") text("Sub Gain") valueTextBox(1)  
+rslider bounds(390, 236, 90, 90) range(0, 3, 1, 1, 1) channel("SubWave_1") $sliderstyle popupPrefix("Sub Wave: ") text("Sub Wave") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(412, 186, 90, 90) range(0, 1, 0.2, 1, 0.001) channel("SubAmp_1") $sliderstyle popupPrefix("Sub Gain: ") text("Sub Gain") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 
 
 ;-------------- Oscillatore 2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;wavetable
-rslider bounds(782, 86, 120, 120) range(0, 9, 1, 1, 0.001) channel("MorphWT_2") $sliderstyle popupText("Wavetable Morph") text("Morph") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(872, 86, 120, 120) range(-20, 20, 0, 1, 0.001) channel("DetuneWT_2") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(956, 88, 120, 120) range(0, 1, 0.75, 1, 0.001) channel("AmpWT_2") $sliderstyle popupText("Gain") text("Gain") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(782, 86, 90, 90) range(0, 9, 1, 1, 0.001) channel("MorphWT_2") $sliderstyle popupPrefix("WT Position: ") text("Morph") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(872, 86, 90, 90) range(-20, 20, 0, 1, 0.001) channel("DetuneWT_2") $sliderstyle popupPrefix("Detune: ") text("Detune") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(956, 88, 90, 90) range(0, 1, 0.75, 1, 0.001) channel("AmpWT_2") $sliderstyle popupPrefix("Gain: ") text("Gain") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 label bounds(780, 68, 100, 20) channel("WT") fontColour(255, 255, 255, 255) text("Wavetable") alpha(0.6)
 
 ;VCO
-rslider bounds(1032, 58, 120, 120) range(0.0001, 0.99999, 0.0001, 1, 0.001) channel("PWM_2") $sliderstyle popupText("Wave") text("Wave") valueTextBox(1) 
-rslider bounds(1106, 58, 120, 120) range(-20, 20, 0, 1, 0.001) channel("DetuneVCO_2") $sliderstyle popupText("Detune") text("Detune") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(1180, 60, 120, 120) range(0, 1, 0.75, 1, 0.001) channel("AmpVCO_2") $sliderstyle popupText("Gain") text("Gain") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1032, 58, 90, 90) range(0.0001, 0.99999, 0.0001, 1, 0.001) channel("PWM_2") $sliderstyle popupPrefix("Wave: ") text("Wave") valueTextBox(0) 
+rslider bounds(1106, 58, 90, 90) range(-20, 20, 0, 1, 0.001) channel("DetuneVCO_2") $sliderstyle popupPrefix("Detune: ") text("Detune") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1180, 60, 90, 90) range(0, 1, 0.75, 1, 0.001) channel("AmpVCO_2") $sliderstyle popupPrefix("Gain: ") text("Gain") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 label bounds(1010, 38, 100, 20) channel("VCO") fontColour(255, 255, 255, 255) text("VCO") alpha(0.60)
 
 ;FM
-rslider bounds(760, 210, 120, 120) range(0, 10, 0, 1, 0.001) channel("FMmod_2") $sliderstyle popupText("FM Mod") text("FM Mod") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(850, 208, 120, 120) range(0, 50, 0, 1, 0.001) channel("FMindx_2") $sliderstyle popupText("FM Index") text("FM Index") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(948, 208, 120, 120) range(0, 7, 0, 1, 0.001) channel("FMwave_2") $sliderstyle popupText("FM Source") text("FM Source") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-label bounds(772, 342, 100, 20) channel("FM") fontColour(255, 255, 255, 255) text("FM") alpha(0.6)
+rslider bounds(760, 210, 90, 90) range(0, 10, 0, 1, 0.001) channel("FMmod_2") $sliderstyle popupPrefix("FM Modulator: ") text("FM Mod") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(850, 208, 90, 90) range(0, 50, 0, 1, 0.001) channel("FMindx_2") $sliderstyle popupPrefix("FM Index: ") text("FM Index") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(948, 208, 90, 90) range(0, 7, 0, 1, 0.001) channel("FMwave_2") $sliderstyle popupPrefix("FM Source: ") text("FM Source") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+label bounds(30, 210, 100, 20) channel("FM") fontColour(255, 255, 255, 255) text("FM") alpha(0.6)
 
 ;SubOSC
 
 button bounds(1220, 220, 45, 25), channel("SubONOFF_2"), text("OFF", "ON"), colour:1(255, 0, 0, 255), alpha(0.8), , 
-rslider bounds(1048, 242, 120, 120) range(0, 3, 1, 1, 1) channel("SubWave_2") $sliderstyle popupText("Sub Wave") text("Sub Wave") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(1146, 244, 120, 120) range(0, 1, 0.2, 1, 0.001) channel("SubAmp_2") $sliderstyle popupText("Sub Gain") text("Sub Gain") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1048, 242, 90, 90) range(0, 3, 1, 1, 1) channel("SubWave_2") $sliderstyle popupPrefix("Sub Wave: ") text("Sub Wave") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1146, 244, 90, 90) range(0, 1, 0.2, 1, 0.001) channel("SubAmp_2") $sliderstyle popupPrefix("Sub Gain: ") text("Sub Gain") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 label bounds(1060, 220, 150, 20) channel("sub") fontColour(255, 255, 255, 255) text("Sub Oscillator") alpha(0.6)
 
 
 ;-------------- Parametri Filtro----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-button bounds(266, 314, 55, 20), channel("filBypass"),range(1) text("Bypass", "Bypass"), colour:1(255, 0, 0, 255), alpha(0.8), , increment(1) value(1)
-rslider bounds(286, 336, 120, 120) channel("filAttack") range(0.001, 2, 0.001, 1, 0.001) $sliderstyle popupText("Attack") text("Attack") valueTextBox(1)  
-rslider bounds(194, 338, 120, 120) channel("filAmount") range(0, 1, 0.01, 1, 0.001) $sliderstyle popupText("Emphasis") text("Emphasis") valueTextBox(1)  
-rslider bounds(376, 336, 120, 120) channel("filDec") range(0, 4, 0.3, 1, 0.001) $sliderstyle popupText("Decay") text("Decay") valueTextBox(1)  
-combobox bounds(110, 314, 153, 20) channel("filt_menu") text("TB303 Ladder", "Moog Ladder", "Steiner-Parker LowPass", "Steiner-Parker HighPass", "Steiner-Parker BandPass", "Sallen-Key Lowpass", "Sallen-Key Highpass") $combostyle alpha(0.7) colour(120, 50, 5, 255)
-rslider bounds(16, 336, 120, 120) range(0, 1, 1, 1, 0.001) channel("filt_freq") $sliderstyle popupText("Cutoff Frequency") text("Cutoff") valueTextBox(1)  
-rslider bounds(96, 338, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_res") $sliderstyle popupText("Resonance") text("Resonance") valueTextBox(1)  
-;rslider bounds(2, 478, 120, 120) range(0, 1, 0, 1, 0.001) channel("filt_dist") $sliderstyle popupText("Distortion") text("Distortion") valueTextBox(1) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-label bounds(10, 220, 100, 20) channel("FM") fontColour(255, 255, 255, 255) text("Filter") alpha(0.60)
+button bounds(280, 386, 55, 20), channel("filBypass"), text("Bypass", "Bypass"), colour:1(255, 0, 0, 255), alpha(0.8), , increment(1) value(1)
+rslider bounds(300, 408, 90, 90) channel("filAttack") range(0.001, 2, 0.001, 1, 0.001) $sliderstyle popupPrefix("Attack: ") popupPostfix(" sec") text("Attack") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(208, 410, 90, 90) channel("filAmount") range(0, 1, 0.01, 1, 0.001) $sliderstyle popupPrefix("Emphasis: ") text("Emphasis") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(390, 408, 90, 90) channel("filDec") range(0, 4, 0.3, 1, 0.001) $sliderstyle popupPrefix("Decay: ") popupPostfix(" sec") text("Decay") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+combobox bounds(124, 386, 153, 20) channel("filt_menu") text("TB303 Ladder", "Moog Ladder", "Steiner-Parker LowPass", "Steiner-Parker HighPass", "Steiner-Parker BandPass", "Sallen-Key Lowpass", "Sallen-Key Highpass") $combostyle alpha(0.7) colour(120, 50, 5, 255)
+rslider bounds(30, 408, 90, 90) range(0, 1, 1, 1, 0.001) channel("filt_freq") $sliderstyle popupPrefix("Cutoff Frequency: ") text("Cutoff") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(110, 410, 90, 90) range(0, 1, 0, 1, 0.001) channel("filt_res") $sliderstyle popupPrefix("Resonance: ") text("Resonance") valueTextBox(0) filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+label bounds(28, 390, 100, 20) channel("Filter") fontColour(255, 255, 255, 255) text("Filter") alpha(0.6)
 
 ;--------------  1° LFO----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;button bounds(510, 478, 55, 20), channel("ARP"),range(1) text("ARP", "ARP"), colour:1(255, 0, 0, 255), alpha(0.8), , increment(1) value(1)
@@ -120,30 +119,40 @@ label bounds(10, 220, 100, 20) channel("FM") fontColour(255, 255, 255, 255) text
 ;chorus
 
 
-button bounds(700, 364, 55, 20), channel("FX"),range(1) text("FX", "FX"),  colour:1(255, 0, 0, 255), alpha(0.8), , increment(1) value(1)
+button bounds(700, 364, 55, 20), channel("FX"),range(0,1, 0, 0, 1) text("FX", "FX"), visible(1)  colour:1(255, 0, 0, 255), alpha(0.8), , increment(1) value(0)
 
-groupbox bounds(794, 440, 360, 243) channel("chorus")   lineThickness(0), outlineThickness(0)colour(0, 0, 0, 0){
-rslider bounds(0, 0, 125, 73) channel("CHORUSsend") range(0.001, 4, 0.011, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Send Chorus") text("Send Chorus") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(104, 0, 125, 73) channel("CHORUSrate") range(0.001, 1, 0.032, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Rate") text("Rate") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(209, 0, 125, 73) channel("CHORUSdepth") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Depth") text("Depth") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(315, 0, 125, 73) channel("CHORUSwidth") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Width") text("Width") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+groupbox bounds(0, 10, 600, 360) channel("effetti")  plant("pop1") lineThickness(0), popup(1) outlineThickness(0)colour(0, 0, 0, 0){
+image bounds(0, 0, 600, 360) channel("ibg1") file("./SynthResources/bg.jpg")
+rslider bounds(0, 0, 90, 90) channel("CHORUSsend") range(0.001, 1, 0.011, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Send Chorus: ") text("Send Chorus") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(120, 0, 90, 90) channel("CHORUSrate") range(0.001, 1, 0.032, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Rate: ") text("Rate") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(240, 0, 90, 90) channel("CHORUSdepth") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Depth: ") text("Depth") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(360, 0, 90, 90) channel("CHORUSwidth") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Width: ") text("Width") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 ;distortion
-rslider bounds(0, 73, 125, 73) channel("DISTORTIONsend") range(0.001, 4, 0.011, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Send Dist") text("Send Dist") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(104, 73, 125, 73) channel("DISTORTIONlev") range(0.001, 1, 0.032, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Level") text("Level") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(209, 73, 125, 73) channel("DISTORTIONdrive") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Drive") text("Drive") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(315, 73, 125, 73) channel("DISTORTIONtone") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Tone") text("Tone") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(0, 120,90, 90) channel("DISTORTIONsend") range(0.001, 1, 0.011, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Send Dist: ") text("Send Dist") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(120, 120, 90, 90) channel("DISTORTIONlev") range(0.001, 1, 0.032, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Level: ") text("Level") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(240, 120, 90, 90) channel("DISTORTIONdrive") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Drive: ") text("Drive") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(360, 120, 90, 90) channel("DISTORTIONtone") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Tone: ") text("Tone") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+
+;delay
+rslider bounds(0, 240, 90, 90) channel("DELAYsend") range(0.001, 1, 0.011, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Send Delay: ") text("Send Delay") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(120, 240, 90, 90) channel("DELAYtime") range(0.001, 1, 0.032, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Time: ") popupPostfix(" sec")text("Time") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(240, 240, 90, 90) channel("DELAYfback") range(0.001, 1, 0.032, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Feedback: ") text("Feedback") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(360, 240, 90, 90) channel("DELAYtone") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Tone: ") text("Tone") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+
+
+
 }
      
 
 ;--------------  ADSR----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-rslider bounds(110, 456, 120, 120) channel("env1a") range(0.001, 4, 0.011, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Attack") text("Attack")  
-rslider bounds(348, 452, 120, 120) channel("env1d") range(0.001, 4, 0.032, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Decay") text("Decay")  
-rslider bounds(230, 454, 120, 120) channel("env1s") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("Sustain") text("Sustain")  
-;rslider bounds(1170, 236, 120, 120) channel("env1r") range(0.01, 2, 0.4, 1, 0.001) $sliderstyle valueTextBox(1) popupText("Release") text("Release") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
-rslider bounds(-8, 456, 120, 120) channel("porttime") range(0, 2000, 3, 0.4, 0.01) $sliderstyle valueTextBox(1) popupText("Glide") text("Glide")  
-rslider bounds(560, 398, 120, 120) channel("MAIN_VOLUME") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(1) popupText("VOLUME") text("VOLUME") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(716, 414, 90, 90) channel("Attack") range(0.001, 4, 0.011, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Attack: ") popupPostfix(" sec") text("Attack") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(980, 412, 90, 90) channel("Decay") range(0.001, 4, 0.032, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Decay: ") popupPostfix(" sec") text("Decay") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(850, 410, 90, 90) channel("Sustain") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("Sustain: ") text("Sustain") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+;rslider bounds(1170, 236, 90, 90) channel("env1r") range(0.01, 2, 0.4, 1, 0.001) $sliderstyle valueTextBox(0) popupPrefix("Release") text("Release") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(1128, 410, 90, 90) channel("Glide") range(0, 2000, 3, 0.4, 0.01) $sliderstyle valueTextBox(0) popupPrefix("Glide:")  popupPostfix(" msec") text("Glide") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
+rslider bounds(560, 398, 90, 90) channel("MAIN_VOLUME") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(0) popupPrefix("VOLUME") text("VOLUME") filmstrip("./SynthResources/knob.png", 128) fontColour(255, 255, 255, 255) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 200) trackerInsideRadius(0.67)
 
 ;keyboard bounds(240, 480, 400, 100) channel("keyboard10079")
 
@@ -161,6 +170,7 @@ nchnls		= 	2
 #include "./SynthResources/MainOSC.udo"    ;UDO Oscillatore
 #include "./UDOs/StChorus.udo" ;UDO Chorus
 #include "./UDOs/Distortion.udo" ; UDO Distortion
+#include "./UDOs/AnalogDelay.udo" ; UDO AnalogDelay
 
 #define MAX_FREQ #20000#
 #define MULT_TRK1 #1.019440643702146#  ; 2^(1/36) : key track coefficient for SW1 On / SW2 Off  (1 octave/36 half-steps)
@@ -241,6 +251,11 @@ gkDISTORTION_lev init 0
 gkDISTORTION_drive init 0
 gkDISTORTION_tone init 0
 
+gkDELAY_send init 0
+gkDELAY_mix init 0
+gkDELAY_time init 0
+gkDELAY_fback init 0
+gkDELAY_tone init 0
 
 ;Create table to map freq. filter knob
 
@@ -471,9 +486,15 @@ gkDISTORTION_lev cabbageGetValue "DISTORTIONlev"
 gkDISTORTION_drive cabbageGetValue "DISTORTIONdrive"
 gkDISTORTION_tone cabbageGetValue "DISTORTIONtone"
 
+gkDELAY_send cabbageGetValue "DELAYsend"
+gkDELAY_mix cabbageGetValue "DELAYmix"
+gkDELAY_time cabbageGetValue "DELAYtime"
+gkDELAY_fback cabbageGetValue "DELAYfback"
+gkDELAY_tone cabbageGetValue "DELAYtone"
+
 gkMAIN_VOL cabbageGetValue "MAIN_VOLUME"
 
-gkdrywet chnget "ampdrywet"
+gkdrywet chnget "osc1/osc2"
 gkdrywet port gkdrywet, 0.02
 
 giMIDIvel veloc 0.15, 1.0						;Read MIDI velocity and scale to 0. - 1
@@ -521,7 +542,7 @@ gkDECAY_ON	= 1			;Get switch for DECAY On/Off
 
 gkVEL_SW	= 1	
 
-gkporttime_0 	cabbageGetValue "porttime"			;Get port time (glide o portamento)
+gkporttime_0 	cabbageGetValue "Glide"			;Get port time (glide o portamento)
 
 gkporttime_0 = (gkGLIDE_ON == 1? gkporttime_0 : 0)	;Test on GLIDE on/off
 
@@ -530,9 +551,9 @@ if ktrig == 1 then
 
 ;====== MODIFIERS ================
 ;Loudness Contour (VCA or amplitude envelope param.)
-gkAmpAttTim		cabbageGetValue "env1a"		;Get Loudness Envelope Attack Time in [secs]
-gkAmpRelTim		cabbageGetValue "env1d"		;Get Loudness Envelope Decay Time in [secs]
-gkAmpLev		cabbageGetValue "env1s"		;Get Loudness Envelope Sustain Lev
+gkAmpAttTim		cabbageGetValue "Attack"		;Get Loudness Envelope Attack Time in [secs]
+gkAmpRelTim		cabbageGetValue "Decay"		;Get Loudness Envelope Decay Time in [secs]
+gkAmpLev		cabbageGetValue "Sustain"		;Get Loudness Envelope Sustain Lev
 	
 		
 ;Filter Contour (VCF envelope param.)
@@ -687,6 +708,7 @@ endin
 
 instr 10; Main Audio Engine
 
+;========= GLIDE /PORTAMENTO ============
 
 gkporttime = gkporttime_0 * 0.001			;Scale port in sec
 
@@ -701,30 +723,25 @@ kporttime	linseg	0.0,0.01,1				;Portamento Time rises quickly to a held value of
 kporttime	=	kporttime*gkporttime		;Portamento Time function scaled by value output by widget (knob)
 kcps		portk	gkcps, kporttime		;Apply portamento to pitch changes
 
-
+;========= INIT ENV K VARIABLE ============
 kAmpEnv			init	0				;Init amp env. to zero	
 kFiltEnv		init	0				;Init filt. env. to zero
-kNoiseEnv		init 	0				;Init Noise env. to zero
-kRMEnv			init 	0				;Init RM env. to zero
-kFMEnv			init 	0				;Init FM amp. env to zero
-kFM_IndexEnv	init	0				;Init FM index env to zero
 
+;========= MODULATION WHEEL ============
 kvib_ctrl = gkvib_ctrl/127.0		;Normalize to 1 the external MOD WHEEL (0-127 -->  0 - 1)
 
 
-
-
+;========= WAVETABLE SYNTH 1 E 2============
 
 aOsc1, aSub1 MainOsc kcps, kcps+gkWTDetune_1, kcps+gkVCOdetune_1, gkWave_1, gkWAVETamp_1, 99999, 1111, gkVCOamp_1, gkPWM_1, gkFMwave_1, gkFMfactor_1, gkFMIndex_1,  1010, 1011,  gkSubAmp_1, gkSubTable_1
 aOsc2, aSub2 MainOsc kcps, kcps+gkWTDetune_2, kcps+gkVCOdetune_2, gkWave_2, gkWAVETamp_2, 999999, 2222, gkVCOamp_2, gkPWM_2, gkFMwave_2, gkFMfactor_2, gkFMIndex_2,  1012, 1013,  gkSubAmp_2, gkSubTable_2
 
 
+;========= ENVELOPE ENGINE ============
 
 if gkNoteOn=1&&kactive1=1 then		;If a new legato phrase has begun (A NEW NOTE pressed and no older are held ...
 	  reinit	RestartLegEnvs		;...Restart the 'legato phrase' envelopes (AMPLITUDE AND FILTER)
-	endif	
-
-	
+	endif		
 			
 RestartLegEnvs:					;A label: start a reinit pass to restart the legato phrase ENVELOPES
 	
@@ -752,8 +769,10 @@ rireturn
 
 	aAmpEnv		interp	kAmpEnv				;Smoother amp.env - (useful for fast changing envelope segments)	
 	
+	
+	
 
-adrywet interp gkdrywet 
+
 
 gkSubtoFil_1 = 1
 gkSubtoFil_2 = 1
@@ -776,11 +795,13 @@ if gkSubONOFF_2	==1 then ;&& gkSubtoFil_2
 endif
 
 
+;========= OSC1 / OSC2 =======
 
-
+adrywet interp gkdrywet 
 aL sum aSum1*(1-adrywet), aSum2*adrywet
 
-;Filter
+
+;========= FILTER SECTION =======
 
 
 kfilt_delta = $MAX_FREQ - gkfil										;Compute Delta Freq. (difference from cutoff to NY freq.)
@@ -796,13 +817,6 @@ kfreq_VCF = kfreq_VCF*$MULT_TRK1^gktrack_del
 	
 	kfreq_VCF = (kfreq_VCF <= $MAX_FREQ? kfreq_VCF : $MAX_FREQ)						;Limit upper freq to 22 Khz
 	acut interp kfreq_VCF
-	
-
-
-    
-		
-; 15) kSubONOFF = Selettore se accendere o spegnere il sub Oscillatore			
-				
 					
 							
 if gkFiltbypass == 0 then	
@@ -850,7 +864,8 @@ ares =aL;, aSub1, aSub2
 endif
 
 
-; OUT
+;====== OUT SECTION ======
+
 gilimit = ampdbfs(-9)
 aoutLeft balance2 ares, (aL*0.5)
 aoutRight balance2 ares, (aL*0.5)
@@ -864,22 +879,28 @@ dispfft adisplay, .009, 256
 
 
 
-;SEND
+;====== SEND TO FX ======
+
 gaSEND_STCHORUS = (aoutLeft*aAmpEnv*gilimit)*gkCHORUS_SEND
 gaSEND_DISTORTION = (aoutLeft*aAmpEnv*gilimit)*gkDISTORTION_send
+gaSEND_DELAY = (aoutLeft*aAmpEnv*gilimit)*gkDELAY_send
 
 
 outs aoutLeft*aAmpEnv*gilimit*gkMAIN_VOL , aoutLeft*aAmpEnv*gilimit*gkMAIN_VOL
 endin
 
-;----------------------------------------------------
-;Occhi reattivi al BPM dell'Host
+
 
 instr 30 ;CHORUS
-
+gkFX cabbageGetValue "FX"
+if gkFX == 1 then
+cabbageSet gkFX, "effetti", "visible(1), popup(1)"
+else 
+cabbageSet 1, "effetti", "visible(0), popup(0)"
+endif
 aoutL, aoutR StChorus gaSEND_STCHORUS,gaSEND_STCHORUS,gkCHORUS_rate,gkCHORUS_depth,gkCHORUS_width
 
-outs aoutL*gkMAIN_VOL*gilimit,aoutR*gkMAIN_VOL*gilimit
+outs aoutL*gkMAIN_VOL*gilimit,aoutR*gkMAIN_VOL
 
 endin
 
@@ -891,16 +912,24 @@ outs aoutL*gkMAIN_VOL*gilimit,aoutL*gkMAIN_VOL*gilimit
 
 endin
 
+instr 32 ; Analog Delay
+aoutDel AnalogDelay gaSEND_DELAY,1,gkDELAY_time ,gkDELAY_fback,gkDELAY_tone
+	outs aoutDel*gkMAIN_VOL*gilimit,aoutDel*gkMAIN_VOL
+endin
 
-instr 6 ; Ricevo le info di BPM e Play/Stop dall'Host
-kplay chnget "IS_PLAYING"
+
+;----------------------------------------------------
+;Occhi reattivi al BPM dell'Host
+
+instr 6 
+kplay chnget "IS_PLAYING" ; Ricevo le info di BPM e Play/Stop dall'Host e se è in Play
 kBPM chnget "HOST_BPM"
 kTrig metro (kBPM/60)
 
 kline linseg  0., 0.2, 1, 0.2, 0.
 
 if kTrig == 1 && kplay == 1 then
-;printk2 kTrig
+
 cabbageSet kTrig,  "occhio", "alpha", kline
 cabbageSet kTrig,  "occhio1", "alpha", kline
 
@@ -935,5 +964,6 @@ f1501 0 513	-7 0 512 1		;Linear (LIN) Curve for MIDI Vel.
 i 100 0 [3600*24*7]
 i 30 0 [3600*24*7]
 i 31 0 [3600*24*7]
+i 32 0 [3600*24*7]
 ;i 999 0 [3600*24*7]
 </CsScore>

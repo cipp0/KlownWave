@@ -6,26 +6,45 @@ Multi Wavetable Synth with FM & FX - AU/VST Plugin
 
 ## ToDo
 
+- FARE ESPORTATO WINDOWS
 - Prendere wavetables da Serum, ANA ecc. utilizzando [AutoCropWT](/Tool). Ricampionare tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
-- Capire il funzionamento dei filtri svn
-- Reinserire gli LFO (Testare con LFO di Ableton)
-- Inserire sends agli FX vari prendendo gli UDO dalla cartella UDOs
-- Inserire 2 banchi di filtri (uno a sinistra del clown, uno a destra) - ???
-- Organizzare graficamente le sezioni degli oscillatori, filtro ecc.
 
-Da tenere in considerazione:
+- Inserire sorgente Noise (Level, to Filter) vedi eu-MOOG
+- Creare un instrument mixer per mettere gli FX in insert o in send e poterli ordinare (ora solo send)
+- Assegnare Program Change al banco dei Preset
+- Inserire sorgente da filtrare (es: Macro Oscillatore A, Macro Oscillatore B)
+
+- Creare 8 LFO e altri 2 ADSR
+- Fare matrice di modulazione (su Y LFO/ADSR su X le destinazioni con scaling )
+ - Destinazioni:
+  - Pitch
+  - Morph - 1
+  - FM mod - 1
+  - FM Index - 1
+  - Morph - 2
+  - FM mod - 2
+  - FM Index - 2
+  - Cutoff
+  - Resonance
+  - Emphasis
+
+- Dividere in due sezioni la grafica:
+  - Sezione sopra (1) :
+    - Organizzare in due Tab (Plants) :
+      - Oscillatori
+      - FX a sinistra - Modulation matrix a destra
+  - Sezione sotto (2)
+    -  Sub osc | Noise | Filter | Main Envelope
+
+Futuri sviluppi:
 - Inserire filtri: *mvmfilter comb e a formanti*
 - Utilizzo di *midiarp* (arpeggiatore midi)
-- Inserire inviluppo sul morphing
 - Utilizzare le tabelle delle wavetable come sorgente dell'FM (oltre a quelle presenti)
 
-*Ultimo update: 15/12/21*
+*Ultimo update: 20/1/22*
 
 ## Issues
 - Il suboscillatore viene filtrato, metterlo opzionale
-- il synth è monofonico, è un problema?
-- L'FM fa solo sul Wavetable non col vco2
-- Rinominare tutti i widget prima di distribuire
 
 ## Tests
 - Verificare consumo di CPU con varie configurazioni di buffer e samplerate.
@@ -36,6 +55,7 @@ Da tenere in considerazione:
     - 8GB di RAM
 
 - Verificare il funzionamento della release su PC senza aver CSound installato
+  - Con MAC funziona
 
 - Fare DMG con Package dentro
 
@@ -54,6 +74,14 @@ Da tenere in considerazione:
 *Spiegare procedura per hackerare il Synth*
 
 ## Changelog
+
+### Update 20/1/22 (cippo)
+- Rinominati tutti i widget
+- Inserito FX Delay
+- Inseriti gli FX in una finestra secondaria
+- Inserito test GUI su wavetable
+- Issue fixed
+
 ### Update 15/12/21 (cippo)
   Struttura dell'algoritmo completamente rinnovata:
 
