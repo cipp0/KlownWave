@@ -16,12 +16,12 @@ Wavetable Synth with FM & FX - AU/VST Plugin
 - Fare matrice di modulazione (su Y LFO/ADSR su X le destinazioni con scaling ) https://cabbageaudio.com/docs/managing_large_numbers_of_widgets/
    - Destinazioni:
       - Pitch
-      - Morph - 1
-      - FM mod - 1
-      - FM Index - 1
-      - Morph - 2
-      - FM mod - 2
-      - FM Index - 2
+      - Morph - OSC1
+      - FM mod - OSC1
+      - FM Index - OSC1
+      - Morph - OSC2
+      - FM mod - OSC2
+      - FM Index - OSC2
       - Cutoff
       - Resonance
       - Emphasis
