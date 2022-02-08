@@ -1,5 +1,5 @@
 # 👾 KernelNet
-Multi Wavetable Synth with FM & FX - AU/VST Plugin
+Wavetable Synth with FM & FX - AU/VST Plugin
 
 *by BitNet01 & Kernel Panik Sound*
 
@@ -9,9 +9,7 @@ Multi Wavetable Synth with FM & FX - AU/VST Plugin
 - FARE ESPORTATO WINDOWS
 - Prendere wavetables da Serum, ANA ecc. utilizzando [AutoCropWT](/Tool). Ricampionare tutte le forme d'onda a 4096 samples ---> FAUSTER (wavetables)
 
-- Inserire sorgente Noise (Level, to Filter) vedi eu-MOOG
-- Creare un instrument mixer per mettere gli FX in insert o in send e poterli ordinare (ora solo send)
-- Assegnare Program Change al banco dei Preset
+- Creare un instrument mixer per mettere gli FX in insert e poterli ordinare (ora solo send)
 - Inserire sorgente da filtrare (es: Macro Oscillatore A, Macro Oscillatore B)
 
 - Creare 8 LFO e altri 2 ADSR
@@ -74,7 +72,8 @@ Futuri sviluppi:
 *Spiegare procedura per hackerare il Synth*
 
 ## Changelog
-
+### Update 8/2/22 (cippo)
+- Inserito sorgente Noise con Level e ON/OFF
 ### Update 20/1/22 (cippo)
 - Rinominati tutti i widget
 - Inserito FX Delay
