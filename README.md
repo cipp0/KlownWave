@@ -46,7 +46,7 @@ Future developments:
 * Last update: 20/1/22 *
 
 ## Issues
-to
+- linking libcsound64 on windows, DAW crashes
 
 ## Tests
 - Check CPU consumption with various buffer and samplerate configurations.
