@@ -1,11 +1,8 @@
 # 👾 KernelNet
-Multi Wavetable Synth with FM & FX - AU / VST Plugin based on Csound and Cabbage
+Multi Wavetable Synth with FM & FX - AU / VST Plugin
 
 * Developed by Francesco Casanova (BitNet01) from an idea of ​​[Kernel Panik Sound] (https://www.facebook.com/kernelpaniksound) *
 
-[(ITA README)](/README_ita.md)
-
-#### Everything is still in development
 
 ## ToDo
 
