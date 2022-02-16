@@ -41,11 +41,11 @@ Multi Wavetable Synth with FM & FX - AU / VST Plugin based on Csound and Cabbage
 
 Future developments:
 - Assign Program Changes to the Preset Bank
-- Insert filters: * mvmfilter comb and a formants *
-- Using * midiarp * (midi arpeggiator)
+- Insert filters: *mvmfilter comb and a formants*
+- Using *midiarp* (midi arpeggiator)
 - Use the wavetable tables as the source of the FM (in addition to those present)
 
-* Last update: 20/1/22 *
+*Last update: 16/2/22*
 
 ## Issues
 - linking libcsound64 on windows, DAW crashes
@@ -77,6 +77,9 @@ Future developments:
 ## Hacking
 *Explain procedure to hack the Synth*
 
+## License
+![plot](/Old-dev/cc.png)
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 ## Contributors
 
