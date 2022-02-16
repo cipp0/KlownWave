@@ -1,7 +1,7 @@
 # 👾 KernelNet
 Multi Wavetable Synth with FM & FX - AU / VST Plugin based on Csound and Cabbage
 
-* Developed by Francesco Casanova (BitNet01) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound) *
+*Developed by Francesco Casanova (BitNet01) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
 
 [(ITA README)](/README_ita.md)
 
@@ -11,7 +11,7 @@ Multi Wavetable Synth with FM & FX - AU / VST Plugin based on Csound and Cabbage
 
 - Export for Windows
 - Finish the graphics with panels
-- Create Wavetable change mechanism (see example csoundQT on [tests] (/ tests))
+- Create Wavetable change mechanism (see example csoundQT on [tests](/ tests))
 - Create a mixer to put the FX in inserts and be able to sort them (now only send)
 
 - Insert 2 filters per Oscillator bank
