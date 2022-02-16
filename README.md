@@ -19,12 +19,12 @@ Multi Wavetable Synth with FM & FX - AU / VST Plugin based on Csound and Cabbage
 - Make modulation matrix (on Y 8 LFO / 2 ADSR on X the destinations with scaling)
    - Destinations:
       - Pitch
-      - Morph - 1
-      - FM mod - 1
-      - FM Index - 1
-      - Morph - 2
-      - FM mod - 2
-      - FM Index - 2
+      - Morph - OSC1
+      - FM mod - OSC1
+      - FM Index - OSC1
+      - Morph - OSC2
+      - FM mod - OSC2
+      - FM Index - OSC2
       - Cutoff
       - Resonance
       - Emphasis
