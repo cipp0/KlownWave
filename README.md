@@ -1,6 +1,8 @@
 # 👾 KernelNet
 Multi Wavetable Synth with FM & FX - AU / VST Plugin based on Csound and Cabbage
 
+![plot](/Old-dev/img.png)
+
 *Developed by Francesco Casanova (BitNet01) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
 
 [(ITA README)](/README_ita.md)
@@ -64,16 +66,16 @@ Future developments:
 - Beta testing and making presets
 
 
-[OSX Plugin Distribution Procedure] (https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274)
+[OSX Plugin Distribution Procedure](https://forum.cabbageaudio.com/t/distributing-plugins-on-macos/2274)
 
-[Windows Plugin distribution procedure] (https://forum.cabbageaudio.com/t/distributing-plugins-on-windows/2275)
+[Windows Plugin distribution procedure](https://forum.cabbageaudio.com/t/distributing-plugins-on-windows/2275)
 
 
 ## How to build
-* Explain how to build with Cabbage *
+*Explain how to build with Cabbage*
 
 ## Hacking
-* Explain procedure to hack the Synth *
+*Explain procedure to hack the Synth*
 
 
 ## Contributors
