@@ -1,4 +1,4 @@
-# 👾 KernelNet
+# 👾 KlownWave
 Multi Wavetable Synth with FM & FX - AU / VST Plugin based on Csound and Cabbage
 
 ![plot](/Old-dev/img.png)
