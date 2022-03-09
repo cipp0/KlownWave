@@ -25,7 +25,7 @@ keyboard bounds(493, 380, 320, 68) keysDownColour(255,30,50) mouseOverKeyColour(
 image bounds(474, 156, 200, 200) channel("occhio") file("./SynthResources/occhi.png") alpha(0)
 image bounds(620, 156, 200, 200) channel("occhio1") file("./SynthResources/occhi.png") alpha(0)
 
-rslider bounds(580, 272, 131, 130) channel("osc1/osc2") range(0, 1, 0.5, 1, 0.001)  popupText("OSC1 / OSC2")  outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/nasoknob.png", 128)  textColour(0, 0, 0, 255) fontColour(0, 0, 0, 255) trackerInsideRadius(0.67) 
+rslider bounds(580, 272, 131, 130) channel("osc1osc2") range(0, 1, 0.5, 1, 0.001)  popupText("OSC1 / OSC2")  outlineColour(58, 58, 58, 0) filmstrip("./SynthResources/nasoknob.png", 128)  textColour(0, 0, 0, 255) fontColour(0, 0, 0, 255) trackerInsideRadius(0.67) 
 ;signaldisplay bounds(554, 80, 190, 117), colour("white") displayType("waveform"), backgroundColour(147, 210, 0,0), zoom(-1), signalVariable("adisplay", "adisplay"), channel("display")
 
 
@@ -617,7 +617,7 @@ gkDELAY_tone cabbageGetValue "DELAYtone"
 
 gkMAIN_VOL cabbageGetValue "MAINVOLUME"
 
-gkdrywet chnget "osc1/osc2"
+gkdrywet chnget "osc1osc2"
 gkdrywet port gkdrywet, 0.02
 
 

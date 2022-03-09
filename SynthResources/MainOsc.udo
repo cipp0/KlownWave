@@ -25,13 +25,13 @@
 
 ; ----------------------------------------------------------------------------------
 
-opcode MainOsc, aa, kkkkkkkkkkkkiikk
+opcode MainOsc, aa, kkkkkiikkkkkiikk
 
 ;============================   
 ;==== VARIABILI DI INPUT ==== 
 ;============================
 
-kFreq, kFreqWT, kFreqVCO, kWave,kWAVETamp, kMorphTable, kDummyTable, kVCOamp, kPWM, kFMwave, kFMfactor, kFMIndex, iFMmorphTable, iFMDummyTable, kSubAmp,kSubTable  xin
+kFreq, kFreqWT, kFreqVCO, kWave,kWAVETamp, iMorphTable, iDummyTable, kVCOamp, kPWM, kFMwave, kFMfactor, kFMIndex, iFMmorphTable, iFMDummyTable, kSubAmp,kSubTable  xin
 
 
 ;============    
@@ -50,9 +50,9 @@ amod poscil3 kmodamp, kfreqmod, iFMDummyTable
 ;==== WAVETABLE OSCILLATOR ==== 
 ;==============================     
      
-ftmorf  kWave, i(kMorphTable), i(kDummyTable)             
+ftmorf  kWave, iMorphTable, iDummyTable             
 
-awavetable poscil3 kWAVETamp, kFreqWT+amod, i(kDummyTable)
+awavetable poscil3 kWAVETamp, kFreqWT+amod, iDummyTable
 
 ;=====================     
 ;==== CLASSIC VCO ==== 
