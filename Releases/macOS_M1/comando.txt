@@ -1,0 +1,1 @@
+sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/cipp0/KlownWave/main/Releases/macOS_M1/kw_install.sh)"
