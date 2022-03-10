@@ -12,10 +12,14 @@ function die {
 [ "$(uname -m)" == "x86_64" ] && echo "x86_64 arch detected" && repo=${repo_x86}
 
 for pkg in ${pkgs}; do
-  curl -fSsL "${repo}/${pkg}" -o "${pkg}" || die "error downloading ${pkg}"
+  curl -fSsL "${repo}/${pkg}" -o "/tmp/${pkg}" || die "error downloading ${pkg}"
 done
 
-tar -C ${libdir} -xzpf Csound.tar.gz || die "error moving framework"
-tar -C ${vstdir} -xzpf KlownWave.tar.gz || die "error moving VST"
+tar -C ${libdir} -xzpf /tmp/Csound.tar.gz || die "error moving framework"
+tar -C ${vstdir} -xzpf /tmp/KlownWave.tar.gz || die "error moving VST"
+
+for pkg in ${pkgs}; do
+  rm -f "/tmp/${pkg}"
+done
 
 echo "all done!"
