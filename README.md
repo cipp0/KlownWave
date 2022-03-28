@@ -1,6 +1,6 @@
 # 👾 KlownWave
 
-![plot](/Old-dev/img0.jpg)
+![plot](/img/img0.jpg)
 
 AU / VST Plugin synth written in Csound and Cabbage
 *Developed by [Francesco Casanova](cipp0.github.io/) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
@@ -37,7 +37,7 @@ AU / VST Plugin synth written in Csound and Cabbage
 *Explain how to build with Cabbage*
 
 ## License
-![plot](/Old-dev/cc.png)
+![plot](/img/cc.png)
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 
