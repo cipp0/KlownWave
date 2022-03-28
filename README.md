@@ -1,13 +1,10 @@
 # 👾 KlownWave
-AU / VST Plugin synth written in Csound and Cabbage
 
 ![plot](/Old-dev/img0.jpg)
 
-*Developed by Francesco Casanova ([BitNet01](https://www.facebook.com/BitNet001)) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
+AU / VST Plugin synth written in Csound and Cabbage
+*Developed by [Francesco Casanova](cipp0.github.io/) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
 
-[(ITA README)](/README_ita.md)
-
-#### Everything is still in development
 
 ## Features
 - 2 x Wavetable Oscillators 
@@ -36,12 +33,8 @@ AU / VST Plugin synth written in Csound and Cabbage
   - Delay
   - Reverb
 
-
 ## How to build
 *Explain how to build with Cabbage*
-
-## Hacking
-*Explain procedure to hack the Synth*
 
 ## License
 ![plot](/Old-dev/cc.png)
