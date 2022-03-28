@@ -14,7 +14,7 @@
 #define combostyle colour(120, 50, 5, 255) alpha(0.7)
 
 bounds(0, 0, 0, 0)
-form caption("KlownWave") size(1300, 640), openGL(1), pluginId("KW12") bundle("./GUI", "./KKWave.snaps", "./UDOs", "./Waves") guiMode("queue")
+form caption("KlownWave") size(1300, 640), openGL(1), pluginId("KW12") bundle("./GUI", "./KlownWave.snaps", "./UDOs", "./Waves") guiMode("queue")
 
 ;-------------- Background e pagliaccio ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
