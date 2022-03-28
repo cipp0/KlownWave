@@ -1,7 +1,7 @@
 # 👾 KlownWave
 Multi Wavetable Synth with FM & FX - AU / VST Plugin based on Csound and Cabbage
 
-![plot](/Old-dev/img.png)
+![plot](/Old-dev/img.jpg)
 
 *Developed by Francesco Casanova ([BitNet01](https://www.facebook.com/BitNet001)) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
 
