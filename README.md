@@ -4,7 +4,7 @@
 
 AU / VST Plugin synth written in Csound and Cabbage
 
-*Developed by [Francesco Casanova](cipp0.github.io/) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
+*Developed by [Francesco Casanova](https://cipp0.github.io/) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
 
 
 ## Features
