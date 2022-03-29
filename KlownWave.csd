@@ -11,7 +11,7 @@
 
 AU / VST Plugin synth written in Csound and Cabbage
 
-Developed by Francesco Casanova from an idea of Kernel Panik Sound
+Developed by Francesco Casanova (BitNet01) from an idea of Kernel Panik Sound
 
 In this long period of pandemic, for about two years now, we have tried to commit our efforts, for something truly stimulating and of which 
 we have always been passionate, and this is how, thanks to the collaboration with the Bitnet01 collective, we have been able to develop in this
@@ -58,7 +58,7 @@ Features:
 #define combostyle colour(120, 50, 5, 255) alpha(0.7)
 
 bounds(0, 0, 0, 0)
-form caption("KlownWave") size(1300, 640), openGL(1), pluginId("KW12") bundle("./GUI", "./KlownWave.snaps", "./UDOs", "./Waves") guiMode("queue")
+form caption("KlownWave") size(1300, 640), openGL(1), pluginId("KW00") bundle("./GUI", "./KlownWave.snaps", "./UDOs", "./Waves") guiMode("queue")
 
 ;-------------- Background e pagliaccio ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1562,7 +1562,7 @@ instr 30
 
 if gkdistON == 1 then
     adist Distortion gaSynthClean ,gkDISTORTION_lev,gkDISTORTION_drive,gkDISTORTION_tone
-     aoutDistort = adist
+     aoutDistort = adist*0.7*gilimit
 else
     aoutDistort = gaSynthClean 
 endif
