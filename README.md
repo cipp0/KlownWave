@@ -50,6 +50,7 @@ KlownWave will be distributed to the public 'by donation', will be open source a
 
 ## License
 ![plot](/img/cc.png)
+
 *Developed by [Francesco Casanova](https://cipp0.github.io/) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-nc-sa/3.0/)
