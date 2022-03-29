@@ -8,6 +8,50 @@
   ███   ▀█▀ █████▄▄██  ▀██████▀   ▀███▀███▀   ▀█   █▀   ▀███▀███▀    ███    █▀   ▀██████▀    ██████████ 
   ▀         ▀                                                                                                                         
 
+
+AU / VST Plugin synth written in Csound and Cabbage
+
+Developed by Francesco Casanova from an idea of Kernel Panik Sound
+
+In this long period of pandemic, for about two years now, we have tried to commit our efforts, for something truly stimulating and of which 
+we have always been passionate, and this is how, thanks to the collaboration with the Bitnet01 collective, we have been able to develop in this
+time, our virtual synthesizer, Vst, with our style and sound timbre that we have called KLOWNWAVE,
+
+(WAVETABLE SYNTHESIZER, AKA KERNELPANIK SYNTHESIZER).
+
+We are excited to introduce this new project to you, and we hope you will share our visionary initiative.
+KlownWave will be distributed to the public 'by donation', will be open source and hackable.
+
+Features:
+
+    2 x Wavetable Oscillators
+    6 x Wavetable Set with 16 morphable waves each
+    2 x Analog-like Oscillators (Saw-Ramp-Triangle)
+    2 x FM module with morphable source (between different harmonics in sine waves)
+    1 x White Noise
+    1 x Filter module with envelope and types:
+        TB303-like lowpass filter with resonance
+        Moog-like lowpass filter with resonance
+        Steiner-Parker lowpass filter with resonance
+        Steiner-Parker highpass filter with resonance
+        Steiner-Parker bandpass filter with resonance
+        Sallen-Key lowpass filter with resonance
+        Sallen-Key highpass filter with resonance
+    1 x Sub oscillator (1 octave down) with different waves (sine, triangle, saw, square)
+    1 x Envelope with portamento
+    1 x Modulation matrix with:
+        8 x LFOs (sine, triangle, saw, ramp, square, random)
+        9 x Destinations (Morph WT1, FM Mod 1, FM Index 1, Morph WT2, FM Mod 2, FM Index 2, Cutoff, Resonance, Emphasis)
+    6 X Effects (in insert) 
+        Distortion
+        Chorus
+        Flanger
+        Phaser
+        Delay
+        Reverb
+
+    FX Code copyright Ian McCurdy
+    
 <Cabbage> 
 
 #define sliderstyle outlineColour(58, 58, 58, 0) filmstrip("./GUI/knob.png", 128) visible(1),  textColour(255, 255, 255, 255) fontColour(255, 255, 255, 0) textBoxOutlineColour(0,0,0,0) trackerInsideRadius(0.67) popupText("") text("")
@@ -295,7 +339,6 @@ checkbox bounds(190, 192, 19, 19) channel("check70")colour:1("255,255,25, 180")c
 checkbox bounds(215, 192, 19, 19) channel("check71")colour:1("255,255,25, 180")colour:0("0, 0, 0, 0")
 checkbox bounds(240, 192, 19, 19) channel("check72")colour:1("255,255,25, 180")colour:0("0, 0, 0, 0")
 
-
 }
 }
 
@@ -303,16 +346,16 @@ checkbox bounds(240, 192, 19, 19) channel("check72")colour:1("255,255,25, 180")c
 
 button bounds(10, 6, 105, 20), channel("FX"),range(1) text("FX & Modulation", "Oscillators"),   colour:1(255, 0, 0, 255), alpha(0.8), , increment(1) 
 
-groupbox bounds(25, 65, 600, 660) channel("effetti")  plant("pop1") lineThickness(0), popup(0) outlineThickness(0)colour(0, 0, 0, 0){
+groupbox bounds(25, 45, 600, 660) channel("effetti")  plant("pop1") lineThickness(0), popup(0) outlineThickness(0)colour(0, 0, 0, 0){
 
 
 ;distortion
 groupbox bounds(30, 30, 360, 90) channel("distort")  lineThickness(0), popup(0) outlineThickness(0)colour(0, 0, 0, 0){
     image bounds (0,0,360,80) channel("grigliaChorus") file("./GUI/griglia2.png") alpha(1)
 
-    rslider bounds(90, 9, 80, 80) channel("DISTORTIONlev") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Level: ") text("Level") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
-    rslider bounds(160, 9, 80, 80) channel("DISTORTIONdrive") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Drive: ") text("Drive") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
-    rslider bounds(230, 9, 80, 80) channel("DISTORTIONtone") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Tone: ") text("Tone") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+    rslider bounds(90, 9, 80, 80) channel("DISTORTIONlev") range(0, 1, 0.75, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Level: ") text("Level") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+    rslider bounds(160, 9, 80, 80) channel("DISTORTIONdrive") range(0, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Drive: ") text("Drive") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+    rslider bounds(230, 9, 80, 80) channel("DISTORTIONtone") range(0, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Tone: ") text("Tone") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
     button bounds(300, 9,32, 62), channel("distortON"), text("", ""), alpha(1) increment(1) value(0) imgFile("on", "./GUI/raveonoff1.png") , imgFile("off", "./GUI/raveonoff.png")
 
 }
@@ -375,6 +418,7 @@ groupbox bounds(30, 430, 360, 100) channel("reverb")  lineThickness(0), popup(0)
 }
 
 }
+image bounds (55,80,120,470) channel("fxlabel") file("./GUI/FX.png") alpha(0.9)
      
 ;SubOSC
 groupbox bounds(960, 360, 500, 360) channel("sub") lineThickness(0), popup(0) visible(1) outlineThickness(0)colour(0, 0, 0,0){
@@ -1008,6 +1052,7 @@ if gkFX == 1 then
 cabbageSet gkFX, "effetti", "visible(1)"
 cabbageSet gkFX, "LFOs", "visible(1)"
 cabbageSet gkFX, "matrix", "visible(1)"
+cabbageSet gkFX, "fxlabel","visible(1)"
 
 cabbageSet gkFX, "tubi", "visible(0)"
 cabbageSet gkFX, "OSC1", "visible(0)"
@@ -1022,6 +1067,7 @@ else
 cabbageSet 1, "effetti", "visible(0), popup(0)"
 cabbageSet 1, "LFOs", "visible(0)"
 cabbageSet 1, "matrix", "visible(0)"
+cabbageSet 1, "fxlabel","visible(0)"
 
 cabbageSet 1, "tubi", "visible(1)"
 cabbageSet 1, "OSC1", "visible(1)"
@@ -1062,6 +1108,27 @@ gkporttime_0 = (gkGLIDE_ON == 1? gkporttime_0 : 0)	;Test on GLIDE on/off
 
 ktrig metro 30 ;							;Reduce widget reading rate to 30/sec
 if ktrig == 1 then
+
+gkdistON cabbageGetValue "distortON"
+gkchorusON cabbageGetValue "chorusON"
+gkflangerON cabbageGetValue "flangerON"
+gkphaserON cabbageGetValue "phaserON"
+gkdelayON cabbageGetValue "delayON"
+gkreverbON cabbageGetValue "reverbON"
+
+gkFlangerRate cabbageGetValue "FLANGERrate"
+gkFlangerDepth cabbageGetValue "FLANGERdepth"
+gkFlangerDelay cabbageGetValue "FLANGERdelay"
+gkFlangerFback cabbageGetValue "FLANGERfback"
+
+gkPhaserRate cabbageGetValue "PHASERrate"
+gkPhaserDepth cabbageGetValue "PHASERdepth"
+gkPhaserFreq cabbageGetValue "PHASERfreq"
+gkPhaserFback cabbageGetValue "PHASERfback"
+
+gkReverbRoom cabbageGetValue "REVroom"
+gkReverbDamp cabbageGetValue "REVdamp"
+gkReverbType cabbageGetValue "REVtype"
 
 gkdrywet cabbageGetValue "osc1osc2"
 
@@ -1483,9 +1550,7 @@ aoutRight balance2 aPostFilter, (aPreFilter*0.8)
 aoutLeft dcblock aoutLeft
 aoutRight dcblock aoutRight 
 
-aMainOut = aoutLeft*aAmpEnv;*gilimit
-
-chnset aMainOut, "out1"
+gaSynthClean = aoutLeft*aAmpEnv;*gilimit
 
 endin
 
@@ -1493,66 +1558,68 @@ endin
 ;====== MIXER ======
 instr 30
 
-aSynthClean chnget  "out1"
-
-kdistON cabbageGetValue "distortON"
-kchorusON cabbageGetValue "chorusON"
-kflangerON cabbageGetValue "flangerON"
-kphaserON cabbageGetValue "phaserON"
-kdelayON cabbageGetValue "delayON"
-kreverbON cabbageGetValue "reverbON"
-
-
 ;Distortion
 
-if kdistON == 1 then
-    aoutDistort Distortion aSynthClean ,gkDISTORTION_lev,gkDISTORTION_drive,gkDISTORTION_tone
-    chnset aoutDistort*gilimit, "outFX"
+if gkdistON == 1 then
+    adist Distortion gaSynthClean ,gkDISTORTION_lev,gkDISTORTION_drive,gkDISTORTION_tone
+     aoutDistort = adist
 else
-    chnset aSynthClean, "outFX"
+    aoutDistort = gaSynthClean 
 endif
+
+
 
 ;Chorus
 
-if kchorusON == 1 then
-    ain chnget "outDist"
-    aoutChorusL, aoutChorusR StChorus ain*gkCHORUS_mix,ain*gkCHORUS_mix,gkCHORUS_rate,gkCHORUS_depth,gkCHORUS_width
+if gkchorusON == 1 then
+    aoutChorusL, aoutChorusR StChorus aoutDistort,aoutDistort,gkCHORUS_rate,gkCHORUS_depth,gkCHORUS_width
     aoutChorus sum aoutChorusL,aoutChorusR
-    chnset aoutChorus, "outFX"
+   
 else
-    chnset ain, "outChor"
+    aoutChorus = aoutDistort 
 endif
 
+
 ;Flanger
-
-;aoutFlanger  Flanger  aSynthClean,krate,kdepth,kdelay,kfback
-
+if gkflangerON == 1 then
+    aoutFlanger  Flanger  aoutChorus,gkFlangerRate,gkFlangerDepth,gkFlangerDelay ,gkFlangerFback
+else
+    aoutFlanger = aoutChorus
+    
+endif    
 
 ;Phaser
-
-; aout  Phaser  ain,krate,kdepth,kfreq,kfback
-
+if gkphaserON == 1 then
+    aPhaserout Phaser aoutChorus,gkPhaserRate,gkPhaserDepth,gkPhaserFreq, gkPhaserFback 
+else
+    aPhaserout =aoutChorus
+endif
 
 ; Analog Delay
-if kdelayON == 1 then
-    ain chnget "outChor"
-    aoutDelay AnalogDelay ain,1,gkDELAY_time ,gkDELAY_fback,gkDELAY_tone 
-    chnset aoutDelay, "outFX"  
+if gkdelayON == 1 then
+   
+    aoutDelay1 AnalogDelay aPhaserout,1,gkDELAY_time ,gkDELAY_fback,gkDELAY_tone 
+    aoutDelay sum aoutDelay1, aPhaserout
 else 
-    chnset ain, "outDel" 
+    aoutDelay = aPhaserout
 endif
 
 ; Reverb
+if gkreverbON == 1 then
+    aoutReverbL1, aoutReverbR1 Reverb aoutDelay, gkReverbRoom, gkReverbDamp, gkReverbType
+    aoutReverbL sum aoutReverbL1,aoutDelay
+    aoutReverbR sum aoutReverbL1,aoutDelay
+else
+    aoutReverbL = aoutDelay
+    aoutReverbR = aoutDelay
+endif
+aPostFxL = aoutReverbL
+aPostFxR = aoutReverbR
 
-;aoutReverb Reverb aSynthClean kRoom, kDamp, ktype
+aPostFxL dcblock aPostFxL
+aPostFxR dcblock aPostFxR
 
-
-aPostFX chnget "outFX" 
-
-aPostFX dcblock aPostFX
-
-outs aPostFX*gilimit*gkMAIN_VOL, aPostFX*gilimit*gkMAIN_VOL
-
+outs aPostFxL*gilimit*gkMAIN_VOL, aPostFxR*gilimit*gkMAIN_VOL
 ;outs aoutLeft*gilimit*gkMAIN_VOL, aoutRight*gilimit*gkMAIN_VOL
 endin
 
@@ -2026,6 +2093,6 @@ i 99 0 [3600*24*7]
 f1501 0 513	-7 0 512 1		;Linear (LIN) Curve for MIDI Vel.
 i 100 0 [3600*24*7]
 i 30 0 [3600*24*7]
-
+;i 31 0 [3600*24*7]
 ;i 999 0 [3600*24*7]
 </CsScore>

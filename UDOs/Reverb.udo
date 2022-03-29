@@ -1,4 +1,4 @@
-opcode	Reverb, aa, aKKK			
+opcode	Reverb, aa, akkk			
 ain,kRoom, kDamp, ktype	xin		
 
 
