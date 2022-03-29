@@ -4,8 +4,14 @@
 
 AU / VST Plugin synth written in [Csound](https://csound.com/) and [Cabbage](https://cabbageaudio.com/)
 
-*Developed by [Francesco Casanova](https://cipp0.github.io/) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
+"In this long period of pandemic, for about two years now, we have tried to commit our efforts, for something truly stimulating and of which 
+we have always been passionate, and this is how, thanks to the collaboration with the BitNet01 collective, we have been able to develop in this
+time, our virtual synthesizer, Vst, with our style and sound timbre that we have called KLOWNWAVE.
 
+We are excited to introduce this new project to you, and we hope you will share our visionary initiative.
+KlownWave will be distributed to the public 'by donation', will be open source and hackable"
+
+*Kernel Panik Sound*
 
 ## Features
 - 2 x Wavetable Oscillators 
@@ -35,10 +41,17 @@ AU / VST Plugin synth written in [Csound](https://csound.com/) and [Cabbage](htt
   - Reverb
 
 ## How to build
-*Explain how to build with Cabbage*
+- Clone or download this repository
+- Download and install [Cabbage](https://cabbageaudio.com/download/) (with CSound 6.16 at least)
+- Open the .csd file in Cabbage
+- Click File > Export Plugin > VST Plugin Synth
+- Select your default VSTs folder
+- Open the DAW and Enjoy!
 
 ## License
 ![plot](/img/cc.png)
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-nc-sa/3.0/)
+
+*Developed by [Francesco Casanova](https://cipp0.github.io/) from an idea of [Kernel Panik Sound](https://www.facebook.com/kernelpaniksound)*
 
