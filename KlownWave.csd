@@ -351,7 +351,7 @@ groupbox bounds(25, 45, 600, 660) channel("effetti")  plant("pop1") lineThicknes
 
 ;distortion
 groupbox bounds(30, 30, 360, 90) channel("distort")  lineThickness(0), popup(0) outlineThickness(0)colour(0, 0, 0, 0){
-    image bounds (0,0,360,80) channel("grigliaChorus") file("./GUI/griglia2.png") alpha(1)
+    image bounds (-5,0,350,80) channel("grigliadists") file("./GUI/griglia2.png") alpha(1)
 
     rslider bounds(90, 9, 80, 80) channel("DISTORTIONlev") range(0, 1, 0.75, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Level: ") text("Level") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
     rslider bounds(160, 9, 80, 80) channel("DISTORTIONdrive") range(0, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Drive: ") text("Drive") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
@@ -362,7 +362,7 @@ groupbox bounds(30, 30, 360, 90) channel("distort")  lineThickness(0), popup(0) 
 
 ;chorus
 groupbox bounds(30, 110, 360, 90) channel("chorus")  lineThickness(0), popup(0) outlineThickness(0)colour(0, 0, 0, 0){
-    image bounds (0,0,360,80) channel("grigliaChorus") file("./GUI/griglia2.png") alpha(1)
+    image bounds (-5,0,350,80) channel("grigliaChorus") file("./GUI/griglia2.png") alpha(1)
     rslider bounds(90, 9, 80, 80) channel("CHORUSrate") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Rate: ") text("Rate") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
     rslider bounds(160, 9, 80, 80) channel("CHORUSdepth") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Depth: ") text("Depth") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
     rslider bounds(230, 9, 80, 80) channel("CHORUSwidth") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Width: ") text("Width") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
@@ -371,7 +371,7 @@ groupbox bounds(30, 110, 360, 90) channel("chorus")  lineThickness(0), popup(0) 
 
 ;flanger
 groupbox bounds(30, 190, 360, 90) channel("flanger")  lineThickness(0), popup(0) outlineThickness(0)colour(0, 0, 0, 0){
-    image bounds (0,0,360,80) channel("grigliaFlang") file("./GUI/griglia2.png") alpha(1)
+    image bounds (-5,0,350,80) channel("grigliaFlang") file("./GUI/griglia2.png") alpha(1)
 
     rslider bounds(60, 9, 80, 80) channel("FLANGERrate") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Rate: ") text("Rate") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
     rslider bounds(120, 9, 80, 80) channel("FLANGERdepth") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Depth: ") text("Depth") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
@@ -383,7 +383,7 @@ groupbox bounds(30, 190, 360, 90) channel("flanger")  lineThickness(0), popup(0)
 
 ;phaser
 groupbox bounds(30, 270, 360, 90) channel("phaser")  lineThickness(0), popup(0) outlineThickness(0)colour(0, 0, 0, 0){
-    image bounds (0,0,360,80) channel("grigliaFlang") file("./GUI/griglia2.png") alpha(1)
+    image bounds (-5,0,350,80) channel("grigliaFlang") file("./GUI/griglia2.png") alpha(1)
 
     rslider bounds(60, 9, 80, 80) channel("PHASERrate") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Rate: ") text("Rate") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
     rslider bounds(120, 9, 80, 80) channel("PHASERdepth") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Depth: ") text("Depth") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
@@ -397,7 +397,7 @@ groupbox bounds(30, 270, 360, 90) channel("phaser")  lineThickness(0), popup(0) 
 
 ;delay
 groupbox bounds(30, 350, 360, 100) channel("delay")  lineThickness(0), popup(0) outlineThickness(0)colour(0, 0, 0, 0){
-    image bounds (0,0,360,80) channel("grigliaDel") file("./GUI/griglia2.png") alpha(1)
+    image bounds (-5,0,350,80) channel("grigliaDel") file("./GUI/griglia2.png") alpha(1)
 
     rslider bounds(90, 9, 80, 80) channel("DELAYtime") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Time: ") popupPostfix(" sec")text("Time") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
     rslider bounds(160, 9, 80, 80) channel("DELAYfback") range(0, 1, 0, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Feedback: ") text("Feedback") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
@@ -408,17 +408,20 @@ groupbox bounds(30, 350, 360, 100) channel("delay")  lineThickness(0), popup(0) 
 
 ;reverb
 groupbox bounds(30, 430, 360, 100) channel("reverb")  lineThickness(0), popup(0) outlineThickness(0)colour(0, 0, 0, 0){
-    image bounds (0,0,360,80) channel("grigliaDel") file("./GUI/griglia2.png") alpha(1)
+    image bounds (-5,0,350,80) channel("grigliaDel") file("./GUI/griglia2.png") alpha(1)
 
-    rslider bounds(90, 9, 80, 80) channel("REVtype") range(0, 1, 0, 1, 1) $sliderstyle valueTextBox(1) popupPrefix("Type: ") popupPostfix(" sec")text("Time") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
-    rslider bounds(160, 9, 80, 80 channel("REVroom") range(0.001, 1, 0.032, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Room: ") text("Room") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+    ;rslider bounds(90, 9, 80, 80) channel("REVtype") range(0, 1, 0, 1, 1) $sliderstyle valueTextBox(1) popupPrefix("Type: ") popupPostfix(" sec")text("Time") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+    ;rslider bounds(160, 9, 80, 80 channel("REVERBroom") range(0.001, 1, 0.032, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Room: ") text("Room") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
     rslider bounds(230, 9, 80, 80) channel("REVdamp") range(0.001, 1, 1, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Damp: ") text("Damp") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+        rslider bounds(160, 9, 80, 80) channel("REVERBroom") range(0.001, 1, 0.2, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("Room: ") text("Room") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+        rslider bounds(80, 9, 80, 80) channel("REVmix") range(0.001, 1, 0.5, 1, 0.0001) $sliderstyle valueTextBox(1) popupPrefix("DryWet: ") text("DryWet") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+
     button bounds(300, 9,32, 62), channel("reverbON"), text("", ""), alpha(1) increment(1) value(0) imgFile("on", "./GUI/raveonoff1.png") , imgFile("off", "./GUI/raveonoff.png")
 
 }
 
 }
-image bounds (55,80,120,470) channel("fxlabel") file("./GUI/FX.png") alpha(0.9)
+image bounds (55,80,120,470) channel("fxlabel") file("./GUI/FX.png") alpha(0.9)mouseInteraction(0)
      
 ;SubOSC
 groupbox bounds(960, 360, 500, 360) channel("sub") lineThickness(0), popup(0) visible(1) outlineThickness(0)colour(0, 0, 0,0){
@@ -490,7 +493,6 @@ nchnls		= 	2
 
 #define MAX_FREQ #20000#
 #define MULT_TRK1 #1.019440643702146#  ; 2^(1/36) : key track coefficient for SW1 On / SW2 Off  (1 octave/36 half-steps)
-
 
 ;=========================                       
 opcode AMP_ON, k,iiiii  		;Envelope (Attack / Decay  to Sustain -  No Release )
@@ -1116,19 +1118,18 @@ gkphaserON cabbageGetValue "phaserON"
 gkdelayON cabbageGetValue "delayON"
 gkreverbON cabbageGetValue "reverbON"
 
-gkFlangerRate cabbageGetValue "FLANGERrate"
-gkFlangerDepth cabbageGetValue "FLANGERdepth"
-gkFlangerDelay cabbageGetValue "FLANGERdelay"
-gkFlangerFback cabbageGetValue "FLANGERfback"
 
 gkPhaserRate cabbageGetValue "PHASERrate"
 gkPhaserDepth cabbageGetValue "PHASERdepth"
 gkPhaserFreq cabbageGetValue "PHASERfreq"
 gkPhaserFback cabbageGetValue "PHASERfback"
 
-gkReverbRoom cabbageGetValue "REVroom"
+gkReverbRoom cabbageGetValue "REVERBroom"
+gkReverbRoom   port gkReverbRoom,0.01
 gkReverbDamp cabbageGetValue "REVdamp"
+gkReverbDamp   port gkReverbDamp,0.01
 gkReverbType cabbageGetValue "REVtype"
+gkRevMix cabbageGetValue "REVmix"
 
 gkdrywet cabbageGetValue "osc1osc2"
 
@@ -1136,6 +1137,11 @@ gkCHORUS_mix cabbageGetValue "CHORUSsend"
 gkCHORUS_rate cabbageGetValue "CHORUSrate"
 gkCHORUS_depth cabbageGetValue "CHORUSdepth"
 gkCHORUS_width cabbageGetValue "CHORUSwidth"
+
+gkFlangerRate cabbageGetValue "FLANGERrate"
+gkFlangerDepth cabbageGetValue "FLANGERdepth"
+gkFlangerDelay cabbageGetValue "FLANGERdel"
+gkFlangerFback cabbageGetValue "FLANGERfback"
 
 gkDISTORTION_send cabbageGetValue "DISTORTIONsend"
 gkDISTORTION_lev cabbageGetValue "DISTORTIONlev"
@@ -1567,22 +1573,23 @@ else
     aoutDistort = gaSynthClean 
 endif
 
-
-
 ;Chorus
 
 if gkchorusON == 1 then
     aoutChorusL, aoutChorusR StChorus aoutDistort,aoutDistort,gkCHORUS_rate,gkCHORUS_depth,gkCHORUS_width
     aoutChorus sum aoutChorusL,aoutChorusR
+    ;aoutChorus balance2 aoutChorus, aoutDistort
    
 else
     aoutChorus = aoutDistort 
 endif
 
-
 ;Flanger
 if gkflangerON == 1 then
-    aoutFlanger  Flanger  aoutChorus,gkFlangerRate,gkFlangerDepth,gkFlangerDelay ,gkFlangerFback
+    
+    
+    aoutFlanger Flanger aoutChorus, gkFlangerRate,gkFlangerDepth,gkFlangerDelay ,gkFlangerFback
+    
 else
     aoutFlanger = aoutChorus
     
@@ -1590,9 +1597,9 @@ endif
 
 ;Phaser
 if gkphaserON == 1 then
-    aPhaserout Phaser aoutChorus,gkPhaserRate,gkPhaserDepth,gkPhaserFreq, gkPhaserFback 
+    aPhaserout Phaser aoutFlanger,gkPhaserRate,gkPhaserDepth,gkPhaserFreq, gkPhaserFback 
 else
-    aPhaserout =aoutChorus
+    aPhaserout =aoutFlanger
 endif
 
 ; Analog Delay
@@ -1600,16 +1607,21 @@ if gkdelayON == 1 then
    
     aoutDelay1 AnalogDelay aPhaserout,1,gkDELAY_time ,gkDELAY_fback,gkDELAY_tone 
     aoutDelay sum aoutDelay1, aPhaserout
+    clear aPhaserout
 else 
     aoutDelay = aPhaserout
 endif
 
 ; Reverb
 if gkreverbON == 1 then
-    aoutReverbL1, aoutReverbR1 Reverb aoutDelay, gkReverbRoom, gkReverbDamp, gkReverbType
-    aoutReverbL sum aoutReverbL1,aoutDelay
-    aoutReverbR sum aoutReverbL1,aoutDelay
-else
+    denorm aoutDelay
+    gkReverbDamp scale gkReverbDamp, 22000, 221
+    
+    aoutReverbL1, aoutReverbR1 reverbsc aoutDelay,aoutDelay, gkReverbRoom, gkReverbDamp, sr, 0.5, 1
+    
+    aoutReverbL ntrpol aoutDelay, aoutReverbL1, gkRevMix
+    aoutReverbR ntrpol aoutDelay, aoutReverbR1, gkRevMix
+    else
     aoutReverbL = aoutDelay
     aoutReverbR = aoutDelay
 endif
