@@ -58,7 +58,7 @@ Features:
 #define combostyle colour(120, 50, 5, 255) alpha(0.7)
 
 bounds(0, 0, 0, 0)
-form caption("KlownWave") size(1300, 640), openGL(1), pluginId("KW00") bundle("./GUI", "./KlownWave.snaps", "./UDOs", "./Waves") guiMode("queue")
+form caption("KlownWave") size(1300, 640), openGL(1), pluginId("Kv12") bundle("./GUI", "./KlownWave.snaps", "./UDOs", "./Waves") guiMode("queue")
 
 ;-------------- Background e pagliaccio ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -97,7 +97,7 @@ image bounds (284,70,160,160) channel("oblo") file("./GUI/oblo.png")alpha(0.9)
 ;wavetable
 gentable bounds(302, 115, 120, 60),channel("gentable1")  tableNumber(1234) outlineThickness(2), tableGridColour(155, 155, 155, 0) tableBackgroundColour(0,0,0,0) tableColour:0(255, 255, 255, 2555) fill(0)
 
-rslider bounds(271, 227, 70,70) range(0, 15, 3, 1, 0.001) channel("Wavetable1Morph") $sliderstyle popupPrefix("WT Position: ") text("Morph") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+rslider bounds(271, 227, 70,70) range(0, 1, 0, 1, 0.001) channel("Wavetable1Morph") $sliderstyle popupPrefix("WT Position: ") text("Morph") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
 rslider bounds(328, 227, 70,70) range(-24, 24, 0, 1, 0.001) channel("Wavetable1Detune") $sliderstyle popupPrefix("Detune: ") text("Detune") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
 rslider bounds(382, 227, 70,70) range(0, 1, 0.75, 1, 0.001) channel("Wavetable1Gain")   $sliderstyle popupPrefix("Gain: ") text("Gain") valueTextBox(1) fontColour(255, 255, 255, 0) textColour(255, 255, 255, 255)
 
@@ -111,9 +111,9 @@ rslider bounds(166, 49, 90,90) range(0, 1, 0.75, 1, 0.001) channel("Oscillator1G
 ;label bounds(8, 16, 100, 20) channel("VCO") fontColour(255, 255, 255, 0) text("VCO") alpha(0.6)
 
 ;FM
-rslider bounds(26, 199, 90,90) range(0, 10, 0, 1, 0.001) channel("FMmodulator1") $sliderstyle popupPrefix("FM Modulator: ") text("FM Mod") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
-rslider bounds(96, 199, 90,90) range(0, 50, 0, 1, 0.001) channel("FMindex1") $sliderstyle popupPrefix("FM Index: ") text("FM Index") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
-rslider bounds(166, 199, 90,90) range(0, 7, 0, 1, 0.001) channel("FMwavetable1") $sliderstyle popupPrefix("FM Source: ") text("FM Source") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+rslider bounds(26, 199, 90,90) range(0, 1, 0, 1, 0.001) channel("FMmodulator1") $sliderstyle popupPrefix("FM Modulator: ") text("FM Mod") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+rslider bounds(96, 199, 90,90) range(0, 1, 0, 1, 0.001) channel("FMindex1") $sliderstyle popupPrefix("FM Index: ") text("FM Index") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+rslider bounds(166, 199, 90,90) range(0, 1, 0, 1, 0.001) channel("FMwavetable1") $sliderstyle popupPrefix("FM Source: ") text("FM Source") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
 
 }
 
@@ -128,7 +128,7 @@ image bounds (59,70,160,160) channel("oblo") file("./GUI/oblo.png")alpha(0.9)
 ;wavetable
 gentable bounds(78, 115, 120, 60), channel("gentable2"), tableNumber(5678) outlineThickness(2), tableGridColour(155, 155, 155, 0) tableBackgroundColour(0,0,0,0) tableColour:0(255, 255, 255, 255) fill(0)
 
-rslider bounds(46, 227, 70,70) range(0, 15, 1, 1, 0.001) channel("Wavetable2Morph") $sliderstyle popupPrefix("WT Position: ") text("Morph") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+rslider bounds(46, 227, 70,70) range(0, 1, 1, 1, 0.001) channel("Wavetable2Morph") $sliderstyle popupPrefix("WT Position: ") text("Morph") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
 rslider bounds(106, 227, 70,70) range(-24, 24, 0, 1, 0.001) channel("Wavetable2Detune") $sliderstyle popupPrefix("Detune: ") text("Detune") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
 rslider bounds(166, 227, 70,70) range(0, 1, 0.75, 1, 0.001) channel("Wavetable2Gain")   $sliderstyle popupPrefix("Gain: ") text("Gain") valueTextBox(1) fontColour(255, 255, 255, 0) textColour(255, 255, 255, 255)
 
@@ -142,9 +142,9 @@ rslider bounds(385, 60, 90,90) range(0, 1, 0.75, 1, 0.001) channel("Oscillator2G
 
 
 ;FM
-rslider bounds(245, 199, 90,90) range(0, 10, 0, 1, 0.001) channel("FMmodulator2") $sliderstyle popupPrefix("FM Modulator: ") text("FM Mod") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
-rslider bounds(315, 199, 90,90) range(0, 50, 0, 1, 0.001) channel("FMindex2") $sliderstyle popupPrefix("FM Index: ") text("FM Index") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
-rslider bounds(385, 199, 90,90) range(0, 7, 0, 1, 0.001) channel("FMwave2") $sliderstyle popupPrefix("FM Source: ") text("FM Source") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+rslider bounds(245, 199, 90,90) range(0, 1, 0, 1, 0.001) channel("FMmodulator2") $sliderstyle popupPrefix("FM Modulator: ") text("FM Mod") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+rslider bounds(315, 199, 90,90) range(0, 1, 0, 1, 0.001) channel("FMindex2") $sliderstyle popupPrefix("FM Index: ") text("FM Index") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+rslider bounds(385, 199, 90,90) range(0, 1, 0, 1, 0.001) channel("FMwave2") $sliderstyle popupPrefix("FM Source: ") text("FM Source") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
 
 }
 
@@ -179,72 +179,72 @@ groupbox bounds(20, 12, 50, 120) channel("LFO1") lineThickness(0), popup(0) visi
 {
 label bounds(4, 0, 38, 16) channel("LFO1label") fontColour(255, 255, 255, 255) text("LFO1") 
 combobox bounds(0, 20, 46, 19) channel("LFO1type") text("Sine", "Triangle", "Square", "Ramp", "Ramp Down", "Random")
-nslider bounds(4, 40, 35, 25) channel("LFO1rate") range(0, 2, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
-nslider bounds(4, 65, 35, 25) channel("LFO1min") range(0, 20, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
-nslider bounds(4, 90, 35, 25) channel("LFO1max") range(0, 20, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
+nslider bounds(4, 40, 35, 25) channel("LFO1rate") range(0, 5, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
+nslider bounds(4, 65, 35, 25) channel("LFO1min") range(0, 1, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
+nslider bounds(4, 90, 35, 25) channel("LFO1max") range(0, 1, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
 }
 
 groupbox bounds(70, 12, 50, 120) channel("LFO2") lineThickness(0), popup(0) visible(1) outlineThickness(0)colour(0, 0, 0,0){
 {
 label bounds(4, 0, 38, 16) channel("LFO2label") fontColour(255, 255, 255, 255) text("LFO2") 
 combobox bounds(0, 20, 46, 19) channel("LFO2type") text("Sine", "Triangle", "Square", "Ramp", "Ramp Down", "Random")
-nslider bounds(4, 40, 35, 25) channel("LFO2rate") range(0, 2, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
-nslider bounds(4, 65, 35, 25) channel("LFO2min") range(0, 20, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
-nslider bounds(4, 90, 35, 25) channel("LFO2max") range(0, 20, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
+nslider bounds(4, 40, 35, 25) channel("LFO2rate") range(0, 5, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
+nslider bounds(4, 65, 35, 25) channel("LFO2min") range(0, 1, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
+nslider bounds(4, 90, 35, 25) channel("LFO2max") range(0, 1, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
 }
 
 groupbox bounds(120, 12, 50, 120) channel("LFO3") lineThickness(0), popup(0) visible(1) outlineThickness(0)colour(0, 0, 0,0){
 {
 label bounds(4, 0, 38, 16) channel("LFO3label") fontColour(255, 255, 255, 255) text("LFO3") 
 combobox bounds(0, 20, 46, 19) channel("LFO3type") text("Sine", "Triangle", "Square", "Ramp", "Ramp Down", "Random")
-nslider bounds(4, 40, 35, 25) channel("LFO3rate") range(0, 2, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
-nslider bounds(4, 65, 35, 25) channel("LFO3min") range(0, 20, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
-nslider bounds(4, 90, 35, 25) channel("LFO3max") range(0, 20, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
+nslider bounds(4, 40, 35, 25) channel("LFO3rate") range(0, 5, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
+nslider bounds(4, 65, 35, 25) channel("LFO3min") range(0, 1, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
+nslider bounds(4, 90, 35, 25) channel("LFO3max") range(0, 1, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
 }
 
 groupbox bounds(170,12, 50, 120) channel("LFO4") lineThickness(0), popup(0) visible(1) outlineThickness(0)colour(0, 0, 0,0){
 {
 label bounds(4, 0, 38, 16) channel("LFO4label") fontColour(255, 255, 255, 255) text("LFO4") 
 combobox bounds(0, 20, 46, 19) channel("LFO4type") text("Sine", "Triangle", "Square", "Ramp", "Ramp Down", "Random")
-nslider bounds(4, 40, 35, 25) channel("LFO4rate") range(0, 2, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
-nslider bounds(4, 65, 35, 25) channel("LFO4min") range(0, 20, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
-nslider bounds(4, 90, 35, 25) channel("LFO4max") range(0, 20, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
+nslider bounds(4, 40, 35, 25) channel("LFO4rate") range(0, 5, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
+nslider bounds(4, 65, 35, 25) channel("LFO4min") range(0, 1, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
+nslider bounds(4, 90, 35, 25) channel("LFO4max") range(0, 1, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
 }
 
 groupbox bounds(220, 12, 50, 120) channel("LFO5") lineThickness(0), popup(0) visible(1) outlineThickness(0)colour(0, 0, 0,0){
 {
 label bounds(4, 0, 38, 16) channel("LFO5label") fontColour(255, 255, 255, 255) text("LFO5") 
 combobox bounds(0, 20, 46, 19) channel("LFO5type") text("Sine", "Triangle", "Square", "Ramp", "Ramp Down", "Random")
-nslider bounds(4, 40, 35, 25) channel("LFO5rate") range(0, 2, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
-nslider bounds(4, 65, 35, 25) channel("LFO5min") range(0, 20, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
-nslider bounds(4, 90, 35, 25) channel("LFO5max") range(0, 20, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
+nslider bounds(4, 40, 35, 25) channel("LFO5rate") range(0, 5, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
+nslider bounds(4, 65, 35, 25) channel("LFO5min") range(0, 1, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
+nslider bounds(4, 90, 35, 25) channel("LFO5max") range(0, 1, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
 }
 
 groupbox bounds(270, 12, 50, 120) channel("LFO6") lineThickness(0), popup(0) visible(1) outlineThickness(0)colour(0, 0, 0,0){
 {
 label bounds(4, 0, 38, 16) channel("LFO6label") fontColour(255, 255, 255, 255) text("LFO6") 
 combobox bounds(0, 20, 46, 19) channel("LFO6type") text("Sine", "Triangle", "Square", "Ramp", "Ramp Down", "Random")
-nslider bounds(4, 40, 35, 25) channel("LFO6rate") range(0, 2, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
-nslider bounds(4, 65, 35, 25) channel("LFO6min") range(0, 20, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
-nslider bounds(4, 90, 35, 25) channel("LFO6max") range(0, 20, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
+nslider bounds(4, 40, 35, 25) channel("LFO6rate") range(0, 5, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
+nslider bounds(4, 65, 35, 25) channel("LFO6min") range(0, 1, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
+nslider bounds(4, 90, 35, 25) channel("LFO6max") range(0, 1, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
 }
 
 groupbox bounds(320, 12, 50, 120) channel("LFO7") lineThickness(0), popup(0) visible(1) outlineThickness(0)colour(0, 0, 0,0){
 {
 label bounds(4, 0, 38, 16) channel("LFO7label") fontColour(255, 255, 255, 255) text("LFO7") 
 combobox bounds(0, 20, 46, 19) channel("LFO7type") text("Sine", "Triangle", "Square", "Ramp", "Ramp Down", "Random")
-nslider bounds(4, 40, 35, 25) channel("LFO7rate") range(0, 2, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
-nslider bounds(4, 65, 35, 25) channel("LFO7min") range(0, 20, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
-nslider bounds(4, 90, 35, 25) channel("LFO7max") range(0, 20, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
+nslider bounds(4, 40, 35, 25) channel("LFO7rate") range(0, 5, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
+nslider bounds(4, 65, 35, 25) channel("LFO7min") range(0, 1, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
+nslider bounds(4, 90, 35, 25) channel("LFO7max") range(0, 1, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
 }
 
 groupbox bounds(370, 12, 50, 120) channel("LFO8") lineThickness(0), popup(0) visible(1) outlineThickness(0)colour(0, 0, 0,0){
 {
 label bounds(4, 0, 38, 16) channel("LFO8label") fontColour(255, 255, 255, 255) text("LFO8") 
 combobox bounds(0, 20, 46, 19) channel("LFO8type") text("Sine", "Triangle", "Square", "Ramp", "Ramp Down", "Random")
-nslider bounds(4, 40, 35, 25) channel("LFO8rate") range(0, 2, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
-nslider bounds(4, 65, 35, 25) channel("LFO8min") range(0, 20, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
-nslider bounds(4, 90, 35, 25) channel("LFO8max") range(0, 20, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
+nslider bounds(4, 40, 35, 25) channel("LFO8rate") range(0, 5, 0, 1, 0.01) text("Rate") textColour(255, 255, 255, 255)
+nslider bounds(4, 65, 35, 25) channel("LFO8min") range(0, 1, 0, 1, 0.01) text("Min")textColour(255, 255, 255, 255)
+nslider bounds(4, 90, 35, 25) channel("LFO8max") range(0, 1, 0, 1, 0.01) text("Max")textColour(255, 255, 255, 255)
 }
 }
 
@@ -342,6 +342,7 @@ checkbox bounds(240, 192, 19, 19) channel("check72")colour:1("255,255,25, 180")c
 }
 }
 
+
 ;--------------  EFFECTS ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 button bounds(10, 6, 105, 20), channel("FX"),range(1) text("FX & Modulation", "Oscillators"),   colour:1(255, 0, 0, 255), alpha(0.8), , increment(1) 
@@ -427,9 +428,11 @@ image bounds (55,80,120,470) channel("fxlabel") file("./GUI/FX.png") alpha(0.9)m
 groupbox bounds(960, 360, 500, 360) channel("sub") lineThickness(0), popup(0) visible(1) outlineThickness(0)colour(0, 0, 0,0){
 image bounds (70,40,230,90) channel("griglia5") file("./GUI/griglia2.png") alpha(1)
 
-button bounds(232, 60, 50, 50), channel("SubONOFF1"), text("OFF", "ON"), colour:1(255, 0, 0, 255), alpha(0.8),imgFile("on", "./GUI/toggleON.png") , imgFile("off", "./GUI/toggleOFF.png")
+button bounds(212, 60, 50, 50), channel("SubONOFF1"), text("OFF", "ON"), colour:1(255, 0, 0, 255), alpha(0.8),imgFile("on", "./GUI/toggleON.png") , imgFile("off", "./GUI/toggleOFF.png")
 rslider bounds(66, 50, 90, 90) range(0, 3, 1, 1, 1) channel("SubWave1") $sliderstyle popupPrefix("Sub Wave: ") text("Sub Wave") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
-rslider bounds(143, 50, 90, 90) range(0, 1, 0.2, 1, 0.001) channel("SubAmp1") $sliderstyle popupPrefix("Sub Gain: ") text("Sub Gain") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+rslider bounds(129, 50, 90, 90) range(0, 1, 0.2, 1, 0.001) channel("SubAmp1") $sliderstyle popupPrefix("Sub Gain: ") text("Sub Gain") valueTextBox(1) filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
+button bounds(260, 50,32, 62), channel("SubToFil"), text("", ""), alpha(1) increment(1) value(0) imgFile("on", "./GUI/raveonoff1.png") , imgFile("off", "./GUI/raveonoff.png")
+
 }
 
 ; Noise
@@ -1111,6 +1114,7 @@ gkporttime_0 = (gkGLIDE_ON == 1? gkporttime_0 : 0)	;Test on GLIDE on/off
 ktrig metro 30 ;							;Reduce widget reading rate to 30/sec
 if ktrig == 1 then
 
+gkSubToFil cabbageGetValue "SubToFil"
 gkdistON cabbageGetValue "distortON"
 gkchorusON cabbageGetValue "chorusON"
 gkflangerON cabbageGetValue "flangerON"
@@ -1340,7 +1344,15 @@ kvib_ctrl = gkvib_ctrl/127.0		;Normalize to 1 the external MOD WHEEL (0-127 --> 
 
 
 ;========= WAVETABLE SYNTH 1 E 2============
+gkWave_1 scale gkWave_1, 0, 15, 0, 1
+gkFMfactor_1 scale gkFMfactor_1, 0, 10, 0, 1
+gkFMIndex_1 scale gkFMIndex_1 , 0, 50, 0,1
+gkFMwave_1 scale gkFMwave_2 , 0, 7, 0, 1
 
+gkWave_2 scale gkWave_2, 0, 15, 0, 1
+gkFMfactor_2 scale gkFMfactor_2, 0, 10, 0, 1
+gkFMIndex_2 scale gkFMIndex_2 , 0, 50, 0,1
+gkFMwave_2 scale gkFMwave_2 , 0, 7, 0 , 1
 
 if gkWaveBank1Menu == 1 then
 
@@ -1468,7 +1480,7 @@ endif
 
 adrywet interp gkdrywet 
 
-    aPreFilter sum aOsc1*adrywet, aOsc2*(1-adrywet), agauss
+    ;aPreFilter sum aOsc1*(1-adrywet), aOsc2*adrywet, agauss
 
 
 ;========= FILTER SECTION =======
@@ -1487,6 +1499,12 @@ kfreq_VCF = kfreq_VCF*$MULT_TRK1^gktrack_del
 	
 	kfreq_VCF = (kfreq_VCF <= $MAX_FREQ? kfreq_VCF : $MAX_FREQ)						;Limit upper freq to 22 Khz
 	acut interp kfreq_VCF
+							
+if gkSubToFil == 1 && gkSubONOFF_1 ==1  then
+    aPreFilter sum aOsc1*(1-adrywet), aOsc2*adrywet, agauss,  aSub1
+else
+    aPreFilter sum aOsc1*(1-adrywet), aOsc2*adrywet, agauss
+endif				
 				
 if gkFiltbypass == 0 then	
 	
@@ -1536,22 +1554,22 @@ endif
 
 ;====== OUT SECTION ======
 
-if gkSubONOFF_1	==1  then
+if gkSubToFil == 0 && gkSubONOFF_1 ==1 then
 
-  aPostFilter sum ares,  aSub1
+   aPostFilter sum ares,  aSub1
 
     
- else
+ else 
      
-   aPostFilter =ares
+   aPostFilter = ares
 
 endif
 
 
-gilimit = ampdbfs(-6)
+gilimit = ampdbfs(-3)
 
-aoutLeft balance2 aPostFilter, (aPreFilter*0.8)
-aoutRight balance2 aPostFilter, (aPreFilter*0.8)
+aoutLeft balance2 aPostFilter, aPreFilter
+aoutRight balance2 aPostFilter, aPreFilter
 
 aoutLeft dcblock aoutLeft
 aoutRight dcblock aoutRight 
@@ -1568,7 +1586,7 @@ instr 30
 
 if gkdistON == 1 then
     adist Distortion gaSynthClean ,gkDISTORTION_lev,gkDISTORTION_drive,gkDISTORTION_tone
-     aoutDistort = adist*0.7*gilimit
+     aoutDistort = adist*gilimit
 else
     aoutDistort = gaSynthClean 
 endif
@@ -1578,7 +1596,7 @@ endif
 if gkchorusON == 1 then
     aoutChorusL, aoutChorusR StChorus aoutDistort,aoutDistort,gkCHORUS_rate,gkCHORUS_depth,gkCHORUS_width
     aoutChorus sum aoutChorusL,aoutChorusR
-    ;aoutChorus balance2 aoutChorus, aoutDistort
+    aoutChorus balance2 aoutChorus, aoutDistort
    
 else
     aoutChorus = aoutDistort 
