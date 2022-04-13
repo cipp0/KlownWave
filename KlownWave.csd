@@ -11,7 +11,7 @@
 
 AU / VST Plugin synth written in Csound and Cabbage
 
-Developed by Francesco Casanova (BitNet01) from an idea of Kernel Panik Sound
+Developed by BitNet01 from an idea of Kernel Panik Sound
 
 In this long period of pandemic, for about two years now, we have tried to commit our efforts, for something truly stimulating and of which 
 we have always been passionate, and this is how, thanks to the collaboration with the Bitnet01 collective, we have been able to develop in this
@@ -454,7 +454,7 @@ rslider bounds(236, 50, 90,90) channel("Glide") range(0, 2000, 3, 0.4, 0.01) $sl
 
 }
 ;rslider bounds(1170, 236, 90, 90) channel("env1r") range(0.01, 2, 0.4, 1, 0.001) $sliderstyle valueTextBox(0) popupPrefix("Release") text("Release") filmstrip("./GUI/knob.png", 128) fontColour(255, 255, 255, 0) outlineColour(58, 58, 58, 0) textColour(255, 255, 255, 255) trackerInsideRadius(0.67)
-rslider bounds(1255, 2, 30,30) channel("MAINVOLUME") range(0.001, 1, 1, 1, 0.0001)  valueTextBox(0) popupPrefix("Out Volume ") trackerColour(255,255,255,255)
+rslider bounds(1255, 2, 30,30) channel("MAINVOLUME") range(0.001, 1, 0.5, 1, 0.0001)  valueTextBox(0) popupPrefix("Out Volume ") trackerColour(255,255,255,255)
 groupbox bounds(350,100,600,400) channel("about") colour("0,0,0,0")visible(0)  {
 label bounds(0,0,600,400) channel("about") colour("black")alpha (0.65) text("")
 
@@ -1475,7 +1475,8 @@ else
 agauss = 0
 endif
 	
-
+gilimit = ampdbfs(-3)
+gilimit1 = ampdbfs(-6)
 ;========= OSC1 / OSC2 =======
 
 adrywet interp gkdrywet 
@@ -1502,6 +1503,7 @@ kfreq_VCF = kfreq_VCF*$MULT_TRK1^gktrack_del
 							
 if gkSubToFil == 1 && gkSubONOFF_1 ==1  then
     aPreFilter sum aOsc1*(1-adrywet), aOsc2*adrywet, agauss,  aSub1
+    aPreFilter = aPreFilter*gilimit1
 else
     aPreFilter sum aOsc1*(1-adrywet), aOsc2*adrywet, agauss
 endif				
@@ -1566,7 +1568,7 @@ if gkSubToFil == 0 && gkSubONOFF_1 ==1 then
 endif
 
 
-gilimit = ampdbfs(-3)
+
 
 aoutLeft balance2 aPostFilter, aPreFilter
 aoutRight balance2 aPostFilter, aPreFilter
